@@ -9,6 +9,6 @@ import { ReactiveFormsModule } from '@angular/forms';
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })
-export class Contact {
+export default class Contact {
 
 }

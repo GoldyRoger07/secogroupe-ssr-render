@@ -17,7 +17,7 @@
                         </a> -->
                         
                         <li class="group  px-1 py-2">
-                            <a routerLinkActive=" active josefin-sans-bold" [routerLinkActiveOptions]="{exact:true}" class="px-4 py-1 text-white rounded-md " [routerLink]="link.value">
+                            <a routerLinkActive=" active josefin-sans-bold" [routerLinkActiveOptions]="{exact:true}" [class]="{'text-white': textWhite, 'text-gray-500': !textWhite, 'px-4': true, 'py-1': true, 'rounded-md': true }" [routerLink]="link.value">
                                 {{link.label}}
                                 
                             </a>

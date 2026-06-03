@@ -245,7 +245,7 @@ html{
 } */
 
 .fade-up{
-    transform: translateY(15%) scale(0.65);
+    transform: translateY(15%) scale(0.95);
     opacity: 0;
     transition: all 700ms ease-in-out ;
     /* transition-delay: 500ms; */

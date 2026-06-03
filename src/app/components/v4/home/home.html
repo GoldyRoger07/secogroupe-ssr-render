@@ -1,12 +1,12 @@
-<section class="flex flex-col justify-between min-h-screen h-fit  md:h-screen">
+<section class="flex flex-col justify-between min-h-screen h-fit max-h-[105vh]  ">
     <!-- <div class="red w-10 h-10"></div> -->
-     <div class="relative h-120 lg:h-[68%] top-0 w-full">
+     <div class="relative h-120 !lg:h-[68%] top-0 w-full">
          <div  class="  absolute top-0 w-full z-3">
      
-             <v4-navbar></v4-navbar>
+             <v4-navbar [isTransparent]="false" [textWhite]="true"></v4-navbar>
          </div>
 
-         <div class="w-screen h-full md:aspect-video absolute top-0 left-0 bottom-0 z-2">
+         <div class="w-screen h-full md:aspect-video absolute top-0  left-0 bottom-0 z-2">
      
              <!-- <div class="max-w-7xl w-full mx-auto pt-[70px] "> -->
                  @defer (on immediate) {

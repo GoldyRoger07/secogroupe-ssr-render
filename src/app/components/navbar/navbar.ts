@@ -12,7 +12,10 @@ import { CommonModule } from '@angular/common';
 export class Navbar {
 
   @Input()
-  isTransparent = false
+  isTransparent = true
+
+  @Input()
+  textWhite = false
 
   links = [
     { label: "Home", value: "/",

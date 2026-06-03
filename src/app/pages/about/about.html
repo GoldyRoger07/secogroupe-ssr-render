@@ -1,7 +1,7 @@
 <!-- <my-navbar/> -->
 <section class="h-screen w-full relative bg-[url(/v4/img/services/seco_tech_1_1440.webp)] bg-no-repeat bg-cover bg-[100%_100%] lg:bg-center">
     <div class="absolute z-5 w-full">
-        <v4-navbar [isTransparent]="true"></v4-navbar>
+        <v4-navbar [isTransparent]="true" [textWhite]="true"></v4-navbar>
 
     </div>
     <img src="v4/assets/bg-about.svg" alt="About Us" class="w-full h-full object-cover object-center absolute top-0 left-0">
@@ -21,9 +21,9 @@
     <my-container>
         
             <div class="col-span-12 relative  w-full h-[70vh] z-2 text-gray-600 flex flex-col items-center justify-center gap-5">
-                <div class="cube absolute auto-show rounded-xl z-1 top-0 left-[20%] lg:left-0  w-[180px] h-[180px] blur-md bg-amber-500/70"></div>
+                <div class="cube absolute   rounded-xl z-1 top-0 left-[20%] lg:left-0  w-[180px] h-[180px] blur-md bg-amber-500/70"></div>
                 <div class="cube absolute rounded-xl z-1 top-0 right-[20%] lg:right-0  w-[200px] h-[200px] blur-md bg-blue-500"></div>
-                <div class="cube absolute auto-show rounded-xl z-1 top-[10%] left-[20%] lg:left-[-10%] w-[100px] h-[100px]  bg-amber-500/70"></div>
+                <div class="cube absolute   rounded-xl z-1 top-[10%] left-[20%] lg:left-[-10%] w-[100px] h-[100px]  bg-amber-500/70"></div>
                 <div class="cube absolute rounded-xl z-1 top-[10%] right-[20%] lg:right-[-10%]  w-[120px] h-[120px]  bg-blue-500"></div>
 
                 <h1 class=" px-2 text-4xl  lg:text-6xl  z-2 uppercase font-bold text-center">
@@ -61,7 +61,7 @@
        <my-container>
            <div class="flex flex-col-reverse md:flex-row xs:mx-auto  justify-center md:justify-end md:w-[50%] md:ml-auto translate-x-[5%] gap-10 items-center ">
 
-               <div class="text-center lg:text-start auto-show p-5 md:px-2 bg-amber-500/90 md:bg-transparent text-white md:text-gray-500 ">
+               <div class="text-center lg:text-start   p-5 md:px-2 bg-amber-500/90 md:bg-transparent text-white md:text-gray-500 ">
                    <h2 class="text-2xl md:text-4xl font-bold  font-bold mb-3 " >Our Mission</h2>
                   
                    <p class="raleway text-lg md:text-xl ">
@@ -84,7 +84,7 @@
 
         <div class="flex flex-col-reverse md:flex-row gap-10 items-center p-10">
 
-               <div class="text-center lg:text-start auto-show p-5 md:px-2 bg-amber-500/90 md:bg-transparent text-white md:text-gray-500 ">
+               <div class="text-center lg:text-start   p-5 md:px-2 bg-amber-500/90 md:bg-transparent text-white md:text-gray-500 ">
                    <h2 class="text-2xl md:text-4xl font-bold  font-bold mb-3 " >Our Mission</h2>
                    <!-- <p class="">
                        To be recognized as the premier and most dependable integrated services
@@ -113,7 +113,7 @@
        
         <div class="flex flex-col-reverse md:flex-row gap-10 items-center p-10">
 
-               <div class="text-center lg:text-start auto-show p-5 md:px-2 bg-amber-500/90 md:bg-transparent text-white md:text-gray-500 ">
+               <div class="text-center lg:text-start   p-5 md:px-2 bg-amber-500/90 md:bg-transparent text-white md:text-gray-500 ">
                    <h2 animateOnScroll class="fade-right text-2xl md:text-4xl font-bold  font-bold mb-3 " >Our Vision</h2>
                    <!-- <p class="">
                        To be recognized as the premier and most dependable integrated services
@@ -139,13 +139,13 @@
     <my-container>
         <div class=" col-span-12 mt-20">
             <div class="text-gray-600 text-center px-2">
-                <h2 class="text-4xl  font-bold mb-3 fade-up">Our Core Values</h2>
-                <p class="fade-up raleway text-lg">These are the fundamental beliefs that dictate our conduct and culture:</p>
+                <h2 class="text-4xl  font-bold mb-3 fade-up " animateOnScroll>Our Core Values</h2>
+                <p class="fade-up raleway text-lg" animateOnScroll>These are the fundamental beliefs that dictate our conduct and culture:</p>
             </div>
 
             <div class="grid lg:grid-cols-2 lg:gap-4  py-10 text-gray-600">
                 @for(item of ourCoreValueCards; track $index){
-                    <div class="flex  flex-col items-center p-8 rounded-2xl  auto-show">
+                    <div class="flex  flex-col items-center p-8 rounded-2xl   ">
                         
                         <h3 class="text-xl w-fit font-semibold mb-2 mr-auto text-left">{{item.title}}</h3>
                         <p class="text-gray-600 raleway text-xl">
