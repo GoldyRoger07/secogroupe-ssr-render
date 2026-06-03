@@ -1,0 +1,260 @@
+
+
+.title-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.title-box p{
+    color: var(--my-sec-bg);
+    font-size: 14px;
+}
+
+.wrapper{
+    margin-top: 20px;
+    width: 100%;
+    height: calc(100vh - 100px);
+    
+    border-radius: 25px;
+    background-image: url(/img/meeting1.jpeg);
+    overflow: hidden;
+   
+}
+
+.wrapper .overlay{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    
+    padding-left: 96px;
+    padding-right: 96px;
+    height: 100%;
+    width: 100%;
+    background: #00000073;
+    
+}
+
+.wrapper h1{
+    font-size: 40px;
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 700;
+    line-height: 64px;
+    white-space: pre-line;
+    color: #fff;
+}
+
+.wrapper .my-buttons{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.wrapper .my-buttons button{
+    padding: 16px 32px;
+    width: fit-content;
+    height: fit-content;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.wrapper .my-buttons button:nth-child(1){
+    background: var(--my-sec-bg);
+    border: 2px solid var(--my-sec-bg);
+    color: #fff;
+}
+
+.wrapper .my-buttons button:nth-child(2){
+    background: #fff;
+    border: 2px solid var(--my-sec-bg);
+    color:  var(--my-sec-bg);
+}
+
+
+.wrapper .my-buttons button:nth-child(1):hover{
+    background: var(--my-hover-sec-bg);
+    border: 2px solid var(--my-sec-bg);
+    color: #fff;
+}
+
+.wrapper .my-buttons button:nth-child(2):hover{
+    background: #efefef;
+    border: 2px solid var(--my-sec-bg);
+    color:  var(--my-sec-bg);
+}
+
+
+
+
+.service-card-container{
+    position: relative;
+}
+
+.services-cards-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+    justify-content: center;
+    gap: 10px;
+    padding: 0 50px;
+}
+
+#site-header {
+    /* border-bottom: 1px solid #d6d6d6; */
+    
+   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+
+
+.service-card-container{
+    width: 100%;
+    height: 300px;
+    perspective: 1200px;
+}
+
+.service-card-container:hover > .service-card{
+    cursor: pointer;
+    transform: rotateY(180deg);
+}
+
+
+.service-card{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 800ms;
+    transform-style: preserve-3d;
+    
+  }
+
+
+
+
+.service-card .front,
+.service-card .back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    background: #fff;
+    overflow: hidden;
+}
+
+
+.service-card .front{
+
+    
+    
+    /* background-image: url(images/new/bg_card_services_3.jpg); */
+    /* background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* justify-content: center;
+    align-items: center; */
+    color: #fbad19;
+    /* // border: 1px solid #f1f1f1; */
+    /* gap: 20px; */
+}
+
+
+.service-card .back{
+    /* background:#434343; */
+    /* // background: #f1f1f1; */
+    
+    transform: rotateY(180deg);
+    /* background-image: url(images/new/bg_card_services_3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* align-items: end; */
+
+}
+
+/* .service-card .icon-box{
+    // height: 70%;
+    // display: flex;
+    // align-items: end;
+    // justify-content: center;
+   
+} */
+
+/* .service-card .title-box{
+    // height: 30%;
+    // display: flex;
+    // align-items: start;
+    // justify-content: center;
+} */
+
+
+.service-card .front i{
+    font-size: 80px;
+    margin-top: 15px;
+    /* margin: auto; */
+   
+}
+
+.service-card .front span{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    /* margin-bottom: 50px; */
+}
+
+.service-card .back .top{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fht.linkedin.com%2Fcompany%2Fseco-s%25C3%25A9curit%25C3%25A9&psig=AOvVaw3EAatXyX30f2I0H3P01UFp&ust=1753562055501000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLCYjvDt2I4DFQAAAAAdAAAAABAE'); */
+    /* background-image: url(images/new/logo_seco_secu.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat; */
+}
+
+.service-card .back .top img{
+    /* background: red; */
+    width: 30%;
+}
+
+
+
+.service-card .back .overlay{
+    /* margin-top: auto; */
+    height: 100%;
+    /* background: #00000028; */
+    background-image: linear-gradient(to bottom,var(--my-sec-bg), transparent 50% ,transparent );
+    /* color: #fbad19; */
+    padding: 20px;
+    
+}
+
+.service-card .back .overlay .title{
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+.service-card .back .overlay p{
+    /* color: #fbad19; */
+    font-size: 15px;
+    padding-bottom: 10px;
+}

@@ -1,0 +1,491 @@
+<v4-navbar/>
+<my-container>
+  <section class="col-span-12" >
+        <!-- <div class="container">
+        </div>  -->
+        <div class="wrapper">
+           <div class="overlay">
+                <div>
+                    <h1>
+                        @if(pays === 'usa' || pays === 'canada' || pays === 'bahamas'){
+                            {{'SERVICES_USA.TITLE' | translate}}
+                        }@else{
+                            Seco Tech, Seco Distributors, Mass Funds, Mass Assurance, Security Experts etc
+                        }
+                    </h1>
+                    <div class="my-buttons">
+                        <button>{{'SERVICES_USA.CTAs.CTA1' | translate}}</button>
+                        <button>{{'SERVICES_USA.CTAs.CTA2' | translate}}</button>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </section>
+        
+    <!-- servicescard section fbad19 -->
+    <section class="col-span-12 rounded-[25px]" style=" padding: 32.5px 0;" id="services-cards">
+      <div class="title-main text-center mx-auto" style="max-width:700px;">
+          
+       <!-- <button class="btn btn-primary my-4" >START APPLICATION PROCESS</button> -->
+        <!-- <div class="marquee-container text-box">
+              <div class="marquee ">
+                  @if(pays === 'usa' || pays === 'canada' || pays === 'bahamas'){
+                      For more than 15 years, we have been supporting businesses
+                  }@else{
+                      Depuis plus de 15 ans, nous accompagnons les entreprises
+                  }
+                     
+              </div>
+        </div> -->
+       
+      </div>
+      @if(pays === 'usa'){
+          <h2 style="text-align: center; margin-bottom: 35px; font-weight: bold; color: #383838;">
+              Our Services
+          </h2>
+      }@else{
+          <h2 style="text-align: center; margin-bottom: 35px; font-weight: bold; color: #383838;">
+              Nos Entreprises disponible 
+              @if(pays === 'canada'){
+                  <span>au Canada</span>
+              }@else if(pays === 'haiti'){
+                  <span>en Haïti</span>
+              }@else if(pays === 'bahamas'){
+                  <span>aux Bahamas</span>
+
+              }@else if(pays === 'bresil'){
+                  <span>aux Brésil</span>
+
+              }
+          </h2>
+      }
+      
+      <div class="services-cards-container" style="margin-bottom: 70px;">
+          <!-- @for(filiale of filiales; track $index){ -->
+            <!-- /services-country/{{pays}}/{{filiale.idName}} -->
+             <!-- @if(filiale.idName === "building-maintenance"){
+
+               <a routerLink="/services-country/{{pays}}/{{filiale.idName}}" class="service-card-container">
+                   <div class="service-card">
+                   <div class="front">
+                       <div class="icon-box">
+                           @if(filiale.details.length>0 && !filiale.icon.includes("fas")){
+                               <img [src]="filiale.icon" alt="logo" width="128px">
+                           }@else{
+                               <i [class]="filiale.icon"></i>
+                           }
+                           
+                               
+                       </div>
+                       
+                       <div class="title-box">
+                           
+                           @if(filiale.details.length>0 && (pays === 'usa' || pays === 'canada' || pays === 'bahamas')){
+                               <span>{{filiale.details}}</span>
+                           }@else{
+                               <span>{{filiale.name}}</span>
+                           }
+                       </div>
+                   </div>
+                   <div class="back">
+                       
+                       <div class="overlay">
+                         @if(filiale.details.length>0 && (pays === 'usa' || pays === 'canada' || pays === 'bahamas')){
+                              
+                               <div class="title text-gray-700">
+                                   
+                                   {{getPreviewInfo(filiale.details.toLocaleLowerCase())?.title}}
+                               </div>
+                               <p class="text-gray-600">
+                                {{getPreviewInfo(filiale.details.toLocaleLowerCase())?.description}}
+                               </p>
+                         }@else{
+                               <span>{{getPreviewInfo(filiale.name.toLocaleLowerCase())?.title}}</span>
+                               <p>
+                                {{getPreviewInfo(filiale.name.toLocaleLowerCase())?.description}}
+                               </p>
+                         }
+                           
+                       </div>
+                   </div>
+                   </div>
+               </a>
+             }@else { -->
+               <a class="service-card-container">
+                   <div class="service-card">
+                   <div class="front">
+                       <div class="icon-box">
+                           <!-- @if(filiale.details.length>0 && !filiale.icon.includes("fas")){
+                               <img [src]="filiale.icon" alt="logo" width="128px">
+                           }@else{ -->
+                                <img [src]="previewIcons.security" alt="logo" width="128px">
+                               <!-- <i [class]="previewIcons.security"></i> -->
+                           <!-- } -->
+                           
+                               <!-- <i class="ri-shield-check-fill"></i> -->
+                       </div>
+                       
+                       <div class="title-box">
+                           
+                           <!-- @if(filiale.details.length>0 && (pays === 'usa' || pays === 'canada' || pays === 'bahamas')){
+                               <span>{{filiale.details}}</span>
+                           }@else{
+                               <span>{{filiale.name}}</span>
+                           } -->
+                            <span>{{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD1.FRONT.TITLE' | translate}}</span>
+
+                       </div>
+                   </div>
+                   <div class="back">
+                       <!-- <div class="top">
+                           <img [src]="filiale.logo" class="bg-amber-300 rounded-xl" alt="logo seco">
+                       </div> -->
+                       <div class="overlay">
+                         <!-- @if (pays === 'usa' || pays === 'canada' || pays === 'bahamas'){ -->
+                               <!-- <span>{{filiale.details}}</span> -->
+                               <div class="title text-gray-700">
+                                   <!-- <i [class]="filiale.icon"></i> -->
+                                   {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD1.BACK.TITLE' | translate}}
+                                   <!-- {{getPreviewInfo(filiale.details.toLocaleLowerCase())?.title}} -->
+                               </div>
+                               <p class="text-gray-600">
+                                {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD1.BACK.DESC' | translate}}
+                                <!-- {{getPreviewInfo(filiale.details.toLocaleLowerCase())?.description}} -->
+                               </p>
+                         <!-- }@else{
+                               <span>{{getPreviewInfo(filiale.name.toLocaleLowerCase())?.title}}</span>
+                               <p>
+                                {{getPreviewInfo(filiale.name.toLocaleLowerCase())?.description}}
+                               </p>
+                         } -->
+                           <!-- <div class="title">
+                               <i [class]="filiale.icon"></i>
+                               {{filiale.name}}
+                           </div> -->
+                           <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius eveniet ratione obcaecati...</p> -->
+                       </div>
+                   </div>
+                   </div>
+               </a>
+
+               <a class="service-card-container">
+                   <div class="service-card">
+                   <div class="front">
+                       <div class="icon-box">
+                           
+                                <img [src]="previewIcons.building" alt="logo" width="128px">
+                              
+                        </div>
+                       
+                       <div class="title-box">
+                           
+                          
+                            <span>{{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD2.FRONT.TITLE' | translate}}</span>
+
+                       </div>
+                   </div>
+                   <div class="back">
+                       
+                       <div class="overlay">
+                         
+                               <div class="title text-gray-700">
+                                   
+                                   {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD2.BACK.TITLE' | translate}}
+                                   
+                               </div>
+                               <p class="text-gray-600">
+                                {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD2.BACK.DESC' | translate}}
+                                
+                               </p>
+                         
+                       </div>
+                   </div>
+                   </div>
+               </a>
+
+               <a class="service-card-container">
+                   <div class="service-card">
+                   <div class="front">
+                       <div class="icon-box">
+                           
+                                <img [src]="previewIcons.staffing" alt="logo" width="128px">
+                              
+                        </div>
+                       
+                       <div class="title-box">
+                           
+                          
+                            <span>{{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD4.FRONT.TITLE' | translate}}</span>
+
+                       </div>
+                   </div>
+                   <div class="back">
+                       
+                       <div class="overlay">
+                         
+                               <div class="title text-gray-700">
+                                   
+                                   {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD4.BACK.TITLE' | translate}}
+                                   
+                               </div>
+                               <p class="text-gray-600">
+                                {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD4.BACK.DESC' | translate}}
+                                
+                               </p>
+                         
+                       </div>
+                   </div>
+                   </div>
+               </a>
+
+               <a class="service-card-container">
+                   <div class="service-card">
+                   <div class="front">
+                       <div class="icon-box">
+                           
+                                <img [src]="previewIcons.hospitality" alt="logo" width="128px">
+                              
+                        </div>
+                       
+                       <div class="title-box">
+                           
+                          
+                            <span>{{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD3.FRONT.TITLE' | translate}}</span>
+
+                       </div>
+                   </div>
+                   <div class="back">
+                       
+                       <div class="overlay">
+                         
+                               <div class="title text-gray-700">
+                                   
+                                   {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD3.BACK.TITLE' | translate}}
+                                   
+                               </div>
+                               <p class="text-gray-600">
+                                {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD3.BACK.DESC' | translate}}
+                                
+                               </p>
+                         
+                       </div>
+                   </div>
+                   </div>
+               </a>
+
+               <a class="service-card-container">
+                   <div class="service-card">
+                   <div class="front">
+                       <div class="icon-box">
+                           
+                                <img [src]="previewIcons.janitorial" alt="logo" width="128px">
+                              
+                        </div>
+                       
+                       <div class="title-box">
+                           
+                          
+                            <span>{{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD5.FRONT.TITLE' | translate}}</span>
+
+                       </div>
+                   </div>
+                   <div class="back">
+                       
+                       <div class="overlay">
+                         
+                               <div class="title text-gray-700">
+                                   
+                                   {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD5.BACK.TITLE' | translate}}
+                                   
+                               </div>
+                               <p class="text-gray-600">
+                                {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD5.BACK.DESC' | translate}}
+                                
+                               </p>
+                         
+                       </div>
+                   </div>
+                   </div>
+               </a>
+
+               <a class="service-card-container">
+                   <div class="service-card">
+                   <div class="front">
+                       <div class="icon-box">
+                           
+                                <img [src]="previewIcons.outdoor" alt="logo" width="128px">
+                              
+                        </div>
+                       
+                       <div class="title-box">
+                           
+                          
+                            <span>{{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD6.FRONT.TITLE' | translate}}</span>
+
+                       </div>
+                   </div>
+                   <div class="back">
+                       
+                       <div class="overlay">
+                         
+                               <div class="title text-gray-700">
+                                   
+                                   {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD6.BACK.TITLE' | translate}}
+                                   
+                               </div>
+                               <p class="text-gray-600">
+                                {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD6.BACK.DESC' | translate}}
+                                
+                               </p>
+                         
+                       </div>
+                   </div>
+                   </div>
+               </a>
+             <!-- } -->
+          <!-- } -->
+              
+          
+         
+      </div>
+        
+    </section>
+
+  <!-- <section class="section-animate col-span-12 my-[50px]">
+    <div class="flex flex-col gap-[20px]">
+      <div class="w-[60%] fade-up">
+        <h2 class="inter-700 text-(--text-color) text-[32px]">Seco Securite</h2>
+        <p class="inter-400 text-(--text-color) text-[24px]"> 
+          Professional Protection Services
+          Safeguarding people, assets, and operations.
+          Your security. Our absolute priority.
+        </p>
+      </div>
+      <div class="rounded-[50px] overflow-hidden grid grid-cols-2 gap-[20px]">
+        <img class="fade-right" src="img/haiti-services/bg_seco_securite_1440.webp" alt="security-guard">
+        <img class="fade-left" src="img/haiti-services/security_guard_female_1440.webp" alt="security-guard">
+      </div> 
+    </div>
+  </section>
+
+  <section class="section-animate col-span-12 rounded-[50px] overflow-hidden" style="background-image: linear-gradient(to right, #e7e7e7, #f9f9f9)">
+    <div class="flex flex-col gap-[20px]">
+      <div class="w-[60%] p-[20px] fade-up">
+        <h2 class="inter-700 text-(--text-color) text-[32px]">Seco Tech</h2>
+        <p class="inter-400 text-(--text-color) text-[24px]">
+          Innovative Technology Solutions
+          Empowering businesses through smart digital systems
+          Technology that moves you forward.
+        </p>
+      </div>
+      <img class="fade-up ml-auto h-[413px] w-[610px] fade-up" src="img/haiti-services/bg_seco_tech1.png" alt="security-guard">
+      
+    </div>
+  </section>
+
+  <section class="section-animate col-span-12 my-[50px]">
+    <div class="flex flex-col gap-[20px]">
+      <div class="w-[60%] fade-up">
+        <h2 class="inter-700 text-(--text-color) text-[32px]">Seco Energy CO</h2>
+        <p class="inter-400 text-(--text-color) text-[24px]">
+          Reliable Energy & Power Solutions
+          From solar systems to sustainable energy supply
+          Powering today. Securing tomorrow.
+        </p>
+      </div>
+      <div class="rounded-[50px] h-[462px] overflow-hidden grid grid-cols-4 gap-[20px]">
+        <img class="col-span-2 h-full object-cover fade-right" src="img/haiti-services/cover_seco_energy.webp" alt="security-guard">
+        <img class="col-span-1 h-full object-cover fade-up" src="img/haiti-services/cover_seco_energy1.webp" alt="security-guard">
+        <img class="col-span-1 h-full object-cover fade-left" src="img/haiti-services/cover_seco_energy2.webp" alt="security-guard">
+        
+      </div> 
+    </div>
+  </section>
+
+  <section class="section-animate col-span-12 my-[50px]">
+    <div class="flex flex-col gap-[20px]">
+      <div class="w-[60%] fade-up">
+        <h2 class="inter-700 text-(--text-color) text-[32px]">Seco Agro Industries</h2>
+        <p class="inter-400 text-(--text-color) text-[24px]">
+          Modern Agricultural Solutions
+          Growing smarter, stronger, and more sustainable food systems
+          Cultivating the future of agriculture.
+        </p>
+      </div>
+      <div class="rounded-[50px] h-[620px] overflow-hidden grid grid-cols-2 grid-rows-2 gap-[20px]">
+        <img class="w-full h-full object-cover fade-up" src="img/haiti-services/cover_seco_agro.webp" alt="security-guard">
+        <img class="w-full h-full object-cover fade-left" src="img/haiti-services/cover_seco_agro1.webp" alt="security-guard">
+        <img class="w-full h-full object-cover fade-right" src="img/haiti-services/cover_seco_agro2.webp" alt="security-guard">
+        <img class="w-full h-full object-cover fade-up" src="img/haiti-services/cover_seco_agro9.webp" alt="security-guard">
+        
+      </div> 
+    </div>
+  </section>
+
+  <section class="section-animate col-span-12 h-[550px] overflow-hidden my-[50px] rounded-[50px]">
+      <div class="grid grid-cols-2 gap-[20px] h-full">
+        <div class="bg-[#d9d9d9] flex items-center px-[20px] h-full">
+
+          <div class="h-fit ">
+            <h2 class="inter-700 text-(--text-color) text-[32px]">Seco Univers Construction</h2>
+            <p class="inter-400 text-(--text-color) text-[24px]">
+              Construction & Architectural Excellence
+              Designing, building, and shaping modern infrastructures
+              We build ideas into reality.
+            </p>
+          </div>
+        </div>
+
+        <img class="h-full w-full object-cover" src="img/haiti-services/cover_seco_construction.webp" alt="architecte">
+      </div>
+  </section>
+
+  <section class="section-animate col-span-12 h-[550px] overflow-hidden my-[50px] rounded-[50px]">
+      <div class="grid grid-cols-2 gap-[20px] h-full">
+        
+        <img class="h-full object-cover" src="img/haiti-services/vecteezy_handshake.webp" alt="architecte">
+        <div class="bg-(--my-sec-bg) flex items-center px-[20px] h-full">
+
+          <div class="h-fit ">
+            <h2 class="inter-700 text-white text-[32px]">Mass Assurance</h2>
+            <p class="inter-400 text-white text-[24px]">
+              Trusted Insurance Services
+              Protecting what matters most in life and business
+              Security you can rely on.
+            </p>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="section-animate col-span-12 h-[550px] overflow-hidden my-[50px] rounded-[50px] ">
+      <div class="grid grid-cols-2 gap-[20px] h-full">
+        <div class="bg-(--my-prim-bg) flex items-center px-[20px]">
+
+          <div class="h-fit ">
+            <h2 class="inter-700 text-white text-[32px]">Mass Funds</h2>
+            <p class="inter-400 text-white text-[24px]">
+              Financial & Economic Solutions
+              Smart investments for long-term growth and stability
+              Building wealth with confidence.
+            </p>
+          </div>
+        </div>
+
+        <img class="h-[550px] w-full object-cover" src="img/haiti-services/bg_mass_funds.jpg" alt="architecte">
+      </div>
+  </section>
+
+  <section class=" section-animate col-span-12 p-[20px] flex items-end justify-start  my-[50px] bg-[url(/img/haiti-services/bg_seco_boyo.avif)] bg-cover rounded-[50px] h-[550px]">
+      <div class="h-fit bg-(--my-sec-bg) w-[50%] rounded-[50px] p-[20px] flex flex-col justify-center">
+            <h2 class="inter-700 text-white text-[32px]">Boyo Airways</h2>
+            <p class="inter-400 text-white text-[24px]">
+                Aviation & Air Travel Services
+                Connecting destinations with safety and precision
+                Where your journey takes flight.
+            </p>
+      </div>
+  </section> -->
+</my-container>
+
+<my-footer/>
