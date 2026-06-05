@@ -5,6 +5,7 @@ import { Footer } from '../../components/footer/footer';
 import { TranslatePipe } from '@ngx-translate/core';
 import { HeroSection } from "../../components/hero-section/hero-section";
 import { MySlider } from "../../components/my-slider/my-slider";
+import { PaperDesignSection } from '../../components/paper-design-section/paper-design-section';
 
 interface ServiceSection{
   title: string;
@@ -23,7 +24,7 @@ interface SubService{
 
 @Component({
   selector: 'all-services',
-  imports: [Navbar, Footer, HeroSection, MySlider, Container, TranslatePipe],
+  imports: [Navbar, Footer, HeroSection, MySlider, Container, TranslatePipe, PaperDesignSection],
   templateUrl: './all-services.html',
   styleUrl: './all-services.css',
 })

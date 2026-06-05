@@ -1,0 +1,7 @@
+.border-gradient-right{
+    background-image: linear-gradient(-74deg ,#b1b1b1,transparent , transparent, transparent );
+}
+
+.border-gradient-left{
+    background-image: linear-gradient(74deg ,#b1b1b1,transparent , transparent, transparent );
+}
