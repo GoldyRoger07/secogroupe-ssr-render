@@ -1,21 +1,25 @@
-import { Component, Input } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, inject, Input, OnInit, signal } from '@angular/core';
+import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 import { HamburgerBtn } from '../hamburger-btn/hamburger-btn';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'v4-navbar',
-  imports: [HamburgerBtn, RouterLink, RouterLinkActive, CommonModule],
+  imports: [HamburgerBtn, RouterLink, RouterLinkActive, CommonModule ],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css'
 })
-export class Navbar {
+export class Navbar implements OnInit{
 
   @Input()
   isTransparent = true
 
   @Input()
   textWhite = false
+
+  currentUrl = signal('')
+
+  activatedRoute = inject(ActivatedRoute)
 
   links = [
     { label: "Home", value: "/",
@@ -87,6 +91,34 @@ export class Navbar {
   onClickMenuBtn(button: HamburgerBtn,mobileMenu: any) {
     button.isOpen = !button.isOpen
     mobileMenu.classList.toggle("open")
+  }
+
+  ngOnInit(): void {
+    this.activatedRoute.url.subscribe(val=>{
+      // console.log(val[0].path)
+      try {
+        switch(val[0].path){
+        case "about-us":
+          this.currentUrl.set("About Us")
+        break;
+        case "services":
+          this.currentUrl.set("Services")
+        break;
+        case "hiring":
+          this.currentUrl.set("Apply Now")
+        break;
+        case "contact":
+          this.currentUrl.set("Contact")
+        break;
+      }
+      } catch (error) {
+        console.log(error)
+        this.currentUrl.set("Home")
+          
+      }
+      
+
+    })
   }
 
 }
