@@ -307,7 +307,7 @@
     <section class="pt-10 pb-40">
         <div class="text-center mb-16 px-5">
                 <h2  class="text-3xl text-gray-700 font-bold mb-4">{{'HOME.CLIENTS.TITLE' | translate}}</h2>
-                <p  class="text-gray-600 max-w-2xl mx-auto">
+                <p  class="text-gray-600 text-2xl max-w-2xl mx-auto">
                     {{'HOME.CLIENTS.DESC' | translate}}
                 </p>
             </div>
@@ -329,75 +329,7 @@
     </section>
 
 
-    <!-- Contact Section -->
-    <section class=" py-20 bg-(--my-sec-bg)  text-white" id="contact">
-        <my-container>
-            <div class="col-span-4 md:col-span-8 lg:col-span-12 flex flex-col lg:flex-row">
-                <div class="lg:w-1/2 mb-12 lg:mb-0">
-                    <h2 class="text-3xl font-bold mb-6">{{'HOME.CONTACT.TITLE' | translate}}</h2>
-                    <p class="mb-8 max-w-md">
-                        {{'HOME.CONTACT.DESC' | translate}}
-                    </p>
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="bg-white bg-opacity-20 px-3 py-2 rounded-lg mr-4">
-                                <i class="ri-mail-line w-5 h-5 text-gray-500" ></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold mb-1">{{'HOME.CONTACT.EMAIL' | translate}}</h3>
-                                <p>hr@secogroupe.com</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="bg-white bg-opacity-20 px-3 py-2 rounded-lg mr-4">
-                                <i class="ri-phone-line w-5 h-5 text-gray-500" ></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold mb-1">{{'HOME.CONTACT.CALL' | translate}}</h3>
-                                <p>954-314-7441 / 954-314-7442</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="bg-white bg-opacity-20 px-3 py-2 rounded-lg mr-4">
-                                <i class="ri-map-pin-line w-5 h-5 text-gray-500" ></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold mb-1">{{'HOME.CONTACT.VISIT' | translate}}</h3>
-                                <p>2701 W Oakland Park Blvd Fort Lauderdale, FL 33311</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:w-1/2 lg:pl-12">
-                    <form  action="https://formspree.io/f/xlgdqnkq"
-  method="POST" class="bg-white rounded-xl p-8 shadow-lg text-gray-600">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">{{'HOME.CONTACT.FORM_TITLE' | translate}}</h3>
-                        <div class="mb-6">
-                            <label for="name" class="block text-gray-700 font-medium mb-2">{{'HOME.CONTACT.NAME' | translate}}</label>
-                            <input type="text" name="name" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        </div>
-                        <div class="mb-6">
-                            <label for="email" class="block text-gray-700 font-medium mb-2">{{'HOME.CONTACT.EMAIL_LABEL' | translate}}</label>
-                            <input type="email" name="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        </div>
-                        <!-- <div class="mb-6">
-                            <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested In</label>
-                            <p-select [options]="services" [fluid]="true"  formControlName="selectedService" optionLabel="name" placeholder="Select a Language" class="w-full md:w-30" />
-
-                            
-                        </div> -->
-                        <div class="mb-6">
-                            <label for="message" class="block text-gray-700 font-medium mb-2">{{'HOME.CONTACT.MESSAGE' | translate}}</label>
-                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-(--my-sec-bg) hover:bg-orange-400 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
-                            {{'HOME.CONTACT.BTN' | translate}}
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </my-container>
-    </section>
+  
 
     <!-- Footer bg-gray-900-->
   <my-footer/>

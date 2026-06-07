@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'paper-design-section',
@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class PaperDesignSection {
 
+  @Input()
+  paperColor = '#d9d9d9'
 }

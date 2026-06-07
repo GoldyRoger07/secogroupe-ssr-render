@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, viewChild } from '@angular/core';
 
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
@@ -21,12 +21,29 @@ register();
   styleUrl: './my-slider.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class MySlider {
+export class MySlider implements OnInit{
   @Input()
   images: Array<string> = [
     "img/services/new/building_maintenance.jpg",
     "img/services/new/facility_management_1.jpg",
-    "img/services/new/facility_manager_2.jpg",
-     
+    "img/services/new/facility_manager_2.jpg",    
   ]
+
+  currentImages = [
+    this.images[0],
+    this.images[1]
+  ]
+  // @viewChild()
+  // img1!:ElementRef
+  // img2!:ElementRef
+
+  id = 0
+
+  ngOnInit(): void {
+    // setInterval(()=>{
+    //   this.currentImages
+    // },10000)
+  }
+
+
 }

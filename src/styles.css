@@ -3,6 +3,17 @@
 @import "tailwindcss";
 
  @import './myfonts.css';
+
+ @layer utilities {
+  .no-scrollbar::-webkit-scrollbar{
+    display: none;
+  }
+
+  .no-scrollbar{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+ }
   
 .inter-100,
 .inter-200,
@@ -68,6 +79,7 @@ html{
             --my-hover-prim-bg: #0b5dd9;
             --my-hover-sec-bg: #d59113;
             --text-color: #4a4a4a;
+            --color: #e6e6e6;
         }
         body {
             font-family: 'Inter', sans-serif;
