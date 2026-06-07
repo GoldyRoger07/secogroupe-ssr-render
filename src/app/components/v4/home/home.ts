@@ -3,10 +3,11 @@ import { interval } from 'rxjs';
 import { Navbar } from '../../navbar/navbar';
 import { MySlider } from '../../my-slider/my-slider';
 import { V4MySlider } from '../my-slider/my-slider';
+import { AnimateOnScrollDirective } from '../../../directives/animate-on-scroll';
 
 @Component({
   selector: 'v4-home',
-  imports: [Navbar, V4MySlider],
+  imports: [Navbar, V4MySlider, AnimateOnScrollDirective],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })

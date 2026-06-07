@@ -6,6 +6,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { HeroSection } from "../../components/hero-section/hero-section";
 import { MySlider } from "../../components/my-slider/my-slider";
 import { PaperDesignSection } from '../../components/paper-design-section/paper-design-section';
+import { AnimateOnScrollDirective } from '../../directives/animate-on-scroll';
 
 interface ServiceSection{
   title: string;
@@ -24,7 +25,7 @@ interface SubService{
 
 @Component({
   selector: 'all-services',
-  imports: [Navbar, Footer, HeroSection, MySlider, Container, TranslatePipe, PaperDesignSection],
+  imports: [Navbar, Footer, HeroSection, MySlider, Container, TranslatePipe, PaperDesignSection, AnimateOnScrollDirective],
   templateUrl: './all-services.html',
   styleUrl: './all-services.css',
 })

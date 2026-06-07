@@ -257,10 +257,10 @@ html{
 } */
 
 .fade-up{
-    transform: translateY(15%) scale(0.95);
+    transform: translateY(25%) scale(0.95);
     opacity: 0;
     transition: all 700ms ease-in-out ;
-    /* transition-delay: 500ms; */
+    transition-delay: calc((sibling-index()-1) * 1s);
 }
 
 .blur-up{
