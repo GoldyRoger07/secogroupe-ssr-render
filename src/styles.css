@@ -256,11 +256,13 @@ html{
     opacity: 1;
 } */
 
+
+
 .fade-up{
     transform: translateY(25%) scale(0.95);
     opacity: 0;
-    transition: all 700ms ease-in-out ;
-    transition-delay: calc((sibling-index()-1) * 1s);
+    transition: all 600ms ease-in-out ;
+    
 }
 
 .blur-up{
@@ -298,6 +300,10 @@ html{
 .fade-right.active, .fade-left.active{
     transform: translateX(0%);
     opacity: 1;
+}
+
+.fade-up,.blur-up,.fade-right,.fade-left{
+  transition-delay: calc((sibling-index() - 1) * 200ms);
 }
 
 .border-gradient{

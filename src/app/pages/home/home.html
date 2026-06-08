@@ -13,20 +13,20 @@
                 <div class="transform transition-all duration-1000 translate-x-0 opacity-100">
                     <!-- <img alt="Partnership approach"  class="fade-up rounded-lg shadow-2xl object-cover w-full h-96" loading="lazy" src="img/services/new/compressed/meeting_with_partener_or_client_500.webp"> -->
                     <!-- <video src="videos/SECO_Groupe,_Inc(360p).mp4" type="video/mp4" autoplay muted controls loop class="fade-up rounded-lg shadow-2xl object-cover w-full h-96"></video>   -->
-                    <video  style="  display: block;" class="w-full"  loop="" autoplay  [muted]="true"
+                    <video  style="  display: block;" animateOnScroll class="blur-up w-full"  loop="" autoplay  [muted]="true"
   playsinline src="videos/SECO_Groupe,_Inc(360p).mp4" ></video>
                 </div>
                 <div class="space-y-8 transform transition-all duration-1000 delay-300 translate-x-0 opacity-100">
                     <div class="space-y-6 " >
-                        <h2 class="text-4xl font-bold text-gray-700 leading-tight">{{'HOME.PARTNERSHIP.TITLE' | translate}}</h2>
-                        <p class="text-md text-gray-600 leading-relaxed">{{'HOME.PARTNERSHIP.DESC1' | translate}}</p>
-                        <p class="text-md text-gray-600 leading-relaxed">{{'HOME.PARTNERSHIP.DESC2' | translate}}</p>
+                        <h2 animateOnScroll class="fade-up text-4xl font-bold text-gray-700 leading-tight">{{'HOME.PARTNERSHIP.TITLE' | translate}}</h2>
+                        <p animateOnScroll class="fade-up text-md text-gray-600 leading-relaxed">{{'HOME.PARTNERSHIP.DESC1' | translate}}</p>
+                        <p animateOnScroll class="fade-up text-md text-gray-600 leading-relaxed">{{'HOME.PARTNERSHIP.DESC2' | translate}}</p>
                     </div>
                     <div class="flex items-center space-x-4">
                         <div class="w-12 h-12 bg-(--my-sec-bg) shrink-0 rounded-full flex items-center justify-center">
-                            <i class="ri-handshake-line text-white text-xl"></i>
+                            <i animateOnScroll class="ri-handshake-line text-white text-xl"></i>
                         </div>
-                        <div class="fade-up">
+                        <div animateOnScroll class="fade-up">
                             <h3 class="font-semibold text-gray-700">{{'HOME.PARTNERSHIP.POINT_TITLE' | translate}}</h3>
                             <p class="text-gray-600">{{'HOME.PARTNERSHIP.POINT_DESC' | translate}}</p>
                         </div>
@@ -45,15 +45,15 @@
         </div> -->
         <my-container>
             <div animateOnScroll class="col-span-4 md:col-span-8 lg:col-span-12 text-center mb-16 fade-up">
-                <h2 class="text-3xl font-bold mb-4 text-gray-700">{{'HOME.MAP.TITLE_S1' | translate}} <span class="text-(--my-sec-bg)">{{'HOME.MAP.TITLE_S2' | translate}}</span> {{'HOME.MAP.TITLE_S3' | translate}}</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-xl">
+                <h2 animateOnScroll class="fade-up text-3xl font-bold mb-4 text-gray-700">{{'HOME.MAP.TITLE_S1' | translate}} <span class="text-(--my-sec-bg)">{{'HOME.MAP.TITLE_S2' | translate}}</span> {{'HOME.MAP.TITLE_S3' | translate}}</h2>
+                <p animateOnScroll class="fade-up text-gray-600 max-w-2xl mx-auto text-xl">
                     {{'HOME.MAP.DESC' | translate}}
                 </p>
             </div>
             <div class="w-full  mx-auto grid grid-cols-2 sm:grid-cols-3  md:grid-cols-4 lg:grid-cols-5  gap-1 px-1">
                 <!-- Project 1 -->
                  @for (map of maps; track $index) {
-                    <div (click)="showDialog(map.title)" class="bg-gradient-to-tr min-w-25  map-card flex flex-col  group relative overflow-hidden rounded-xl shadow-lg scale-95 hover:scale-100 hover:shadow-2xl shadow-gray-400 border-t-5 border-gradient  transition duration-500">
+                    <div (click)="showDialog(map.title)" animateOnScroll class="fade-up bg-gradient-to-tr min-w-25  map-card flex flex-col  group relative overflow-hidden rounded-xl shadow-lg scale-95 hover:scale-100 hover:shadow-2xl shadow-gray-400 border-t-5 border-gradient  transition duration-500">
                         <!-- border-[var(--my-sec-bg)] -->
                      <!-- <div class="card-4">    -->
                         <div class="flex flex-col items-center h-[50%] justify-center">
@@ -92,9 +92,9 @@
         </div> -->
 
         <my-container>
-            <div animateOnScroll class="fade-up col-span-4 md:col-span-8 lg:col-span-12 text-center mb-16 px-3 min-[391px]:px-0 transform transition-all duration-1000 translate-y-0 opacity-100">
-                <h2  class="text-4xl font-bold text-gray-700 mb-6">{{'HOME.EXPERTISE.TITLE' | translate}}</h2>
-                <p   class="text-md text-gray-600 max-w-xl mx-auto leading-relaxed">{{'HOME.EXPERTISE.DESC' | translate}}</p>
+            <div  class=" col-span-4 md:col-span-8 lg:col-span-12 text-center mb-16 px-3 min-[391px]:px-0 transform transition-all duration-1000 translate-y-0 opacity-100">
+                <h2 animateOnScroll class="fade-up text-4xl font-bold text-gray-700 mb-6">{{'HOME.EXPERTISE.TITLE' | translate}}</h2>
+                <p animateOnScroll  class="fade-up text-md text-gray-600 max-w-xl mx-auto leading-relaxed">{{'HOME.EXPERTISE.DESC' | translate}}</p>
             </div>
             <div class="col-span-4 md:col-span-8 lg:col-span-12 mb-20 transform transition-all duration-1000 delay-200 translate-y-0 opacity-100">
                 <div class="bg-gradient-to-r from-blue-50 to-blue-100 min-[391px]:rounded-2xl p-4 md:p-8 lg:p-12">
@@ -104,9 +104,9 @@
                                 <div class="auto-rotate w-16 h-16 bg-(--my-sec-bg) shrink-0 rounded-full flex items-center justify-center mr-4">
                                     <i class="ri-building-2-line text-white text-2xl"></i>
                                 </div>
-                                <h3 class="text-3xl font-bold text-gray-700">{{'HOME.FACILITY.TITLE' | translate}}</h3>
+                                <h3 animateOnScroll class="fade-up text-3xl font-bold text-gray-700">{{'HOME.FACILITY.TITLE' | translate}}</h3>
                             </div>
-                            <p  class="text-lg text-gray-700 mb-8 leading-relaxed">{{'HOME.FACILITY.DESC' | translate}}</p>
+                            <p animateOnScroll class="fade-up text-lg text-gray-700 mb-8 leading-relaxed">{{'HOME.FACILITY.DESC' | translate}}</p>
                         </div>
                         <div class="rounded-lg shadow-lg w-full h-64 overflow-hidden">
                             <my-slider [images]="['img/services/new/compressed/facility_management_500.webp','img/services/new/compressed/facility_management_1_500.webp','img/services/new/compressed/facility_manager_2_500.webp']"></my-slider>
@@ -118,29 +118,29 @@
                             <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                                 <i class="ri-brush-line text-(--my-sec-bg) text-xl"></i>
                             </div>
-                            <h4 class="font-semibold text-gray-700 mb-2" >{{'HOME.FACILITY.CLEANING_TITLE' | translate}}</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed" >{{'HOME.FACILITY.CLEANING_DESC' | translate}}</p>
+                            <h4 animateOnScroll class="fade-up font-semibold text-gray-700 mb-2" >{{'HOME.FACILITY.CLEANING_TITLE' | translate}}</h4>
+                            <p animateOnScroll class="fade-up text-gray-600 text-sm leading-relaxed" >{{'HOME.FACILITY.CLEANING_DESC' | translate}}</p>
                         </div>
                         <div class="bg-white p-6 rounded-lg shadow-md transform transition-all duration-500 hover:scale-105 hover:shadow-lg translate-y-0 opacity-100" style="transition-delay: 500ms;">
                             <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                                 <i class="ri-building-line text-(--my-sec-bg) text-xl"></i>
                             </div>
-                            <h4 class="font-semibold text-gray-700 mb-2" >{{'HOME.FACILITY.PROPERTY_TITLE' | translate}}</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed" >{{'HOME.FACILITY.PROPERTY_DESC' | translate}}</p>
+                            <h4 animateOnScroll class="fade-up font-semibold text-gray-700 mb-2" >{{'HOME.FACILITY.PROPERTY_TITLE' | translate}}</h4>
+                            <p animateOnScroll class="fade-up text-gray-600 text-sm leading-relaxed" >{{'HOME.FACILITY.PROPERTY_DESC' | translate}}</p>
                         </div>
                         <div class="bg-white p-6 rounded-lg shadow-md transform transition-all duration-500 hover:scale-105 hover:shadow-lg translate-y-0 opacity-100" style="transition-delay: 600ms;">
                             <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                                 <i class="ri-car-line text-(--my-sec-bg) text-xl"></i>
                             </div>
-                            <h4 class="font-semibold text-gray-700 mb-2" >{{'HOME.FACILITY.TRANSPORT_TITLE' | translate}}</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed" >{{'HOME.FACILITY.TRANSPORT_DESC' | translate}}</p>
+                            <h4 animateOnScroll class="fade-up font-semibold text-gray-700 mb-2" >{{'HOME.FACILITY.TRANSPORT_TITLE' | translate}}</h4>
+                            <p animateOnScroll class="fade-up text-gray-600 text-sm leading-relaxed" >{{'HOME.FACILITY.TRANSPORT_DESC' | translate}}</p>
                         </div>
                         <div class="bg-white p-6 rounded-lg shadow-md transform transition-all duration-500 hover:scale-105 hover:shadow-lg translate-y-0 opacity-100" style="transition-delay: 700ms;">
                             <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                                 <i class="ri-plant-line text-(--my-sec-bg) text-xl"></i>
                             </div>
-                            <h4 class="font-semibold text-gray-700 mb-2" >{{'HOME.FACILITY.OUTDOOR_TITLE' | translate}}</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed" >{{'HOME.FACILITY.OUTDOOR_DESC' | translate}}</p>
+                            <h4 animateOnScroll class="fade-up font-semibold text-gray-700 mb-2" >{{'HOME.FACILITY.OUTDOOR_TITLE' | translate}}</h4>
+                            <p animateOnScroll class="fade-up text-gray-600 text-sm leading-relaxed" >{{'HOME.FACILITY.OUTDOOR_DESC' | translate}}</p>
                         </div>
                     </div>
                 </div>
@@ -158,9 +158,9 @@
                         <div class="w-16 h-16 bg-gray-700 shrink-0 rounded-full flex items-center justify-center ">
                             <i class="ri-tools-line text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-3xl font-bold text-gray-700" >{{'HOME.INFRA.TITLE' | translate}}</h3>
+                        <h3 animateOnScroll class="fade-up text-3xl font-bold text-gray-700" >{{'HOME.INFRA.TITLE' | translate}}</h3>
                     </div>
-                    <p class="text-lg text-gray-700 mb-8 leading-relaxed" >{{'HOME.INFRA.DESC' | translate}}</p>
+                    <p animateOnScroll class="fade-up text-lg text-gray-700 mb-8 leading-relaxed" >{{'HOME.INFRA.DESC' | translate}}</p>
                 </div>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
@@ -168,29 +168,29 @@
                     <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4">
                         <i class="ri-settings-line text-gray-700 text-xl"></i>
                     </div>
-                    <h4  class="font-semibold text-gray-700 mb-2">{{'HOME.INFRA.OPERATIONS_TITLE' | translate}}</h4>
-                    <p  class="text-gray-600 text-sm leading-relaxed">{{'HOME.INFRA.OPERATIONS_DESC' | translate}}</p>
+                    <h4 animateOnScroll  class="fade-up font-semibold text-gray-700 mb-2">{{'HOME.INFRA.OPERATIONS_TITLE' | translate}}</h4>
+                    <p animateOnScroll class="fade-up text-gray-600 text-sm leading-relaxed">{{'HOME.INFRA.OPERATIONS_DESC' | translate}}</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md transform transition-all duration-500 hover:scale-105 hover:shadow-lg translate-y-0 opacity-100" style="transition-delay: 700ms;">
                     <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4">
                         <i class="ri-flashlight-line text-gray-700 text-xl"></i>
                     </div>
-                    <h4  class="font-semibold text-gray-700 mb-2">{{'HOME.INFRA.MODERN_TITLE' | translate}}</h4>
-                    <p  class="text-gray-600 text-sm leading-relaxed">{{'HOME.INFRA.MODERN_DESC' | translate}}</p>
+                    <h4 animateOnScroll  class="fade-up font-semibold text-gray-700 mb-2">{{'HOME.INFRA.MODERN_TITLE' | translate}}</h4>
+                    <p animateOnScroll class="fade-up text-gray-600 text-sm leading-relaxed">{{'HOME.INFRA.MODERN_DESC' | translate}}</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md transform transition-all duration-500 hover:scale-105 hover:shadow-lg translate-y-0 opacity-100" style="transition-delay: 800ms;">
                     <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4">
                         <i class="ri-temp-cold-line text-gray-700 text-xl"></i>
                     </div>
-                    <h4  class="font-semibold text-gray-700 mb-2">{{'HOME.INFRA.HVAC_TITLE' | translate}}</h4>
-                    <p  class="text-gray-600 text-sm leading-relaxed">{{'HOME.INFRA.HVAC_DESC' | translate}}</p>
+                    <h4 animateOnScroll  class="fade-up font-semibold text-gray-700 mb-2">{{'HOME.INFRA.HVAC_TITLE' | translate}}</h4>
+                    <p animateOnScroll class="fade-up text-gray-600 text-sm leading-relaxed">{{'HOME.INFRA.HVAC_DESC' | translate}}</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md transform transition-all duration-500 hover:scale-105 hover:shadow-lg translate-y-0 opacity-100" style="transition-delay: 900ms;">
                     <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4">
                         <i class="ri-cpu-line text-gray-700 text-xl"></i>
                     </div>
-                    <h4  class="font-semibold text-gray-700 mb-2">{{'HOME.INFRA.CRITICAL_TITLE' | translate}}</h4>
-                    <p  class="text-gray-600 text-sm leading-relaxed">{{'HOME.INFRA.CRITICAL_DESC' | translate}}</p>
+                    <h4 animateOnScroll  class="fade-up font-semibold text-gray-700 mb-2">{{'HOME.INFRA.CRITICAL_TITLE' | translate}}</h4>
+                    <p animateOnScroll class="fade-up text-gray-600 text-sm leading-relaxed">{{'HOME.INFRA.CRITICAL_DESC' | translate}}</p>
                 </div>
             </div>
         </div>
@@ -220,25 +220,25 @@
         <my-container>
                 <div  class="col-span-4 md:col-span-8 lg:col-span-12 grid grid-cols-6 gap-2 p-2 rounded-2xl">
                     <div class=" col-span-6 text-center text-gray-700 bg-white py-3 rounded-xl mb-20">
-                        <h2 class="text-3xl font-bold mb-4">{{'HOME.ADVANTAGES.TITLE' | translate}}</h2>
-                        <p class="text-gray-600 max-w-2xl mx-auto"> {{'HOME.ADVANTAGES.DESC' | translate}} </p>
+                        <h2 animateOnScroll class="fade-up text-3xl font-bold mb-4">{{'HOME.ADVANTAGES.TITLE' | translate}}</h2>
+                        <p animateOnScroll class="fade-up text-gray-600 max-w-2xl mx-auto"> {{'HOME.ADVANTAGES.DESC' | translate}} </p>
                     </div>
 
                     <div class="col-span-6 flex flex-col-reverse md:flex-row md:items-center gap-4 mb-20">
                         <div class="md:w-[50%] min-[1070px]:px-10">
-                            <h2 class="text-3xl text-gray-700 font-bold mb-3">{{'HOME.ADVANTAGES.EXCELLENCE_TITLE' | translate}}</h2>
-                            <p class="text-gray-700"> {{'HOME.ADVANTAGES.EXCELLENCE_DESC' | translate}}
+                            <h2 animateOnScroll class="fade-up text-3xl text-gray-700 font-bold mb-3">{{'HOME.ADVANTAGES.EXCELLENCE_TITLE' | translate}}</h2>
+                            <p animateOnScroll class="fade-up text-gray-700"> {{'HOME.ADVANTAGES.EXCELLENCE_DESC' | translate}}
                             </p>
                         </div>
 
-                        <img class="md:w-[50%] rounded-xl" src="img/excellence-in-services.webp" alt="excellence-in-services">
+                        <img animateOnScroll class="blur-up md:w-[50%] rounded-xl" src="img/excellence-in-services.webp" alt="excellence-in-services">
                     </div>
 
                     <div class="col-span-6 flex flex-col md:flex-row md:items-center gap-4 mb-20">
-                        <img class="md:w-[50%] rounded-xl" src="img/collage-customer-experience-concept.webp" alt="excellence-in-services">
+                        <img animateOnScroll class="blur-up md:w-[50%] rounded-xl" src="img/collage-customer-experience-concept.webp" alt="excellence-in-services">
                         <div class="md:w-[50%] min-[1070px]:px-10">
-                            <h2 class="text-3xl text-gray-700 font-bold mb-3">{{'HOME.ADVANTAGES.CUSTOMER_TITLE' | translate}}</h2>
-                            <p class="text-gray-700">{{'HOME.ADVANTAGES.CUSTOMER_DESC' | translate}}
+                            <h2 animateOnScroll class="fade-up text-3xl text-gray-700 font-bold mb-3">{{'HOME.ADVANTAGES.CUSTOMER_TITLE' | translate}}</h2>
+                            <p animateOnScroll class="fade-up text-gray-700">{{'HOME.ADVANTAGES.CUSTOMER_DESC' | translate}}
                             </p>
                         </div>
 
@@ -246,12 +246,12 @@
 
                     <div class="col-span-6 flex flex-col-reverse md:flex-row md:items-center gap-4">
                         <div class="md:w-[50%] min-[1070px]:px-10">
-                            <h2 class="text-3xl text-gray-700 font-bold mb-3">{{'HOME.ADVANTAGES.SUPPORT_TITLE' | translate}}</h2>
-                            <p class="text-gray-700"> {{'HOME.ADVANTAGES.SUPPORT_DESC' | translate}}
+                            <h2 animateOnScroll class="fade-up text-3xl text-gray-700 font-bold mb-3">{{'HOME.ADVANTAGES.SUPPORT_TITLE' | translate}}</h2>
+                            <p animateOnScroll class="fade-up text-gray-700"> {{'HOME.ADVANTAGES.SUPPORT_DESC' | translate}}
                             </p>
                         </div>
 
-                        <img class="md:w-[50%] rounded-xl" src="img/yellow-h24.webp" alt="H24 services">
+                        <img animateOnScroll class="blur-up md:w-[50%] rounded-xl" src="img/yellow-h24.webp" alt="H24 services">
                     </div>
                 </div>    
         </my-container>
@@ -262,8 +262,8 @@
     <section class="py-20 bg-white" id="portfolio">
        <my-container>
                 <div class="col-span-4 md:col-span-8 lg:col-span-12 text-center mb-16">
-                <h2 class="text-3xl text-gray-700 font-bold mb-4">{{'HOME.WORK.TITLE' | translate}}</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
+                <h2 animateOnScroll class="fade-up text-3xl text-gray-700 font-bold mb-4">{{'HOME.WORK.TITLE' | translate}}</h2>
+                <p animateOnScroll class="fade-up text-gray-600 max-w-2xl mx-auto">
                     {{'HOME.WORK.DESC' | translate}}
                 </p>
             </div>
@@ -271,10 +271,10 @@
                 
              <p-carousel [value]="cardServices"  [numVisible]="4" [numScroll]="1" [circular]="true" [responsiveOptions]="responsiveOptions" autoplayInterval="3000">
         <ng-template let-cardService #item>
-           <p-card [style]="{ overflow: 'hidden', margin: '10px', height: '95%' }">
+           <p-card animateOnScroll class="fade-up" [style]="{ overflow: 'hidden', margin: '10px', height: '95%' }">
                 <ng-template #header>
                     <div class="img-container">
-                        <img alt="Card" loading="lazy" class="w-full card-img" [src]="cardService.cover" />
+                        <img alt="Card" loading="lazy" animateOnScroll class="blur-up w-full card-img" [src]="cardService.cover" />
                     </div>
                     
                 </ng-template>
@@ -306,8 +306,8 @@
    
     <section class="pt-10 pb-40">
         <div class="text-center mb-16 px-5">
-                <h2  class="text-3xl text-gray-700 font-bold mb-4">{{'HOME.CLIENTS.TITLE' | translate}}</h2>
-                <p  class="text-gray-600 text-2xl max-w-2xl mx-auto">
+                <h2 animateOnScroll class="fade-up text-3xl text-gray-700 font-bold mb-4">{{'HOME.CLIENTS.TITLE' | translate}}</h2>
+                <p animateOnScroll class="fade-up text-gray-600 text-2xl max-w-2xl mx-auto">
                     {{'HOME.CLIENTS.DESC' | translate}}
                 </p>
             </div>
@@ -316,12 +316,12 @@
         <!-- Logos -->
          @for (client of clients; track $index) {
 
-             <img loading="lazy" [src]="client.url" alt="Sponsor 1" class="object-contain {{client.size}}">
+             <img animateOnScroll loading="lazy" [src]="client.url" alt="Sponsor 1" class="blur-up object-contain {{client.size}}">
          }
 
          @for (client of clients; track $index) {
 
-             <img loading="lazy" [src]="client.url" alt="Sponsor 1" class="object-contain {{client.size}}">
+             <img animateOnScroll loading="lazy" [src]="client.url" alt="Sponsor 1" class="blur-up object-contain {{client.size}}">
          }
         
         </div>
