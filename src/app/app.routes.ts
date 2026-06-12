@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
     { path: '', pathMatch: 'full', loadComponent: ()=> import('./pages/home/home')  },
+    { path: 'request-a-quote', loadComponent: ()=> import('./pages/request-a-quote/request-a-quote') },
     { path: 'about-us', loadComponent: ()=> import('./pages/about/about')  },
     { path: 'services', loadComponent: ()=> import('./pages/all-services/all-services') },
     { path: 'contact', loadComponent: ()=> import('./pages/contact/contact') }

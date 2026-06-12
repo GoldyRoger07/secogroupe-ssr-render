@@ -1,0 +1,66 @@
+<section class="w-full h-155 bg-[url(/img/hero-section/request-a-quote/01.png)] bg-cover bg-center flex flex-col">
+        <v4-navbar [textWhite]="true"/>
+        <div class="h-full flex items-center justify-center">
+
+            <div class="text-white bg-black/45 p-5 w-[40%] -translate-y-[7%]">
+                <h1 class="font-bold text-3xl mb-2">Request a Professional Service Quote</h1>
+                <p class="text-xl">Fill out the form below and our team will respond with a personalized service proposal within 24 hours.</p>
+            </div>
+        </div>
+</section>
+
+<section class="py-20 bg-gray-100">
+    <my-container>
+        <form  method="POST" class="bg-white rounded-xl p-8 shadow-lg text-gray-600 h-full grid grid-cols-2 gap-5">
+                        <!-- <h3  class="text-2xl font-bold text-gray-700 mb-6">Send Us a Message</h3> -->
+                        <div class="mb-3">
+                            <label for="name" class="block text-gray-600 font-medium mb-2">Service/Product Category</label>
+                            <!-- <input type="text" name="name" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"> -->
+                            <p-select [options]="cities"  optionLabel="name" placeholder="Please Select" class="w-full  py-1" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="block text-gray-600 font-medium mb-2">Property/Business Name</label>
+                            <input type="email" name="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div class="mb-3 col-span-2">
+                            <label for="tel" class="block text-gray-600 font-medium mb-2 ">Direct Dial Number</label>
+                            <input type="tel" name="tel" id="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="firstname" class="block text-gray-600 font-medium mb-2">First</label>
+                            <input type="text" name="firstname" id="firstname" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastname" class="block text-gray-600 font-medium mb-2">Last</label>
+                            <input type="text" name="lastname" id="lastname" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastname" class="block text-gray-600 font-medium mb-2">City</label>
+                            <input type="text" name="lastname" id="lastname" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastname" class="block text-gray-600 font-medium mb-2">State</label>
+                            <input type="text" name="lastname" id="lastname" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <!-- <div class="mb-3">
+                            <label for="service" class="block text-gray-600 font-medium mb-2">Service Interested In</label>
+                            <p-select [options]="languages" [fluid]="true"  formControlName="selectedLanguage" optionLabel="name" placeholder="Select a Language" class="w-full md:w-30" />
+                        </div> -->
+                        <div class="mb-3 col-span-2">
+                            <label for="email" class="block text-gray-600 font-medium mb-2">Email</label>
+                            <input type="email" name="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div class="mb-3 col-span-2 flex items-center">
+                            <p-checkbox inputId="ingredient1" name="pizza" value="Cheese" [binary]="true" />
+                            <label for="ingredient1" class="ml-2">I would like to receive periodic emails with information about our services or new service offerings.</label>
+                        </div>
+
+                        <button type="submit" class="col-span-1 w-fit mt-auto bg-(--my-sec-bg) hover:bg-orange-400 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                            Submit
+                        </button>
+        </form>
+    </my-container>
+</section>
+
+<my-footer />
