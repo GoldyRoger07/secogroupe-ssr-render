@@ -7,6 +7,7 @@ import { HeroSection } from "../../components/hero-section/hero-section";
 import { MySlider } from "../../components/my-slider/my-slider";
 import { PaperDesignSection } from '../../components/paper-design-section/paper-design-section';
 import { AnimateOnScrollDirective } from '../../directives/animate-on-scroll';
+import { V4Slider } from '../../components/v4/v4-slider/v4-slider';
 
 interface ServiceSection{
   title: string;
@@ -25,7 +26,7 @@ interface SubService{
 
 @Component({
   selector: 'all-services',
-  imports: [Navbar, Footer, HeroSection, MySlider, Container, TranslatePipe, PaperDesignSection, AnimateOnScrollDirective],
+  imports: [V4Slider, Navbar, Footer, HeroSection, MySlider, Container, TranslatePipe, PaperDesignSection, AnimateOnScrollDirective],
   templateUrl: './all-services.html',
   styleUrl: './all-services.css',
 })
@@ -37,9 +38,8 @@ export default class AllServices {
     color: 'bg-gradient-to-r from-blue-50 to-blue-100',
     description: 'Beyond simply cleaning, our services ensure a healthy, productive, and welcoming environment for your employees and clients',
     imageUrl: [
-      'img/services/compressed/housekeeping_services_1440.webp',
-      'img/services/compressed/housekeeping_services_1440.webp',
-      'img/services/compressed/housekeeping1_1440.webp'
+      'img/services/compressed/housekeeping_services_500.webp',
+      'v4/img/services/janitorial.png'
     ],
     subServices: [
       {
@@ -64,7 +64,7 @@ export default class AllServices {
     icon: 'ri-building-2-line',
     color: 'bg-gradient-to-r from-gray-50 to-gray-100',
     description: 'Protecting your investment requires proactive and expert maintenance. We keep your infrastructure running smoothly and efficiently.',
-    imageUrl: ['img/services/compressed/building_maintenance.webp','img/services/compressed/building_maintenance_2_1440.webp','img/services/new/compressed/building_maintenance_1440.webp'],
+    imageUrl: ['img/services/compressed/building_maintenance.webp','img/services/compressed/building_maintenance_2_500.webp','img/services/new/compressed/building_maintenance_500.webp'],
     subServices: [
       {
         title: 'Preventative Maintenance',
@@ -94,9 +94,9 @@ export default class AllServices {
     color: 'bg-gradient-to-r from-blue-50 to-blue-100',
     description: 'When you need specialized help fast, our staffing division provides vetted, trained, and reliable personnel to fill essential roles within your facility or organization.',
     imageUrl: [
-      'img/services/new/compressed/facility_management_1_1440.webp',
-      'img/services/new/compressed/facility_management_1_1440.webp',
-      'img/services/new/compressed/facility_management_1_1440.webp'
+      'img/services/new/compressed/facility_management_1_500.webp',
+      'img/services/new/compressed/facility_management_1_500.webp',
+      'img/services/new/compressed/facility_management_1_500.webp'
     ],
     subServices: [
       {

@@ -1,0 +1,8 @@
+.slide-fx{
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+}
+
+.slide-fx.active{
+    opacity: 0;
+}

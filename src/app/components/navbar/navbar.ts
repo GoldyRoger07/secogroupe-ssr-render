@@ -60,7 +60,7 @@ export class Navbar implements OnInit{
           {label: 'Concierge and security'}
         ]
       } },
-    { label: "Apply Now", value: "/hiring",
+    { label: "Apply Now", value: "https://forms.gle/WtcjCFFT79UWEive8",
       previewBox:{
         left:{
           title: "Transform your career dreams into reality",

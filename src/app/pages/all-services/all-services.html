@@ -87,15 +87,23 @@
             <div class="flex flex-col gap-20 py-10">
 
                 <div animateOnScroll class="fade-up overflow-hidden  grid lg:grid-cols-[438px_1fr] w-full rounded-xl " >
-                  <img [src]="serviceSections[5].imageUrl[1]" class="lg:rounded-tr-[100px] "  alt="services">
-                  <div class=" flex  flex-col justify-center px-5 py-3  lg:h-[50%] bg-white  mt-auto lg:rounded-tr-[100px] " >
+                    <div class="lg:rounded-tr-[100px] h-[292px] overflow-hidden">
+
+                        <v4-slider [images]="serviceSections[5].imageUrl"/>
+                    </div>
+                  <!-- <img [src]="serviceSections[5].imageUrl[1]" class="lg:rounded-tr-[100px] "  alt="services"> -->
+                  <div class=" flex flex-col justify-center px-5 py-3  lg:h-[50%] bg-white  mt-auto lg:rounded-tr-[100px] " >
                       <h2 class="josefin-sans-bold text-3xl text-gray-600">{{'SERVICES.SECTION_SERVICES.SERVICES.SERVICE6.TITLE' | translate}}</h2>
                       <p class="josefin-sans-bold text-gray-500 text-xl">{{'SERVICES.SECTION_SERVICES.SERVICES.SERVICE6.DESC' | translate}}</p>
                   </div>
                 </div>
 
                 <div animateOnScroll class="fade-up overflow-hidden grid lg:grid-cols-[1fr_438px]  w-full rounded-xl ">
-                    <img  [src]="serviceSections[0].imageUrl[2]" class="lg:rounded-tl-[100px] lg:order-2" alt="services">
+                    <div class="lg:rounded-tl-[100px] lg:order-2 h-[292px] overflow-hidden">
+
+                        <v4-slider [images]="serviceSections[0].imageUrl"/>
+                    </div>
+                    <!-- <img  [src]="serviceSections[0].imageUrl[2]" class="lg:rounded-tl-[100px] lg:order-2" alt="services"> -->
                     <div class="mt-auto flex text-right flex-col justify-center lg:h-[50%] bg-white px-5 py-3 lg:rounded-tl-[100px] lg:order-1" >
                         <h2 class="josefin-sans-bold text-3xl text-gray-600">{{'SERVICES.SECTION_SERVICES.SERVICES.SERVICE1.TITLE' | translate}}</h2>
                         <p class="josefin-sans-bold text-gray-500 text-xl">{{'SERVICES.SECTION_SERVICES.SERVICES.SERVICE1.DESC' | translate}}</p>
@@ -103,7 +111,11 @@
                 </div>
 
                 <div animateOnScroll class="fade-up overflow-hidden  grid lg:grid-cols-[438px_1fr] w-full rounded-xl ">
-                  <img [src]="serviceSections[1].imageUrl[1]" class="lg:rounded-tr-[100px]" alt="services">
+                  <div class="lg:rounded-tr-[100px] h-[292px] overflow-hidden">
+
+                        <v4-slider [images]="serviceSections[1].imageUrl"/>
+                    </div>
+                  <!-- <img [src]="serviceSections[1].imageUrl[1]" class="lg:rounded-tr-[100px]" alt="services"> -->
                   <div class=" flex  flex-col justify-center px-5 py-3  lg:h-[50%] bg-white  mt-auto lg:rounded-tr-[100px]" >
                       <h2 class="josefin-sans-bold text-3xl text-gray-600">{{'SERVICES.SECTION_SERVICES.SERVICES.SERVICE2.TITLE' | translate}}</h2>
                       <p class="josefin-sans-bold text-gray-500 text-xl">{{'SERVICES.SECTION_SERVICES.SERVICES.SERVICE2.DESC' | translate}}</p>
@@ -111,7 +123,11 @@
                 </div>
 
                 <div animateOnScroll class="fade-up overflow-hidden grid lg:grid-cols-[1fr_438px] w-full rounded-xl ">
-                    <img class="lg:rounded-tl-[100px] lg:order-2" [src]="serviceSections[2].imageUrl[1]" alt="services">
+                    <div class="lg:rounded-tl-[100px] lg:order-2 h-[292px] overflow-hidden">
+
+                        <v4-slider [images]="serviceSections[2].imageUrl"/>
+                    </div>
+                    <!-- <img class="lg:rounded-tl-[100px] lg:order-2" [src]="serviceSections[2].imageUrl[1]" alt="services"> -->
                     <div class="mt-auto flex text-right flex-col justify-center lg:h-[50%] bg-white px-5 py-3 lg:rounded-tl-[100px] lg:order-1" >
                         <h2 class="josefin-sans-bold text-3xl text-gray-600">{{'SERVICES.SECTION_SERVICES.SERVICES.SERVICE3.TITLE' | translate}}</h2>
                         <p class="josefin-sans-bold text-gray-500 text-xl">{{'SERVICES.SECTION_SERVICES.SERVICES.SERVICE3.DESC' | translate}}</p>
@@ -119,7 +135,11 @@
                 </div>
 
                 <div animateOnScroll class="fade-up overflow-hidden  grid lg:grid-cols-[438px_1fr] w-full rounded-xl ">
-                  <img [src]="serviceSections[3].imageUrl[0]" class="lg:rounded-tr-[100px] " alt="services">
+                  <div class="lg:rounded-tr-[100px] h-[292px] overflow-hidden">
+
+                        <v4-slider [images]="serviceSections[3].imageUrl"/>
+                    </div>
+                    <!-- <img [src]="serviceSections[3].imageUrl[0]" class="lg:rounded-tr-[100px] " alt="services"> -->
                   <div class=" flex  flex-col justify-center px-5 py-3  lg:h-[50%] bg-white  mt-auto lg:rounded-tr-[100px]" >
                       <h2 class="josefin-sans-bold text-3xl text-gray-600">{{'SERVICES.SECTION_SERVICES.SERVICES.SERVICE4.TITLE' | translate}}</h2>
                       <p class="josefin-sans-bold text-gray-500 text-xl">{{'SERVICES.SECTION_SERVICES.SERVICES.SERVICE4.DESC' | translate}}</p>
@@ -127,7 +147,11 @@
                 </div>
 
                 <div animateOnScroll class="fade-up overflow-hidden grid lg:grid-cols-[1fr_438px] w-full rounded-xl ">
-                    <img class="lg:rounded-tl-[100px] lg:order-2" [src]="serviceSections[4].imageUrl[0]" alt="services">
+                    <div class="lg:rounded-tl-[100px] lg:order-2 h-[292px] overflow-hidden">
+
+                        <v4-slider [images]="serviceSections[5].imageUrl"/>
+                    </div>
+                    <!-- <img class="lg:rounded-tl-[100px] lg:order-2" [src]="serviceSections[4].imageUrl[0]" alt="services"> -->
                     <div class="mt-auto flex text-right flex-col justify-center lg:h-[50%] bg-white px-5 py-3 lg:rounded-tl-[100px] lg:order-1" >
                         <h2 class="josefin-sans-bold text-3xl text-gray-600">{{'SERVICES.SECTION_SERVICES.SERVICES.SERVICE5.TITLE' | translate}}</h2>
                         <p class="josefin-sans-bold text-gray-500 text-xl">{{'SERVICES.SECTION_SERVICES.SERVICES.SERVICE5.DESC' | translate}}</p>

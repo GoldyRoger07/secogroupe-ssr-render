@@ -17,9 +17,19 @@
                         </a> -->
                         
                         <li class="group  px-1 py-2">
-                            <a routerLinkActive=" active josefin-sans-bold" [routerLinkActiveOptions]="{exact:true}" [class]="{'text-white': textWhite, 'text-gray-500': !textWhite, 'px-4': true, 'py-1': true, 'rounded-md': true }" [routerLink]="link.value">
-                                {{link.label}} 
-                            </a>
+
+                            @if(link.label.toLocaleLowerCase() === "apply now"){
+                               <a [class]="{'text-white': textWhite, 'text-gray-500': !textWhite, 'px-4': true, 'py-1': true, 'rounded-md': true }" [href]="link.value">
+                                    {{link.label}} 
+                                </a> 
+                            }@else {
+
+                                <a routerLinkActive=" active josefin-sans-bold" [routerLinkActiveOptions]="{exact:true}" [class]="{'text-white': textWhite, 'text-gray-500': !textWhite, 'px-4': true, 'py-1': true, 'rounded-md': true }" [routerLink]="link.value">
+                                    {{link.label}} 
+                                </a>
+                            }
+
+
 
                             <!-- @if(link.label === "Home" && currentUrl().length === 0){} -->
                              
@@ -32,7 +42,11 @@
                                                 <p>
                                                     {{link.previewBox.left.desc}}
                                                 </p>
-                                                <button class="w-full p-2 border border-gray-500 text-gray-500 hover:bg-gray-500 hover:text-white transition ease-out duration-200" [routerLink]="link.value">Read More</button>
+                                                @if(link.label.toLocaleLowerCase() === "apply now"){
+                                                    <a class="w-full p-2 border text-center border-gray-500 text-gray-500 hover:bg-gray-500 hover:text-white transition ease-out duration-200" [href]="link.value">Read More</a>
+                                                }@else {
+                                                    <button class="w-full p-2 border border-gray-500 text-gray-500 hover:bg-gray-500 hover:text-white transition ease-out duration-200" [routerLink]="link.value">Read More</button>
+                                                }
                                             </div>
                                         </div>
                                         <div class="bg-(--v4-prim-bg)/45 h-full p-8 flex items-center">
@@ -89,7 +103,7 @@
             <a routerLink="/" routerLinkActive="bg-(--v4-prim-bg)/95 active josefin-sans-bold" [routerLinkActiveOptions]="{exact:true}" class="px-4 py-1 bg-(--v4-sec-bg)/95 rounded-md ">Home</a>
             <a routerLink="/about-us" routerLinkActive="bg-(--v4-prim-bg)/95 active josefin-sans-bold" [routerLinkActiveOptions]="{exact:true}" class="px-4 py-1 bg-(--v4-sec-bg)/95 rounded-md">About Us</a>
             <a routerLink="/services" routerLinkActive="bg-(--v4-prim-bg)/95 active josefin-sans-bold" [routerLinkActiveOptions]="{exact:true}" class="px-4 py-1 bg-(--v4-sec-bg)/95 rounded-md">Services</a>
-            <a routerLink="/hiring" routerLinkActive="bg-(--v4-prim-bg)/95 active josefin-sans-bold" [routerLinkActiveOptions]="{exact:true}" class="px-4 py-1 bg-(--v4-sec-bg)/95 rounded-md">Apply Now</a>
+            <a href="https://forms.gle/WtcjCFFT79UWEive8" class="px-4 py-1 bg-(--v4-sec-bg)/95 rounded-md">Apply Now</a>
             <a routerLink="/contact" routerLinkActive="bg-(--v4-prim-bg)/95 active josefin-sans-bold" [routerLinkActiveOptions]="{exact:true}" class="px-4 py-1 bg-(--v4-sec-bg)/95 rounded-md">Contact Us</a>
         </div>
     </div>
