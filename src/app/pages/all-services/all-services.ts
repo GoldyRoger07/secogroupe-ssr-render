@@ -38,8 +38,11 @@ export default class AllServices {
     color: 'bg-gradient-to-r from-blue-50 to-blue-100',
     description: 'Beyond simply cleaning, our services ensure a healthy, productive, and welcoming environment for your employees and clients',
     imageUrl: [
-      'img/services/compressed/housekeeping_services_500.webp',
-      'v4/img/services/janitorial.png'
+      "img/services/Janitorial & Cleaning/01.jpg",
+      "img/services/Janitorial & Cleaning/02.jpg",
+      "img/services/Janitorial & Cleaning/03.jpg",
+      // 'img/services/compressed/housekeeping_services_500.webp',
+      // 'v4/img/services/janitorial.png'
     ],
     subServices: [
       {
@@ -64,7 +67,12 @@ export default class AllServices {
     icon: 'ri-building-2-line',
     color: 'bg-gradient-to-r from-gray-50 to-gray-100',
     description: 'Protecting your investment requires proactive and expert maintenance. We keep your infrastructure running smoothly and efficiently.',
-    imageUrl: ['img/services/compressed/building_maintenance.webp','img/services/compressed/building_maintenance_2_500.webp','img/services/new/compressed/building_maintenance_500.webp'],
+    imageUrl: [
+      "img/services/Building Maintenance/01.jpg",
+      "img/services/Building Maintenance/02.jpg",
+      'img/services/compressed/building_maintenance.webp',
+      'img/services/compressed/building_maintenance_2_500.webp',
+      'img/services/new/compressed/building_maintenance_500.webp'],
     subServices: [
       {
         title: 'Preventative Maintenance',
@@ -94,9 +102,11 @@ export default class AllServices {
     color: 'bg-gradient-to-r from-blue-50 to-blue-100',
     description: 'When you need specialized help fast, our staffing division provides vetted, trained, and reliable personnel to fill essential roles within your facility or organization.',
     imageUrl: [
-      'img/services/new/compressed/facility_management_1_500.webp',
-      'img/services/new/compressed/facility_management_1_500.webp',
-      'img/services/new/compressed/facility_management_1_500.webp'
+      "img/services/Staffing Solutions/01.jpg",
+      "img/services/Staffing Solutions/02.jpg"
+      // 'img/services/new/compressed/facility_management_1_500.webp',
+      // 'img/services/new/compressed/facility_management_1_500.webp',
+      // 'img/services/new/compressed/facility_management_1_500.webp'
     ],
     subServices: [
       {
@@ -151,6 +161,9 @@ export default class AllServices {
     color: 'bg-gradient-to-r from-blue-50 to-blue-100',
     description: 'Protecting your assets, people, and property is our paramount commitment. Our security experts provide a powerful blend of technology and human presence.',
     imageUrl: [
+      "img/services/Security & Concierge/01.jpg",
+      "img/services/Security & Concierge/02.jpg",
+      "img/services/Security & Concierge/03.jpg",
       'img/services/compressed/bg_seco_securite_1440.webp',
       'img/services/compressed/security_guard_female_1440.webp',
       'img/services/compressed/concierge_1440.webp'
@@ -184,9 +197,11 @@ export default class AllServices {
     color: 'bg-gradient-to-r from-blue-50 to-blue-100',
     description: 'Beyond simply cleaning, our services ensure a healthy, productive, and welcoming environment for your employees and clients',
     imageUrl: [
-      'img/services/compressed/housekeeping_services_1440.webp',
-      'img/services/compressed/housekeeping_services_1440.webp',
-      'img/services/compressed/housekeeping1_1440.webp'
+      "img/services/Hospitality Support/01.jpg",
+      "img/services/Hospitality Support/02.jpg"
+      // 'img/services/compressed/housekeeping_services_1440.webp',
+      // 'img/services/compressed/housekeeping_services_1440.webp',
+      // 'img/services/compressed/housekeeping1_1440.webp'
     ],
     subServices: [
       {
