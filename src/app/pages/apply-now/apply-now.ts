@@ -18,7 +18,16 @@ export default class ApplyNow implements OnInit {
     'https://forms.gle/NGFQqQjCR5mZvQbY7';
 
     constructor(){
-       this.title.setTitle('Apply Now - SECO Groupe');
+       
+    }
+
+  ngOnInit(): void {
+    // if(isPlatformBrowser(this.platformId)){
+    //   setTimeout(() => {
+    //     window.location.href = this.googleFormUrl;
+    //   }, 3000);
+    // }
+    this.title.setTitle('Apply Now - SECO Groupe');
 
     this.meta.updateTag({
       property: 'og:title',
@@ -44,14 +53,5 @@ export default class ApplyNow implements OnInit {
       property: 'og:type',
       content: 'website'
     });
-    }
-
-  ngOnInit(): void {
-    if(isPlatformBrowser(this.platformId)){
-      setTimeout(() => {
-        window.location.href = this.googleFormUrl;
-      }, 3000);
-    }
-
   }
 }
