@@ -22,11 +22,7 @@ export default class ApplyNow implements OnInit {
     }
 
   ngOnInit(): void {
-    // if(isPlatformBrowser(this.platformId)){
-    //   setTimeout(() => {
-    //     window.location.href = this.googleFormUrl;
-    //   }, 3000);
-    // }
+    
     this.title.setTitle('Apply Now - SECO Groupe');
 
     this.meta.updateTag({
@@ -53,5 +49,11 @@ export default class ApplyNow implements OnInit {
       property: 'og:type',
       content: 'website'
     });
+
+    if(isPlatformBrowser(this.platformId)){
+      setTimeout(() => {
+        window.location.href = this.googleFormUrl;
+      }, 3000);
+    }
   }
 }
