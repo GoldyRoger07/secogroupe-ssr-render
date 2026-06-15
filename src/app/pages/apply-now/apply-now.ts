@@ -41,7 +41,7 @@ export default class ApplyNow implements OnInit {
 
     this.meta.updateTag({
       property: 'og:image',
-      content: 'https://secogroupe.com/assets/img/apply_now_flyer.jpg'
+      content: 'https://secogroupe.com/img/apply_now_flyer.jpg'
     });
 
     this.meta.updateTag({
