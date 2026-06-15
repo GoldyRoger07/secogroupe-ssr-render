@@ -1,0 +1,9 @@
+<div class="carousel">
+    <div class="track">
+        @for(client of clients; track $index){
+            <div class="item">
+                <img [src]="client" alt="">
+            </div>
+        }
+    </div>
+</div>
