@@ -5,5 +5,7 @@ export const routes: Routes = [
     { path: 'request-a-quote', loadComponent: ()=> import('./pages/request-a-quote/request-a-quote') },
     { path: 'about-us', loadComponent: ()=> import('./pages/about/about')  },
     { path: 'services', loadComponent: ()=> import('./pages/all-services/all-services') },
-    { path: 'contact', loadComponent: ()=> import('./pages/contact/contact') }
+    { path: 'contact', loadComponent: ()=> import('./pages/contact/contact') },
+    { path: 'apply-now', loadComponent: ()=> import('./pages/apply-now/apply-now') }
 ];
+

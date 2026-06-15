@@ -31,8 +31,8 @@ export default class Home implements OnInit {
    // Pour le SEO
   title = inject(Title)
   meta = inject(Meta)
-  router = inject(Router)
   platformId = inject(PLATFORM_ID);
+  router = inject(Router)
 
   constructor(){
     if (isPlatformBrowser(this.platformId)) 
