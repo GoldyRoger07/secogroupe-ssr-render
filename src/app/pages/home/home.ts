@@ -14,6 +14,7 @@ import { Carousel } from 'primeng/carousel';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { AnimateOnScrollDirective } from '../../directives/animate-on-scroll';
+import { InfiniteHorizontalScroll } from "../../components/infinite-horizontal-scroll/infinite-horizontal-scroll";
 
 interface CardService {
   name: string;
@@ -23,7 +24,7 @@ interface CardService {
 
 @Component({
   selector: 'app-home',
-  imports: [AnimateOnScrollDirective, ButtonModule, CardModule, CommonModule, TranslatePipe, V4Home, Container, Footer, ReactiveFormsModule, MySlider, Carousel],
+  imports: [AnimateOnScrollDirective, ButtonModule, CardModule, CommonModule, TranslatePipe, V4Home, Container, Footer, ReactiveFormsModule, MySlider, Carousel, InfiniteHorizontalScroll],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
@@ -33,6 +34,16 @@ export default class Home implements OnInit {
   meta = inject(Meta)
   platformId = inject(PLATFORM_ID);
   router = inject(Router)
+
+  subsidiaries = [
+    {url: 'img/subsidiaries/Seco groupe logo - Quality services-01.png', size: 'w-64'},
+    {url: 'img/subsidiaries/Seco groupe logo optimal-01.png', size: 'w-64'},
+    {url: 'img/subsidiaries/Seco groupe logo quality-01.png', size: 'w-64'},
+    {url: 'img/subsidiaries/Seco groupe logo security-01.png', size: 'w-64'},
+    {url: 'img/subsidiaries/Seco groupe logo Univers-01.png', size: 'w-64'},
+    {url: 'img/subsidiaries/Seco groupe logo-01.png', size: 'w-64'}
+
+  ]
 
   constructor(){
     if (isPlatformBrowser(this.platformId)) 

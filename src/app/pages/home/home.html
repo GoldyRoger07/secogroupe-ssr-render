@@ -36,6 +36,20 @@
         </my-container>
     </section>
 
+    <section class="py-10">
+        <my-container>
+            <div class="text-center ">
+                <h2 animateOnScroll class="fade-up text-gray-700 text-3xl font-bold">Our Trusted Subsidiaries</h2>
+                <p animateOnScroll class="fade-up text-gray-600 text-xl">Meet the trusted companies that form the SECO Groupe family.</p>
+            </div>    
+        </my-container>
+
+        <div animateOnScroll class="fade-up">
+
+            <infinite-horizontal-scroll [imgs]="subsidiaries"/>
+        </div>
+    </section>
+
     
     <!-- Map Section -->
     <section class=" py-5 bg-white " id="portfolio">

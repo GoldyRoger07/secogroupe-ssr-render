@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'infinite-horizontal-scroll',
@@ -7,7 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './infinite-horizontal-scroll.css',
 })
 export class InfiniteHorizontalScroll {
-  clients = [
+
+  @Input()
+  imgs = [
     { size: "w-34", url: "img/clients/brana_logo.png" },
     { size: "w-54", url: "img/clients/Grand-Sierra-Resort-Logo.png" },
     { size: "w-54", url: "img/clients/grand_geneva_logo.jpeg" },

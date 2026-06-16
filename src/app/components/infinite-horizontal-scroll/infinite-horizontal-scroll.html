@@ -1,8 +1,14 @@
 <div class="carousel">
     <div class="track">
-        @for(client of clients; track $index){
+        @for(img of imgs; track $index){
             <div class="item">
-                <img [src]="client" alt="">
+                <img [src]="img.url" [class]="img.size" alt="slide-img">
+            </div>
+        }
+
+         @for(img of imgs; track $index){
+            <div class="item">
+                <img [src]="img.url" [class]="img.size" alt="slide-img">
             </div>
         }
     </div>
