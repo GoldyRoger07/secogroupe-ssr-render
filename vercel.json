@@ -4,6 +4,14 @@
     "name": "secogroupe-ssr",
     "rewrites": [
         {
+        "source": "/AutoDiscover/autodiscover.xml",
+        "destination": "/404"
+        },
+        {
+        "source": "/autodiscover.xml",
+        "destination": "/404"
+        },
+        {
             "source": "/(.*)",
             "destination": "/api"
         }
