@@ -11,54 +11,152 @@
 
 <section class="py-20 bg-gray-100">
     <my-container>
-        <form  method="POST" class="bg-white rounded-xl p-8 shadow-lg text-gray-600 h-full grid grid-cols-2 gap-5">
-                        <!-- <h3  class="text-2xl font-bold text-gray-700 mb-6">Send Us a Message</h3> -->
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate class="bg-white rounded-xl p-8 shadow-lg text-gray-600 h-full grid grid-cols-2 gap-5">
                         <div class="mb-3">
-                            <label for="name" class="block text-gray-600 font-medium mb-2">Service/Product Category</label>
-                            <!-- <input type="text" name="name" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"> -->
-                            <p-select [options]="cities"  optionLabel="name" placeholder="Please Select" class="w-full  py-1" />
+                            <label for="service" class="block text-gray-600 font-medium mb-2">Service/Product Category <span class="text-red-500">*</span></label>
+                            <p-select
+                                formControlName="serviceCategory"
+                                [options]="services"
+                                optionLabel="name"
+                                placeholder="Please Select"
+                                [invalid]="isInvalid('service')"
+                                class="w-full py-1"
+                            />
+                            @if (isInvalid('service')) {
+                                <span class="text-red-500 text-sm mt-1 block">{{ getError('service') }}</span>
+                            }
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="block text-gray-600 font-medium mb-2">Property/Business Name</label>
-                            <input type="email" name="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            <label for="businessName" class="block text-gray-600 font-medium mb-2">Property/Business Name <span class="text-red-500">*</span></label>
+                            <input
+                                type="text"
+                                id="businessName"
+                                formControlName="businessName"
+                                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                                [class.border-red-400]="isInvalid('businessName')"
+                                [class.border-gray-300]="!isInvalid('businessName')"
+                            >
+                            @if (isInvalid('businessName')) {
+                                <span class="text-red-500 text-sm mt-1 block">{{ getError('businessName') }}</span>
+                            }
                         </div>
                         <div class="mb-3 col-span-2">
-                            <label for="tel" class="block text-gray-600 font-medium mb-2 ">Direct Dial Number</label>
-                            <input type="tel" name="tel" id="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
-                            
+                            <label for="phone" class="block text-gray-600 font-medium mb-2">Direct Dial Number <span class="text-red-500">*</span></label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                formControlName="directDialNumber"
+                                placeholder="+1 (555) 000-0000"
+                                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                                [class.border-red-400]="isInvalid('phone')"
+                                [class.border-gray-300]="!isInvalid('phone')"
+                            >
+                            @if (isInvalid('phone')) {
+                                <span class="text-red-500 text-sm mt-1 block">{{ getError('phone') }}</span>
+                            }
                         </div>
                         <div class="mb-3">
-                            <label for="firstname" class="block text-gray-600 font-medium mb-2">First</label>
-                            <input type="text" name="firstname" id="firstname" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            <label for="firstName" class="block text-gray-600 font-medium mb-2">First <span class="text-red-500">*</span></label>
+                            <input
+                                type="text"
+                                id="firstName"
+                                formControlName="firstName"
+                                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                                [class.border-red-400]="isInvalid('firstName')"
+                                [class.border-gray-300]="!isInvalid('firstName')"
+                            >
+                            @if (isInvalid('firstName')) {
+                                <span class="text-red-500 text-sm mt-1 block">{{ getError('firstName') }}</span>
+                            }
                         </div>
                         <div class="mb-3">
-                            <label for="lastname" class="block text-gray-600 font-medium mb-2">Last</label>
-                            <input type="text" name="lastname" id="lastname" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            <label for="lastName" class="block text-gray-600 font-medium mb-2">Last <span class="text-red-500">*</span></label>
+                            <input
+                                type="text"
+                                id="lastName"
+                                formControlName="lastName"
+                                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                                [class.border-red-400]="isInvalid('lastName')"
+                                [class.border-gray-300]="!isInvalid('lastName')"
+                            >
+                            @if (isInvalid('lastName')) {
+                                <span class="text-red-500 text-sm mt-1 block">{{ getError('lastName') }}</span>
+                            }
                         </div>
                         <div class="mb-3">
-                            <label for="lastname" class="block text-gray-600 font-medium mb-2">City</label>
-                            <input type="text" name="lastname" id="lastname" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            <label for="city" class="block text-gray-600 font-medium mb-2">City <span class="text-red-500">*</span></label>
+                            <input
+                                type="text"
+                                id="city"
+                                formControlName="city"
+                                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                                [class.border-red-400]="isInvalid('city')"
+                                [class.border-gray-300]="!isInvalid('city')"
+                            >
+                            @if (isInvalid('city')) {
+                                <span class="text-red-500 text-sm mt-1 block">{{ getError('city') }}</span>
+                            }
                         </div>
                         <div class="mb-3">
-                            <label for="lastname" class="block text-gray-600 font-medium mb-2">State</label>
-                            <input type="text" name="lastname" id="lastname" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            <label for="state" class="block text-gray-600 font-medium mb-2">State <span class="text-red-500">*</span></label>
+                            <input
+                                type="text"
+                                id="state"
+                                formControlName="state"
+                                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                                [class.border-red-400]="isInvalid('state')"
+                                [class.border-gray-300]="!isInvalid('state')"
+                            >
+                            @if (isInvalid('state')) {
+                                <span class="text-red-500 text-sm mt-1 block">{{ getError('state') }}</span>
+                            }
                         </div>
-                        <!-- <div class="mb-3">
-                            <label for="service" class="block text-gray-600 font-medium mb-2">Service Interested In</label>
-                            <p-select [options]="languages" [fluid]="true"  formControlName="selectedLanguage" optionLabel="name" placeholder="Select a Language" class="w-full md:w-30" />
-                        </div> -->
                         <div class="mb-3 col-span-2">
-                            <label for="email" class="block text-gray-600 font-medium mb-2">Email</label>
-                            <input type="email" name="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            <label for="email" class="block text-gray-600 font-medium mb-2">Email <span class="text-red-500">*</span></label>
+                            <input
+                                type="email"
+                                id="email"
+                                formControlName="email"
+                                placeholder="you@example.com"
+                                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                                [class.border-red-400]="isInvalid('email')"
+                                [class.border-gray-300]="!isInvalid('email')"
+                            >
+                            @if (isInvalid('email')) {
+                                <span class="text-red-500 text-sm mt-1 block">{{ getError('email') }}</span>
+                            }
                         </div>
                         <div class="mb-3 col-span-2 flex items-center">
-                            <p-checkbox inputId="ingredient1" name="pizza" value="Cheese" [binary]="true" />
-                            <label for="ingredient1" class="ml-2">I would like to receive periodic emails with information about our services or new service offerings.</label>
+                            <p-checkbox formControlName="newsletterOptIn" inputId="newsletter" [binary]="true" />
+                            <label for="newsletter" class="ml-2">I would like to receive periodic emails with information about our services or new service offerings.</label>
                         </div>
 
-                        <button type="submit" class="col-span-1 w-fit mt-auto bg-(--my-sec-bg) hover:bg-orange-400 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
-                            Submit
-                        </button>
+                        <div class="col-span-2">
+                            <form-alert
+                                [visible]="alertVisible()"
+                                [type]="alertType()"
+                                [message]="alertMessage()"
+                            />
+                        </div>
+
+                        <div class="col-span-2 flex items-center gap-4">
+                            <button
+                                type="submit"
+                                [disabled]="isLoading()"
+                                class="w-fit mt-auto bg-(--my-sec-bg) hover:bg-orange-400 disabled:opacity-60 disabled:cursor-not-allowed text-white px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center gap-2"
+                            >
+                                @if (isLoading()) {
+                                    <svg class="animate-spin w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+                                    </svg>
+                                    Sending…
+                                } @else {
+                                    Submit
+                                }
+                            </button>
+                            <span class="text-xs text-gray-400">* Required fields</span>
+                        </div>
         </form>
     </my-container>
 </section>
