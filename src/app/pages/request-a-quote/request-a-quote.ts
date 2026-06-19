@@ -68,16 +68,17 @@ export default class RequestAQuote implements OnInit {
     };
 
     this.http.post(`${environment.apiUrl}/quotes`, payload).subscribe({
-      next: () => {
+      next: (response:any) => {
         this.isLoading.set(false);
-        this.form.reset();
         this.alertType.set('success');
         this.alertMessage.set(
-          'Your quote request has been submitted. Our team will contact you within 24 hours.'
+          response.message
         );
         this.alertVisible.set(true);
+        this.form.reset();
       },
-      error: () => {
+      error: (e:any) => {
+        console.log(e)
         this.isLoading.set(false);
         this.alertType.set('error');
         this.alertMessage.set(
