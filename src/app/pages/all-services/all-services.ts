@@ -42,6 +42,7 @@ export default class AllServices {
       "img/services/Janitorial & Cleaning/01.jpg",
       "img/services/Janitorial & Cleaning/02.jpg",
       "img/services/Janitorial & Cleaning/03.jpg",
+      "v4/img/services/janitorial.png"
       // 'img/services/compressed/housekeeping_services_500.webp',
       // 'v4/img/services/janitorial.png'
     ],

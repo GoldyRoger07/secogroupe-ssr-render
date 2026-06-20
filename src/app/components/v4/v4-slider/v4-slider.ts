@@ -11,9 +11,9 @@ export class V4Slider implements OnDestroy{
 
   @Input()
   images = [
-    "v4/img/services/mixed_workers.png",
-    "v4/img/services/janitorial.png",
-    "v4/img/services/housekeeping.png"
+    "v4/img/services/mixed_wo0rkers.png",
+    "v4/img/services/janitoria0l.png",
+    "v4/img/services/housekeep0ing.png"
   ];
 
   // Signaux pour piloter l'affichage et l'animation

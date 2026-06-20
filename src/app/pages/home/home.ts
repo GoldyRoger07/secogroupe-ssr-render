@@ -14,7 +14,7 @@ import { Carousel } from 'primeng/carousel';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { AnimateOnScrollDirective } from '../../directives/animate-on-scroll';
-import { InfiniteHorizontalScroll } from "../../components/infinite-horizontal-scroll/infinite-horizontal-scroll";
+import { InfiniteHorizontalScroll } from '../../components/infinite-horizontal-scroll/infinite-horizontal-scroll';
 
 interface CardService {
   name: string;
@@ -36,13 +36,12 @@ export default class Home implements OnInit {
   router = inject(Router)
 
   subsidiaries = [
-    {url: 'img/subsidiaries/Seco groupe logo - Quality services-01.png', size: 'w-64'},
-    {url: 'img/subsidiaries/Seco groupe logo optimal-01.png', size: 'w-64'},
-    {url: 'img/subsidiaries/Seco groupe logo quality-01.png', size: 'w-64'},
-    {url: 'img/subsidiaries/Seco groupe logo security-01.png', size: 'w-64'},
-    {url: 'img/subsidiaries/Seco groupe logo Univers-01.png', size: 'w-64'},
-    {url: 'img/subsidiaries/Seco groupe logo-01.png', size: 'w-64'}
-
+    {url: 'img/subsidiaries/01.png', size:'w-38'},
+    {url: 'img/subsidiaries/02.png', size:'w-38'},
+    {url: 'img/subsidiaries/03.png', size:'w-38'},
+    {url: 'img/subsidiaries/04.png', size:'w-38'},
+    {url: 'img/subsidiaries/05.png', size:'w-38'},
+    {url: 'img/subsidiaries/06.png', size:'w-38'}
   ]
 
   constructor(){
@@ -85,7 +84,7 @@ export default class Home implements OnInit {
     },
     {
       imgUrl: 'v4/img/map/brazil_map.png',
-      title: 'Brazil'
+      title: 'Bresil'
     },
     {
       imgUrl: 'v4/img/map/bahamas_map.png',
