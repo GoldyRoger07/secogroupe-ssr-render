@@ -1,17 +1,17 @@
-<section class="w-full h-155 bg-[url(/img/hero-section/request-a-quote/01.png)] bg-cover bg-center flex flex-col">
+<section class="w-full min-h-[60vh] md:h-155 bg-[url(/img/hero-section/request-a-quote/01.png)] bg-cover bg-center flex flex-col">
         <v4-navbar [textWhite]="true"/>
-        <div class="h-full flex items-center justify-center">
+        <div class="h-full flex items-center justify-center px-5 py-10">
 
-            <div class="text-white bg-black/45 p-5 w-[40%] -translate-y-[7%]">
-                <h1 class="font-bold text-3xl mb-2">Request a Professional Service Quote</h1>
-                <p class="text-xl">Fill out the form below and our team will respond with a personalized service proposal within 24 hours.</p>
+            <div class="text-white bg-black/45 p-5 w-full max-w-md md:w-[45%] md:-translate-y-[7%]">
+                <h1 class="font-bold text-2xl md:text-3xl mb-2">Request a Professional Service Quote</h1>
+                <p class="text-lg md:text-xl">Fill out the form below and our team will respond with a personalized service proposal within 24 hours.</p>
             </div>
         </div>
 </section>
 
 <section class="py-20 bg-gray-100">
     <my-container>
-        <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate class="bg-white rounded-xl p-8 shadow-lg text-gray-600 h-full grid grid-cols-2 gap-5">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate class="bg-white rounded-xl p-5 md:p-8 shadow-lg text-gray-600 h-full grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div class="mb-3">
                             <label for="service" class="block text-gray-600 font-medium mb-2">Service/Product Category <span class="text-red-500">*</span></label>
                             <p-select
@@ -40,7 +40,7 @@
                                 <span class="text-red-500 text-sm mt-1 block">{{ getError('businessName') }}</span>
                             }
                         </div>
-                        <div class="mb-3 col-span-2">
+                        <div class="mb-3 col-span-1 md:col-span-2">
                             <label for="phone" class="block text-gray-600 font-medium mb-2">Direct Dial Number <span class="text-red-500">*</span></label>
                             <input
                                 type="tel"
@@ -111,7 +111,7 @@
                                 <span class="text-red-500 text-sm mt-1 block">{{ getError('state') }}</span>
                             }
                         </div>
-                        <div class="mb-3 col-span-2">
+                        <div class="mb-3 col-span-1 md:col-span-2">
                             <label for="email" class="block text-gray-600 font-medium mb-2">Email <span class="text-red-500">*</span></label>
                             <input
                                 type="email"
@@ -126,12 +126,12 @@
                                 <span class="text-red-500 text-sm mt-1 block">{{ getError('email') }}</span>
                             }
                         </div>
-                        <div class="mb-3 col-span-2 flex items-center">
+                        <div class="mb-3 col-span-1 md:col-span-2 flex items-center">
                             <p-checkbox formControlName="newsletterOptIn" inputId="newsletter" [binary]="true" />
                             <label for="newsletter" class="ml-2">I would like to receive periodic emails with information about our services or new service offerings.</label>
                         </div>
 
-                        <div class="col-span-2">
+                        <div class="col-span-1 md:col-span-2">
                             <form-alert
                                 [visible]="alertVisible()"
                                 [type]="alertType()"
@@ -139,7 +139,7 @@
                             />
                         </div>
 
-                        <div class="col-span-2 flex items-center gap-4">
+                        <div class="col-span-1 md:col-span-2 flex items-center gap-4">
                             <button
                                 type="submit"
                                 [disabled]="isLoading()"
