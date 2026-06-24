@@ -4,7 +4,7 @@ import { Container } from '../../components/container/container';
 import { Footer } from '../../components/footer/footer';
 import { Title, Meta } from '@angular/platform-browser';
 // import { Router } from 'express';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { SelectType } from '../../models/SelectType';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -24,7 +24,7 @@ interface CardService {
 
 @Component({
   selector: 'app-home',
-  imports: [AnimateOnScrollDirective, ButtonModule, CardModule, CommonModule, TranslatePipe, V4Home, Container, Footer, ReactiveFormsModule, MySlider, Carousel, InfiniteHorizontalScroll],
+  imports: [AnimateOnScrollDirective, ButtonModule, CardModule, CommonModule, TranslatePipe, V4Home, Container, Footer, ReactiveFormsModule, MySlider, Carousel, InfiniteHorizontalScroll, RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
@@ -72,23 +72,29 @@ export default class Home implements OnInit {
   maps = [
     {
       imgUrl: 'v4/img/map/usa_map.png',
-      title: 'United States'
+      title: 'United States',
+      url: "usa"
     },
     {
       imgUrl: 'v4/img/map/canada_map.png',
-      title: 'Canada'
+      title: 'Canada',
+      url: 'usa'
     },
     {
       imgUrl: 'v4/img/map/haiti_map.png',
-      title: 'Haiti'
+      title: 'Haiti',
+      url: 'haiti'
     },
     {
       imgUrl: 'v4/img/map/brazil_map.png',
-      title: 'Bresil'
+      title: 'Brazil',
+      url: 'bresil'
+
     },
     {
       imgUrl: 'v4/img/map/bahamas_map.png',
-      title: 'Bahamas'
+      title: 'Bahamas',
+      url: 'bahamas'
     },
   ]
 

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, HostListener, inject, OnInit } from '@angular/core';
 import { Navbar } from "../../components/navbar/navbar";
 import { Footer } from "../../components/footer/footer";
 import { Container } from "../../components/container/container";
@@ -20,7 +20,8 @@ import { FilialeService } from '../../services/filiale-service';
 export default class ServicesCountry implements OnInit{
   
   pays: string = '';
-  
+  activeCardIndex: number | null = null;
+
   filiales: Filiale[] = []
 
   activatedRoute = inject(ActivatedRoute)
@@ -45,7 +46,7 @@ export default class ServicesCountry implements OnInit{
       this.pays = params.get('pays') || "";
       
 
-      if(!(this.pays === "usa" || this.pays === "canada" || this.pays === "haiti" || this.pays === "bahamas" || this.pays === "bresil"))
+      if(!(this.pays === "usa" || this.pays === "canada" || this.pays === "haiti" || this.pays === "bahamas" || this.pays === "brazil"))
           this.router.navigate(['/']);
       else
           this.filiales = this.filialeService.getFilialesByPays(this.pays)
@@ -73,7 +74,16 @@ export default class ServicesCountry implements OnInit{
 
   getPreviewInfo(service: string){
     return this.previewInfo.find(p => p.service.toLocaleLowerCase() === service)
-
   }
-  
+
+  selectCard(event: Event, index: number) {
+    event.stopPropagation();
+    this.activeCardIndex = this.activeCardIndex === index ? null : index;
+  }
+
+  @HostListener('document:click')
+  onDocumentClick() {
+    this.activeCardIndex = null;
+  }
+
 }

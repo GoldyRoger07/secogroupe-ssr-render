@@ -1,6 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-apply-now',
@@ -13,6 +14,7 @@ export default class ApplyNow implements OnInit {
   title = inject(Title)
   meta = inject(Meta)
   platformId = inject(PLATFORM_ID);
+  router = inject(Router)
 
   private readonly googleFormUrl =
     'https://forms.gle/NGFQqQjCR5mZvQbY7';
@@ -52,7 +54,8 @@ export default class ApplyNow implements OnInit {
 
     if(isPlatformBrowser(this.platformId)){
       setTimeout(() => {
-        window.location.href = this.googleFormUrl;
+        // window.location.href = this.googleFormUrl;
+        this.router.navigate(["/hiring"])
       }, 3000);
     }
   }

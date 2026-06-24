@@ -71,7 +71,7 @@
             <div class="w-full  mx-auto grid grid-cols-2 sm:grid-cols-3  md:grid-cols-4 lg:grid-cols-5  gap-1 px-1">
                 <!-- Project 1 -->
                  @for (map of maps; track $index) {
-                    <div (click)="showDialog(map.title)" animateOnScroll class="fade-up bg-gradient-to-tr min-w-25  map-card flex flex-col  group relative overflow-hidden rounded-xl shadow-lg scale-95 hover:scale-100 hover:shadow-2xl shadow-gray-400 border-t-5 border-gradient  transition duration-500">
+                    <div (click)="showDialog(map.title)" [routerLink]="map.url==='/haiti'?'/services-country/'+map.url:'#'" animateOnScroll class="fade-up bg-gradient-to-tr min-w-25  map-card flex flex-col  group relative overflow-hidden rounded-xl shadow-lg scale-95 hover:scale-100 hover:shadow-2xl shadow-gray-400 border-t-5 border-gradient  transition duration-500">
                         <!-- border-[var(--my-sec-bg)] -->
                      <!-- <div class="card-4">    -->
                         <div class="flex flex-col items-center h-[50%] justify-center">

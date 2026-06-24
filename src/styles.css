@@ -89,10 +89,10 @@ html{
         .hero-gradient {
             background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
         }
-        .service-card:hover {
+        /* .service-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
+        } */
         .nav-link {
       position: relative;
     }
