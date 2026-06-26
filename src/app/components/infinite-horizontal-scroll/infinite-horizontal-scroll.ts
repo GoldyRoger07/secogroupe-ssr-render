@@ -20,7 +20,7 @@ export class InfiniteHorizontalScroll {
     { size: "w-34", url: "img/clients/logo_camelback_resort.png" },
     { size: "w-34", url: "img/clients/logo_chulavista.png" },
     { size: "w-34", url: "img/clients/logo_dells_resort.png" },
-    { size: "w-54", url: "img/clients/logo_fne.webp" },
+    { size: "w-34", url: "img/clients/logo_fne.jpg" },
     { size: "w-34", url: "img/clients/logo_ihsi.png" },
     { size: "w-34", url: "img/clients/logo_marriott.png" },
     { size: "w-44", url: "img/clients/logo_monarch_resort.png"}
