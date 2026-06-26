@@ -1,0 +1,254 @@
+<section class="col-span-12 rounded-[25px]" style=" padding: 32.5px 0;" id="services-cards">
+
+    <my-container>
+        <h2 class="text-center font-bold text-gray-600 text-3xl my-5" >
+              Our Services
+          </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3" style="margin-bottom: 70px;">
+                <a class="service-card-container" [class.active]="activeCardIndex === 2" (click)="selectCard($event, 2)">
+                     <div class="service-card">
+                     <div class="front">
+                         <div class="icon-box">
+  
+                                  <img [src]="previewIcons.staffing" alt="logo" width="128px">
+                                
+                          </div>
+                         
+                         <div class="title-box">
+                             
+                            
+                              <span>{{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD4.FRONT.TITLE' | translate}}</span>
+  
+                         </div>
+                     </div>
+                     <div class="back">
+                         
+                         <div class="overlay">
+                           
+                                 <div class="title text-gray-700">
+                                     
+                                     {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD4.BACK.TITLE' | translate}}
+                                     
+                                 </div>
+                                 <p class="text-gray-600">
+                                  {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD4.BACK.DESC' | translate}}
+                                  
+                                 </p>
+                           
+                         </div>
+                     </div>
+                     </div>
+                 </a>
+            
+                <a class="service-card-container" [class.active]="activeCardIndex === 4" (click)="selectCard($event, 4)">
+                     <div class="service-card">
+                     <div class="front">
+                         <div class="icon-box">
+  
+                                  <img [src]="previewIcons.janitorial" alt="logo" width="128px">
+                                
+                          </div>
+                         
+                         <div class="title-box">
+                             
+                            
+                              <span>{{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD5.FRONT.TITLE' | translate}}</span>
+  
+                         </div>
+                     </div>
+                     <div class="back">
+                         
+                         <div class="overlay">
+                           
+                                 <div class="title text-gray-700">
+                                     
+                                     {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD5.BACK.TITLE' | translate}}
+                                     
+                                 </div>
+                                 <p class="text-gray-600">
+                                  {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD5.BACK.DESC' | translate}}
+                                  
+                                 </p>
+                           
+                         </div>
+                     </div>
+                     </div>
+                 </a>
+                
+                 <a class="service-card-container" [class.active]="activeCardIndex === 1" (click)="selectCard($event, 1)">
+                     <div class="service-card">
+                     <div class="front">
+                         <div class="icon-box">
+  
+                                  <img [src]="previewIcons.building" alt="logo" width="128px">
+                                
+                          </div>
+                         
+                         <div class="title-box">
+                             
+                            
+                              <span>{{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD2.FRONT.TITLE' | translate}}</span>
+  
+                         </div>
+                     </div>
+                     <div class="back">
+                         
+                         <div class="overlay">
+                           
+                                 <div class="title text-gray-700">
+                                     
+                                     {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD2.BACK.TITLE' | translate}}
+                                     
+                                 </div>
+                                 <p class="text-gray-600">
+                                  {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD2.BACK.DESC' | translate}}
+                                  
+                                 </p>
+                           
+                         </div>
+                     </div>
+                     </div>
+                 </a>
+
+                 <a class="service-card-container" [class.active]="activeCardIndex === 3" (click)="selectCard($event, 3)">
+                     <div class="service-card">
+                     <div class="front">
+                         <div class="icon-box">
+  
+                                  <img [src]="previewIcons.hospitality" alt="logo" width="128px">
+                                
+                          </div>
+                         
+                         <div class="title-box">
+                             
+                            
+                              <span>{{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD3.FRONT.TITLE' | translate}}</span>
+  
+                         </div>
+                     </div>
+                     <div class="back">
+                         
+                         <div class="overlay">
+                           
+                                 <div class="title text-gray-700">
+                                     
+                                     {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD3.BACK.TITLE' | translate}}
+                                     
+                                 </div>
+                                 <p class="text-gray-600">
+                                  {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD3.BACK.DESC' | translate}}
+                                  
+                                 </p>
+                           
+                         </div>
+                     </div>
+                     </div>
+                 </a>
+
+                 <a class="service-card-container" [class.active]="activeCardIndex === 5" (click)="selectCard($event, 5)">
+                     <div class="service-card">
+                     <div class="front">
+                         <div class="icon-box">
+  
+                                  <img [src]="previewIcons.outdoor" alt="logo" width="128px">
+                                
+                          </div>
+                         
+                         <div class="title-box">
+                             
+                            
+                              <span>{{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD6.FRONT.TITLE' | translate}}</span>
+  
+                         </div>
+                     </div>
+                     <div class="back">
+                         
+                         <div class="overlay">
+                           
+                                 <div class="title text-gray-700">
+                                     
+                                     {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD6.BACK.TITLE' | translate}}
+                                     
+                                 </div>
+                                 <p class="text-gray-600">
+                                  {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD6.BACK.DESC' | translate}}
+                                  
+                                 </p>
+                           
+                         </div>
+                     </div>
+                     </div>
+                 </a>
+                 
+                 <a class="service-card-container" [class.active]="activeCardIndex === 0" (click)="selectCard($event, 0)">
+                     <div class="service-card">
+                     <div class="front">
+                         <div class="icon-box">
+                             <!-- @if(filiale.details.length>0 && !filiale.icon.includes("fas")){
+                                 <img [src]="filiale.icon" alt="logo" width="128px">
+                             }@else{ -->
+                                  <img [src]="previewIcons.security" alt="logo" width="128px">
+                                 <!-- <i [class]="previewIcons.security"></i> -->
+                             <!-- } -->
+                             
+                                 <!-- <i class="ri-shield-check-fill"></i> -->
+                         </div>
+                         
+                         <div class="title-box">
+                             
+                             <!-- @if(filiale.details.length>0 && (pays === 'usa' || pays === 'canada' || pays === 'bahamas')){
+                                 <span>{{filiale.details}}</span>
+                             }@else{
+                                 <span>{{filiale.name}}</span>
+                             } -->
+                              <span>{{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD1.FRONT.TITLE' | translate}}</span>
+  
+                         </div>
+                     </div>
+                     <div class="back">
+                         <!-- <div class="top">
+                             <img [src]="filiale.logo" class="bg-amber-300 rounded-xl" alt="logo seco">
+                         </div> -->
+                         <div class="overlay">
+                           <!-- @if (pays === 'usa' || pays === 'canada' || pays === 'bahamas'){ -->
+                                 <!-- <span>{{filiale.details}}</span> -->
+                                 <div class="title text-gray-700">
+                                     <!-- <i [class]="filiale.icon"></i> -->
+                                     {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD1.BACK.TITLE' | translate}}
+                                     <!-- {{getPreviewInfo(filiale.details.toLocaleLowerCase())?.title}} -->
+                                 </div>
+                                 <p class="text-gray-600">
+                                  {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD1.BACK.DESC' | translate}}
+                                  <!-- {{getPreviewInfo(filiale.details.toLocaleLowerCase())?.description}} -->
+                                 </p>
+                           <!-- }@else{
+                                 <span>{{getPreviewInfo(filiale.name.toLocaleLowerCase())?.title}}</span>
+                                 <p>
+                                  {{getPreviewInfo(filiale.name.toLocaleLowerCase())?.description}}
+                                 </p>
+                           } -->
+                             <!-- <div class="title">
+                                 <i [class]="filiale.icon"></i>
+                                 {{filiale.name}}
+                             </div> -->
+                             <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius eveniet ratione obcaecati...</p> -->
+                         </div>
+                     </div>
+                     </div>
+                 </a>
+  
+                 
+  
+                 
+  
+                 
+  
+                 
+  
+                 
+            
+           
+        </div>
+    </my-container>
+        
+    </section>

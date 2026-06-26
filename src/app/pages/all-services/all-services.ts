@@ -9,6 +9,7 @@ import { PaperDesignSection } from '../../components/paper-design-section/paper-
 import { AnimateOnScrollDirective } from '../../directives/animate-on-scroll';
 import { V4Slider } from '../../components/v4/v4-slider/v4-slider';
 import { InfiniteHorizontalScroll } from '../../components/infinite-horizontal-scroll/infinite-horizontal-scroll';
+import { CardServices } from "../../components/card-services/card-services";
 
 interface ServiceSection{
   title: string;
@@ -27,7 +28,7 @@ interface SubService{
 
 @Component({
   selector: 'all-services',
-  imports: [V4Slider, Navbar, Footer, HeroSection, MySlider, Container, TranslatePipe, PaperDesignSection, AnimateOnScrollDirective, InfiniteHorizontalScroll],
+  imports: [V4Slider, Navbar, Footer, HeroSection, MySlider, Container, TranslatePipe, PaperDesignSection, AnimateOnScrollDirective, InfiniteHorizontalScroll, CardServices],
   templateUrl: './all-services.html',
   styleUrl: './all-services.css',
 })
