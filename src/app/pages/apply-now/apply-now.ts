@@ -37,15 +37,15 @@ export default class ApplyNow implements OnInit {
       content: 'Join our professional team. Complete the application form today.'
     });
 
-    // this.meta.updateTag({
-    //   property: 'og:image',
-    //   content: 'https://secogroupe.com/img/apply_now_flyer.jpg'
-    // });
-
     this.meta.updateTag({
       property: 'og:image',
-      content: 'https://secogroupe.com/img/Seco - Housekeeper & Houseman-01.jpeg'
+      content: 'https://secogroupe.com/img/apply_now_flyer.jpeg'
     });
+
+    // this.meta.updateTag({
+    //   property: 'og:image',
+    //   content: 'https://secogroupe.com/img/Seco - Housekeeper & Houseman-01.jpeg'
+    // });
 
     // Seco - Housekeeper & Houseman-01.jpeg
 
