@@ -91,6 +91,91 @@
                 }
             </div>
 
+            <div class="mb-3">
+                <label for="city" class="block text-gray-600 font-medium mb-2">City <span class="text-red-500">*</span></label>
+                <input
+                    type="text"
+                    id="city"
+                    formControlName="city"
+                    class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    [class.border-red-400]="isInvalid('city')"
+                    [class.border-gray-300]="!isInvalid('city')"
+                >
+                @if (isInvalid('city')) {
+                    <span class="text-red-500 text-sm mt-1 block">{{ getError('city') }}</span>
+                }
+            </div>
+            <div class="mb-3 col-span-1 ">
+                <label for="fullAddress" class="block text-gray-600 font-medium mb-2">Full Address <span class="text-red-500">*</span></label>
+                <input
+                    type="text"
+                    id="fullAddress"
+                    formControlName="fullAddress"
+                    class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    [class.border-red-400]="isInvalid('fullAddress')"
+                    [class.border-gray-300]="!isInvalid('fullAddress')"
+                >
+                @if (isInvalid('fullAddress')) {
+                    <span class="text-red-500 text-sm mt-1 block">{{ getError('fullAddress') }}</span>
+                }
+            </div>
+            <div class="mb-3">
+                <label for="experience" class="block text-gray-600 font-medium mb-2">Years of Experience <span class="text-red-500">*</span></label>
+                <p-select
+                    formControlName="experience"
+                    [options]="experiences"
+                    optionLabel="name"
+                    placeholder="Select experience"
+                    [invalid]="isInvalid('experience')"
+                    class="w-full py-1"
+                />
+                @if (isInvalid('experience')) {
+                    <span class="text-red-500 text-sm mt-1 block">{{ getError('experience') }}</span>
+                }
+            </div>
+            <div class="mb-3">
+                <label for="language" class="block text-gray-600 font-medium mb-2">Languages <span class="text-red-500">*</span></label>
+                <p-select
+                    formControlName="language"
+                    [options]="languages"
+                    optionLabel="name"
+                    placeholder="Select a language"
+                    [invalid]="isInvalid('language')"
+                    class="w-full py-1"
+                />
+                @if (isInvalid('language')) {
+                    <span class="text-red-500 text-sm mt-1 block">{{ getError('language') }}</span>
+                }
+            </div>
+            <div class="mb-3">
+                <label for="legalStatus" class="block text-gray-600 font-medium mb-2">Legal Status <span class="text-red-500">*</span></label>
+                <p-select
+                    formControlName="legalStatus"
+                    [options]="legalStatuses"
+                    optionLabel="name"
+                    placeholder="Select legal status"
+                    [invalid]="isInvalid('legalStatus')"
+                    class="w-full py-1"
+                />
+                @if (isInvalid('legalStatus')) {
+                    <span class="text-red-500 text-sm mt-1 block">{{ getError('legalStatus') }}</span>
+                }
+            </div>
+            <div class="mb-3 col-span-1 ">
+                <label for="sex" class="block text-gray-600 font-medium mb-2">Sex <span class="text-red-500">*</span></label>
+                <p-select
+                    formControlName="sex"
+                    [options]="sexes"
+                    optionLabel="name"
+                    placeholder="Select sex"
+                    [invalid]="isInvalid('sex')"
+                    class="w-full py-1"
+                />
+                @if (isInvalid('sex')) {
+                    <span class="text-red-500 text-sm mt-1 block">{{ getError('sex') }}</span>
+                }
+            </div>
+
             <div class="col-span-1 md:col-span-2">
                 <form-alert
                     [visible]="alertVisible()"
