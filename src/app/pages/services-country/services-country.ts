@@ -7,6 +7,7 @@ import { Filiale } from '../../models/Filiale';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 import { FilialeService } from '../../services/filiale-service';
+import { SeoService } from '../../services/seo-service';
 
 
 
@@ -27,6 +28,15 @@ export default class ServicesCountry implements OnInit{
   activatedRoute = inject(ActivatedRoute)
   router = inject(Router)
   filialeService = inject(FilialeService)
+  seo = inject(SeoService)
+
+  private readonly countryLabels: Record<string, string> = {
+    usa: 'the USA',
+    canada: 'Canada',
+    haiti: 'Haiti',
+    bahamas: 'the Bahamas',
+    brazil: 'Brazil',
+  }
 
   previewInfo = this.filialeService.previewInfo
 
@@ -48,9 +58,17 @@ export default class ServicesCountry implements OnInit{
 
       if(!(this.pays === "usa" || this.pays === "canada" || this.pays === "haiti" || this.pays === "bahamas" || this.pays === "brazil"))
           this.router.navigate(['/']);
-      else
+      else {
           this.filiales = this.filialeService.getFilialesByPays(this.pays)
-      
+
+          const label = this.countryLabels[this.pays] ?? this.pays;
+          this.seo.update({
+            title: `Services in ${label.replace(/^the /, '')} | SECO Groupe`,
+            description: `Reliable hospitality, maintenance, cleaning, staffing, concierge and security services delivered by SECO Groupe in ${label}.`,
+            path: `/services-country/${this.pays}`,
+          });
+      }
+
     });
   }
 

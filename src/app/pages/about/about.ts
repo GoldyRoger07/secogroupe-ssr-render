@@ -4,6 +4,7 @@ import { Container } from '../../components/container/container';
 import { Footer } from '../../components/footer/footer';
 import { isPlatformBrowser } from '@angular/common';
 import { AnimateOnScrollDirective } from '../../directives/animate-on-scroll';
+import { SeoService } from '../../services/seo-service';
 
 @Component({
   selector: 'app-about',
@@ -14,8 +15,9 @@ import { AnimateOnScrollDirective } from '../../directives/animate-on-scroll';
 export default class About implements OnInit{
 
   platformId = inject(PLATFORM_ID);
+  seo = inject(SeoService);
 
-  
+
    ourCoreValueCards = [
     {
       title: 'Excellence & Quality',
@@ -52,6 +54,13 @@ compliant with all regulations.`
   ]
 
   ngOnInit(): void {
+    this.seo.update({
+      title: 'About Us | SECO Groupe',
+      description:
+        'SECO Groupe is an international business support company providing hospitality support, janitorial cleaning, staffing solutions, concierge and security services across multiple countries.',
+      path: '/about-us',
+    });
+
     if(isPlatformBrowser(this.platformId)){
        const sections = document.querySelectorAll(".section-animate")
 

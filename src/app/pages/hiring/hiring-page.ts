@@ -7,6 +7,7 @@ import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { FormAlert } from '../../components/form-alert/form-alert';
 import { environment } from '../../../environments/environment';
+import { SeoService } from '../../services/seo-service';
 
 interface Position {
   name: string;
@@ -26,6 +27,7 @@ interface SelectOption {
 export default class HiringPage implements OnInit {
   private fb = inject(FormBuilder);
   private http = inject(HttpClient);
+  private seo = inject(SeoService);
 
   positions!: Position[];
   experiences: SelectOption[] = [
@@ -67,6 +69,12 @@ export default class HiringPage implements OnInit {
   });
 
   ngOnInit() {
+    this.seo.update({
+      title: 'Careers & Hiring | SECO Groupe',
+      description:
+        'Join the SECO Groupe team. We are hiring across hospitality, maintenance and support roles. Apply online and our recruitment team will get back to you shortly.',
+      path: '/hiring',
+    });
 
     this.positions = [
       'Front Desk Agent',

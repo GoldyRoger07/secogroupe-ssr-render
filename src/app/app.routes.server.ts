@@ -1,11 +1,14 @@
 import { RenderMode, ServerRoute } from '@angular/ssr';
 
 export const serverRoutes: ServerRoute[] = [
-  // { path: '', renderMode: RenderMode.Prerender },
-  // { path: 'about-us', renderMode: RenderMode.Server },
-  { path: 'apply-now', renderMode: RenderMode.Prerender },
+  {
+    path: 'services-country/:pays',
+    renderMode: RenderMode.Prerender,
+    getPrerenderParams: async () =>
+      ['usa', 'canada', 'haiti', 'bahamas', 'brazil'].map((pays) => ({ pays })),
+  },
   {
     path: '**',
-    renderMode: RenderMode.Client
-  }
+    renderMode: RenderMode.Prerender,
+  },
 ];

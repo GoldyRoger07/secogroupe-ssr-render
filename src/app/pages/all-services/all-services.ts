@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Navbar } from '../../components/navbar/navbar';
+import { SeoService } from '../../services/seo-service';
 import { Container } from '../../components/container/container';
 import { Footer } from '../../components/footer/footer';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -32,7 +33,18 @@ interface SubService{
   templateUrl: './all-services.html',
   styleUrl: './all-services.css',
 })
-export default class AllServices {
+export default class AllServices implements OnInit {
+    private seo = inject(SeoService);
+
+    ngOnInit(): void {
+      this.seo.update({
+        title: 'Our Services | SECO Groupe',
+        description:
+          'Explore SECO Groupe services: janitorial & cleaning, building maintenance, staffing solutions, outdoor care, security & concierge and hospitality support.',
+        path: '/services',
+      });
+    }
+
     serviceSections: ServiceSection[] = [
   {
     title: 'Janitorial & Cleaning',

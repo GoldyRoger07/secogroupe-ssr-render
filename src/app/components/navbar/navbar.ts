@@ -95,9 +95,7 @@ export class Navbar implements OnInit{
 
   ngOnInit(): void {
     this.activatedRoute.url.subscribe(val=>{
-      // console.log(val[0].path)
-      try {
-        switch(val[0].path){
+      switch(val[0]?.path){
         case "about-us":
           this.currentUrl.set("About Us")
         break;
@@ -110,14 +108,9 @@ export class Navbar implements OnInit{
         case "contact":
           this.currentUrl.set("Contact")
         break;
+        default:
+          this.currentUrl.set("Home")
       }
-      } catch (error) {
-        console.log(error)
-        this.currentUrl.set("Home")
-          
-      }
-      
-
     })
   }
 

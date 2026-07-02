@@ -8,6 +8,7 @@ import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { FormAlert } from '../../components/form-alert/form-alert';
 import { environment } from '../../../environments/environment';
+import { SeoService } from '../../services/seo-service';
 
 interface Service {
   name: string;
@@ -23,6 +24,7 @@ interface Service {
 export default class RequestAQuote implements OnInit {
   private fb = inject(FormBuilder);
   private http = inject(HttpClient);
+  private seo = inject(SeoService);
 
   services!: Service[];
 
@@ -44,6 +46,13 @@ export default class RequestAQuote implements OnInit {
   });
 
   ngOnInit() {
+    this.seo.update({
+      title: 'Request a Quote | SECO Groupe',
+      description:
+        'Request a personalized service quote from SECO Groupe. Fill out the form and our team will respond with a tailored proposal within 24 hours.',
+      path: '/request-a-quote',
+    });
+
     this.services = [
       { name: 'Hospitality Support', code: 'hospitality_support' },
       { name: 'Janitorial & Cleaning', code: 'janitorial_cleaning' },

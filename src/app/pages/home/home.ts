@@ -2,9 +2,9 @@ import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import V4Home from "../../components/v4/home/home";
 import { Container } from '../../components/container/container';
 import { Footer } from '../../components/footer/footer';
-import { Title, Meta } from '@angular/platform-browser';
 // import { Router } from 'express';
 import { Router, RouterLink } from '@angular/router';
+import { SeoService } from '../../services/seo-service';
 import { SelectType } from '../../models/SelectType';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -30,8 +30,7 @@ interface CardService {
 })
 export default class Home implements OnInit {
    // Pour le SEO
-  title = inject(Title)
-  meta = inject(Meta)
+  seo = inject(SeoService)
   platformId = inject(PLATFORM_ID);
   router = inject(Router)
 
@@ -193,9 +192,12 @@ export default class Home implements OnInit {
                 numScroll: 1
             }
         ]
-    this.title.setTitle('Home — Secogroupe');
-    this.meta.updateTag({ name: 'description', content: 'Senior Living. Compassionate care and support services designed to enhance quality of life for senior residents and their families. Multi-Family, HOA &' });
-    this.meta.updateTag({ property: 'og:title', content: 'Seco groupe | Security' });
+    this.seo.update({
+      title: 'SECO Groupe | Facility Management, Security & Staffing Services',
+      description:
+        'SECO Groupe delivers integrated facility management, security, housekeeping, janitorial, maintenance and staffing solutions across the USA, Canada, Bahamas, Haiti and Brazil.',
+      path: '/',
+    });
 
 
     if (isPlatformBrowser(this.platformId)){
