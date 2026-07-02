@@ -35,7 +35,7 @@ export default class HiringPage implements OnInit {
     '5–10 years',
     '10+ years',
   ].map((name) => ({ name, code: name.toLowerCase().replace(/[^a-z0-9]+/g, '_') }));
-  languages: SelectOption[] = ['English', 'Spanish','French', 'Other'].map((name) => ({
+  languages: SelectOption[] = ['English', 'Spanish', 'French'].map((name) => ({
     name,
     code: name.toLowerCase(),
   }));
@@ -60,12 +60,14 @@ export default class HiringPage implements OnInit {
     city: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(80)]],
     fullAddress: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(160)]],
     experience: [null as SelectOption | null, Validators.required],
-    language: [null as SelectOption | null, Validators.required],
+    // Editable select: value is a SelectOption when picked, or a string when typed freely
+    language: [null as SelectOption | string | null, Validators.required],
     legalStatus: [null as SelectOption | null, Validators.required],
     sex: [null as SelectOption | null, Validators.required],
   });
 
   ngOnInit() {
+
     this.positions = [
       'Front Desk Agent',
       'Administrative Staff',
@@ -98,11 +100,17 @@ export default class HiringPage implements OnInit {
     this.isLoading.set(true);
     this.alertVisible.set(false);
 
+    const selectedLanguage = this.form.value.language as SelectOption | string | null;
+    const language =
+      typeof selectedLanguage === 'string'
+        ? (selectedLanguage.trim() || null)
+        : (selectedLanguage?.name ?? null);
+
     const payload = {
       ...this.form.value,
       position: (this.form.value.position as Position | null)?.name ?? null,
       experience: (this.form.value.experience as SelectOption | null)?.name ?? null,
-      language: (this.form.value.language as SelectOption | null)?.name ?? null,
+      language,
       legalStatus: (this.form.value.legalStatus as SelectOption | null)?.name ?? null,
       sex: (this.form.value.sex as SelectOption | null)?.name ?? null,
     };

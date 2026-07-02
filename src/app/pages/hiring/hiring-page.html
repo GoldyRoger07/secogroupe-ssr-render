@@ -139,7 +139,8 @@
                     formControlName="language"
                     [options]="languages"
                     optionLabel="name"
-                    placeholder="Select a language"
+                    [editable]="true"
+                    placeholder="Select or type a language"
                     [invalid]="isInvalid('language')"
                     class="w-full py-1"
                 />
