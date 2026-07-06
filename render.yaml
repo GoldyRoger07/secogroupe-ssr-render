@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: secogroupe-ssr
+    runtime: node
+    plan: starter
+    region: ohio
+    branch: main
+    autoDeploy: true
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: node dist/secogroupe-ssr/server/server.mjs
+    healthCheckPath: /api/ping
+    envVars:
+      - key: NODE_VERSION
+        value: 22.12.0
+      - key: NODE_ENV
+        value: production
