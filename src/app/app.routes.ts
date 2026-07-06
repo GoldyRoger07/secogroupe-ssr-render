@@ -8,6 +8,8 @@ export const routes: Routes = [
     { path: 'services-country/:pays', loadComponent: ()=> import('./pages/services-country/services-country') , pathMatch: 'full'},
     { path: 'contact', loadComponent: ()=> import('./pages/contact/contact') },
     { path: 'hiring', loadComponent: ()=> import('./pages/hiring/hiring-page') },
-    { path: 'apply-now', loadComponent: ()=> import('./pages/apply-now/apply-now') }
+    { path: 'apply-now', loadComponent: ()=> import('./pages/apply-now/apply-now') },
+    { path: 'blog', loadComponent: ()=> import('./pages/blog/blog') },
+    { path: 'blog/:slug', loadComponent: ()=> import('./pages/blog-detail/blog-detail') }
 ];
 

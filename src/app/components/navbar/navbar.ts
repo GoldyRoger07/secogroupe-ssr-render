@@ -83,6 +83,18 @@ export class Navbar implements OnInit{
           {label: 'Our Leadership Team', value: ''},
           {label: 'Our History', value: ''},
         ]
+      } },
+    { label: "Blog", value: "/blog",
+      previewBox:{
+        left:{
+          title: "Blog",
+          desc: "News, insights and expert tips from SECO Groupe on facility management, security, staffing and hospitality services..."
+        },
+        right:[
+          {label: 'Latest Articles', value: ''},
+          {label: 'Industry Insights', value: ''},
+          {label: 'Company News', value: ''},
+        ]
       } }
 
   ]
@@ -107,6 +119,9 @@ export class Navbar implements OnInit{
         break;
         case "contact":
           this.currentUrl.set("Contact")
+        break;
+        case "blog":
+          this.currentUrl.set("Blog")
         break;
         default:
           this.currentUrl.set("Home")

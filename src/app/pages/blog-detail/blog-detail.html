@@ -1,0 +1,100 @@
+<section
+class="relative bg-cover bg-center text-white"
+style="background-image: url('/img/blog_cover.png')"
+>
+<div class="z-5 absolute w-full">
+
+  <v4-navbar [textWhite]="true" [isTransparent]="true" />
+</div>
+  <div class="absolute z-2 inset-0 bg-black/55"></div>
+  <div class="z-2 relative max-w-6xl mx-auto px-5 py-24 md:py-32 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold josefin-sans mb-4">Our Blog</h1>
+    <p class="max-w-2xl mx-auto text-white/90 text-2xl">
+      News, insights and expert tips on facility management, security, staffing and hospitality.
+    </p>
+  </div>
+</section>
+<!-- Loading -->
+@if (isLoading()) {
+  <div class="max-w-3xl mx-auto px-5 py-20 animate-pulse">
+    <div class="h-4 bg-gray-200 rounded w-1/4 mb-6"></div>
+    <div class="h-9 bg-gray-200 rounded w-3/4 mb-4"></div>
+    <div class="h-72 bg-gray-200 rounded-lg w-full mb-8"></div>
+    <div class="space-y-3">
+      <div class="h-4 bg-gray-200 rounded w-full"></div>
+      <div class="h-4 bg-gray-200 rounded w-full"></div>
+      <div class="h-4 bg-gray-200 rounded w-2/3"></div>
+    </div>
+  </div>
+}
+
+<!-- Not found -->
+@else if (notFound() || !post()) {
+  <div class="max-w-3xl mx-auto px-5 py-28 text-center min-h-[40vh]">
+    <h1 class="text-3xl font-bold josefin-sans text-gray-800 mb-3">Article not found</h1>
+    <p class="text-gray-500 mb-6">
+      The article you are looking for doesn't exist or is no longer available.
+    </p>
+    <button
+      (click)="goToBlog()"
+      class="px-6 py-2 bg-(--v4-prim-bg) text-white hover:bg-gray-600 transition"
+    >
+      Back to blog
+    </button>
+  </div>
+}
+
+<!-- Article -->
+@else {
+  <article class="max-w-3xl mx-auto px-5 py-14">
+    <a routerLink="/blog" class="text-sm text-(--v4-prim-bg) hover:underline">← Back to blog</a>
+
+    <div class="flex flex-wrap items-center gap-2 text-xs text-gray-400 mt-6 mb-3">
+      @if (post()!.category) {
+        <span class="px-2 py-0.5 bg-(--v4-prim-bg)/15 text-(--v4-prim-bg) rounded-full font-semibold uppercase tracking-wide">
+          {{ post()!.category }}
+        </span>
+      }
+      @if (post()!.publishedAt) {
+        <span>{{ post()!.publishedAt | date: 'longDate' }}</span>
+      }
+    </div>
+
+    <h1 class="text-3xl md:text-4xl font-bold josefin-sans text-gray-800 leading-tight mb-4">
+      {{ post()!.title }}
+    </h1>
+
+    @if (post()!.authorName) {
+      <div class="flex items-center gap-3 mb-8">
+        @if (post()!.authorPhotoUrl) {
+          <img [src]="post()!.authorPhotoUrl" [alt]="post()!.authorName" class="w-10 h-10 rounded-full object-cover" />
+        }
+        <span class="text-sm text-gray-500">By {{ post()!.authorName }}</span>
+      </div>
+    }
+
+    @if (post()!.coverImage) {
+      <img
+        [src]="post()!.coverImage"
+        [alt]="post()!.title"
+        class="w-full rounded-lg mb-8 object-cover max-h-[440px]"
+      />
+    }
+
+    @if (safeContent()) {
+      <div class="blog-content max-w-none" [innerHTML]="safeContent()"></div>
+    } @else if (post()!.excerpt) {
+      <p class="text-gray-700 leading-relaxed">{{ post()!.excerpt }}</p>
+    }
+
+    @if (post()!.tags && post()!.tags!.length) {
+      <div class="flex flex-wrap gap-2 mt-10 pt-6 border-t border-gray-100">
+        @for (tag of post()!.tags; track tag) {
+          <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">#{{ tag }}</span>
+        }
+      </div>
+    }
+  </article>
+}
+
+<my-footer />
