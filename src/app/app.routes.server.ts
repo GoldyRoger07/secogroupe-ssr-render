@@ -8,13 +8,15 @@ export const serverRoutes: ServerRoute[] = [
       ['usa', 'canada', 'haiti', 'bahamas', 'brazil'].map((pays) => ({ pays })),
   },
   {
-    // Contenu dynamique tiré du backend → rendu côté client (pas de prerender au build).
+    // Contenu dynamique tiré du backend → rendu côté serveur à la demande (SSR)
+    // pour que Google indexe le contenu. Les données HttpClient sont transférées
+    // au client via le HTTP transfer cache (provideClientHydration).
     path: 'blog',
-    renderMode: RenderMode.Client,
+    renderMode: RenderMode.Server,
   },
   {
     path: 'blog/:slug',
-    renderMode: RenderMode.Client,
+    renderMode: RenderMode.Server,
   },
   {
     path: '**',
