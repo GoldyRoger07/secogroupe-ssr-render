@@ -3,6 +3,7 @@ import { Navbar } from '../../components/navbar/navbar';
 import { Footer } from '../../components/footer/footer';
 import { Container } from '../../components/container/container';
 import { SelectModule } from 'primeng/select';
+import { MultiSelectModule } from 'primeng/multiselect';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { FormAlert } from '../../components/form-alert/form-alert';
@@ -21,7 +22,7 @@ interface SelectOption {
 
 @Component({
   selector: 'hiring-page',
-  imports: [Navbar, Footer, Container, SelectModule, ReactiveFormsModule, FormAlert],
+  imports: [Navbar, Footer, Container, SelectModule, MultiSelectModule, ReactiveFormsModule, FormAlert],
   templateUrl: './hiring-page.html',
 })
 export default class HiringPage implements OnInit {
@@ -57,7 +58,7 @@ export default class HiringPage implements OnInit {
     firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
     lastName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
     email: ['', [Validators.required, Validators.email]],
-    position: [null as Position | null, Validators.required],
+    position: [null as Position[] | null, Validators.required],
     phone: ['', [Validators.required, Validators.pattern(/^\+?[\d\s\-\(\)]{7,20}$/)]],
     city: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(80)]],
     fullAddress: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(160)]],
@@ -114,9 +115,13 @@ export default class HiringPage implements OnInit {
         ? (selectedLanguage.trim() || null)
         : (selectedLanguage?.name ?? null);
 
+    const selectedPositions = (this.form.value.position as Position[] | null) ?? [];
+
     const payload = {
       ...this.form.value,
-      position: (this.form.value.position as Position | null)?.name ?? null,
+      position: selectedPositions.length
+        ? selectedPositions.map((p) => p.name).join(', ')
+        : null,
       experience: (this.form.value.experience as SelectOption | null)?.name ?? null,
       language,
       legalStatus: (this.form.value.legalStatus as SelectOption | null)?.name ?? null,
