@@ -1,4 +1,4 @@
-import { Component, HostListener, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Navbar } from "../../components/navbar/navbar";
 import { Footer } from "../../components/footer/footer";
 import { Container } from "../../components/container/container";
@@ -21,7 +21,6 @@ import { SeoService } from '../../services/seo-service';
 export default class ServicesCountry implements OnInit{
   
   pays: string = '';
-  activeCardIndex: number | null = null;
 
   filiales: Filiale[] = []
 
@@ -92,16 +91,6 @@ export default class ServicesCountry implements OnInit{
 
   getPreviewInfo(service: string){
     return this.previewInfo.find(p => p.service.toLocaleLowerCase() === service)
-  }
-
-  selectCard(event: Event, index: number) {
-    event.stopPropagation();
-    this.activeCardIndex = this.activeCardIndex === index ? null : index;
-  }
-
-  @HostListener('document:click')
-  onDocumentClick() {
-    this.activeCardIndex = null;
   }
 
 }

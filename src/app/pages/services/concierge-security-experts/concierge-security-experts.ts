@@ -28,6 +28,7 @@ export default class ConciergeSecurityExperts implements OnInit {
     subtitle:
       'One trusted partner combining a welcoming concierge presence with professional protection for your people, assets and property.',
     image: 'img/services/compressed/bg_seco_securite_1440.webp',
+    alt: 'SECO Groupe licensed security guard and concierge providing integrated protection, access control and front-desk services at a corporate property.',
   };
 
   gallery = [

@@ -28,6 +28,7 @@ export default class BuildingMaintenance implements OnInit {
     subtitle:
       'Protecting your investment with proactive, expert maintenance that keeps your infrastructure running smoothly and efficiently.',
     image: 'img/services/Building Maintenance/01.jpg',
+    alt: 'SECO Groupe building maintenance technician servicing HVAC, electrical and plumbing systems during preventative facility maintenance in a commercial building.',
   };
 
   gallery = [

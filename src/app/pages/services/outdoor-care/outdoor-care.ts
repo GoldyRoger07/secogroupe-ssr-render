@@ -28,6 +28,7 @@ export default class OutdoorCare implements OnInit {
     subtitle:
       'Professional landscaping and grounds maintenance that keep the exterior of your property polished, safe and welcoming all year round.',
     image: 'img/services/new/gazon2.jpg',
+    alt: 'SECO Groupe outdoor care crew mowing lawns and maintaining landscaped grounds as part of professional groundskeeping and exterior maintenance services.',
   };
 
   gallery = [
