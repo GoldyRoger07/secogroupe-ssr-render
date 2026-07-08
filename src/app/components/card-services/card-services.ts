@@ -1,19 +1,17 @@
-import { Component, HostListener, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { FilialeService } from '../../services/filiale-service';
 import { TranslatePipe } from '@ngx-translate/core';
 import { Container } from "../container/container";
 
 @Component({
   selector: 'card-services',
-  imports: [TranslatePipe, Container],
+  imports: [TranslatePipe, Container, RouterLink],
   templateUrl: './card-services.html',
   styleUrl: './card-services.css',
 })
 export class CardServices {
 
-  
-  activeCardIndex: number | null = null;
-  
   filialeService = inject(FilialeService)
 
   previewInfo = this.filialeService.previewInfo
@@ -45,15 +43,5 @@ export class CardServices {
 
   getPreviewInfo(service: string){
     return this.previewInfo.find(p => p.service.toLocaleLowerCase() === service)
-  }
-
-  selectCard(event: Event, index: number) {
-    event.stopPropagation();
-    this.activeCardIndex = this.activeCardIndex === index ? null : index;
-  }
-
-  @HostListener('document:click')
-  onDocumentClick() {
-    this.activeCardIndex = null;
   }
 }

@@ -311,6 +311,68 @@ html{
   border-color:  #faaf3b;
 }
 
+/* =========================================================================
+   Decorative SVG accents (service pages). The wrapper handles the scroll
+   reveal (via .blur-up / .fade-* + [animateOnScroll]); the inner .decor-*
+   element carries a gentle, continuous motion so transforms never clash.
+   ========================================================================= */
+@keyframes decor-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+@keyframes decor-float-x {
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(12px); }
+}
+@keyframes decor-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.decor-float      { animation: decor-float 7s ease-in-out infinite; }
+.decor-float-slow { animation: decor-float 11s ease-in-out infinite; }
+.decor-float-x    { animation: decor-float-x 9s ease-in-out infinite; }
+.decor-spin-slow  { animation: decor-spin 28s linear infinite; }
+
+/* Animations applied directly to animatable SVG paint properties
+   (stroke-dashoffset, stroke, fill, fill-opacity) — these live on the
+   inner shapes, independent of the wrapper's transform/reveal. */
+@keyframes decor-dash {
+  to { stroke-dashoffset: -60; }
+}
+@keyframes decor-fill-fade {
+  0%, 100% { fill-opacity: 0.25; }
+  50%      { fill-opacity: 0.6; }
+}
+@keyframes decor-stroke-pulse {
+  0%, 100% { stroke: var(--my-sec-bg); }
+  50%      { stroke: var(--v4-sec-bg); }
+}
+@keyframes decor-fill-pulse {
+  0%, 100% { fill: var(--my-sec-bg); }
+  50%      { fill: var(--v4-sec-bg); }
+}
+.decor-dash         { animation: decor-dash 2.5s linear infinite; }
+.decor-fill-fade    { animation: decor-fill-fade 5s ease-in-out infinite; }
+.decor-stroke-pulse { animation: decor-stroke-pulse 7s ease-in-out infinite; }
+.decor-fill-pulse   { animation: decor-fill-pulse 6s ease-in-out infinite; }
+
+/* A stroked path that "draws" itself (stroke-dashoffset) when its wrapper
+   is revealed on scroll (the directive adds .active to the wrapper). */
+.decor-draw {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  transition: stroke-dashoffset 1200ms ease-in-out;
+}
+.blur-up.active .decor-draw { stroke-dashoffset: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .decor-float, .decor-float-slow, .decor-float-x, .decor-spin-slow,
+  .decor-dash, .decor-fill-fade, .decor-stroke-pulse, .decor-fill-pulse {
+    animation: none;
+  }
+  .decor-draw { transition: none; stroke-dashoffset: 0; }
+}
+
 .map-card{
   aspect-ratio: 5 / 6;
 }

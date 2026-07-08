@@ -114,11 +114,11 @@
     perspective: 1200px;
 }
 
-/* .service-card-container:hover > .service-card{
+.service-card-container:hover > .service-card{
     cursor: pointer;
     transform: rotateY(180deg);
-} */
- 
+}
+
 .service-card-container.active > .service-card{
     cursor: pointer;
     transform: rotateY(180deg);
