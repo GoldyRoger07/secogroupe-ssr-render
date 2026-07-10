@@ -4,6 +4,7 @@ export const routes: Routes = [
     { path: '', pathMatch: 'full', loadComponent: ()=> import('./pages/home/home')  },
     { path: 'request-a-quote', loadComponent: ()=> import('./pages/request-a-quote/request-a-quote') },
     { path: 'about-us', loadComponent: ()=> import('./pages/about/about')  },
+    { path: 'preferred-vendors', loadComponent: ()=> import('./pages/preferred-vendors/preferred-vendors')  },
     { path: 'services', loadComponent: ()=> import('./pages/all-services/all-services') },
     { path: 'services/staffing-solutions', loadComponent: ()=> import('./pages/services/staffing-solutions/staffing-solutions') },
     { path: 'services/hospitality-support', loadComponent: ()=> import('./pages/services/hospitality-support/hospitality-support') },
