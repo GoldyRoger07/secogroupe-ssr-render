@@ -72,10 +72,10 @@ html{
  }
    
    :root{
-            --v4-prim-bg: #faaf3b;
+            --v4-prim-bg: #F7941D;
             --v4-sec-bg: #0c73ba;
             --my-prim-bg: #0d6efd;
-            --my-sec-bg: #fbad19;
+            --my-sec-bg: #F7941D;
             --my-hover-prim-bg: #0b5dd9;
             --my-hover-sec-bg: #d59113;
             --text-color: #4a4a4a;

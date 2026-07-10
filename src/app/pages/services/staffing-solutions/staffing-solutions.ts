@@ -27,7 +27,7 @@ export default class StaffingSolutions implements OnInit {
     title: 'Staffing Solutions',
     subtitle:
       'When you need specialised help fast, we provide vetted, trained and reliable personnel to fill essential roles within your facility or organisation.',
-    image: 'img/services/Staffing Solutions/01.jpg',
+    image: 'img/services/Staffing Solutions/staffing-team.png',
     alt: 'SECO Groupe staffing solutions team of vetted, trained professionals ready for temporary, temp-to-hire and direct placement across facility, hospitality and security roles.',
   };
 

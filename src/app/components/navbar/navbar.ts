@@ -23,17 +23,18 @@ export class Navbar implements OnInit{
 
   links = [
     { label: "Home", value: "/",
-      previewBox:{
-        left:{
-          title: "YOUR TRUSTED FACILITY SERVICE PROVIDER",
-          desc: "At SECO GROUPE, we don't just see a building; We see an opportunity to create smarter more resilient, and connected space that delivers real value..."
-        },
-        right:[
-          {label: 'Why Secogroupe', value: ''},
-          {label: 'Our Leadership Team', value: ''},
-          {label: 'Our History', value: ''},
-        ]
-      } },
+      // previewBox:{
+      //   left:{
+      //     title: "YOUR TRUSTED FACILITY SERVICE PROVIDER",
+      //     desc: "At SECO GROUPE, we don't just see a building; We see an opportunity to create smarter more resilient, and connected space that delivers real value..."
+      //   },
+      //   right:[
+      //     {label: 'Why Secogroupe', value: ''},
+      //     {label: 'Our Leadership Team', value: ''},
+      //     {label: 'Our History', value: ''},
+      //   ]
+      // } 
+    },
     { label: "About Us", value: "/about-us",
       previewBox:{
         left:{
@@ -41,9 +42,10 @@ export class Navbar implements OnInit{
           desc: "Seco Groupe is an international business support company providing hospitality support, janitorial cleaning, staffing solutions, concierge, and security..."
         },
         right:[
-          {label: 'Why Secogroupe', value: ''},
-          {label: 'Our Leadership Team', value: ''},
-          {label: 'Our History', value: ''},
+          // {label: 'Why Secogroupe', value: ''},
+          // {label: 'Our Leadership Team', value: ''},
+          // {label: 'Our History', value: ''},
+          {label: 'Partner With Us', value: '/preferred-vendors'}
         ]
       }
      },
@@ -54,36 +56,28 @@ export class Navbar implements OnInit{
           desc: "Seco Groupe is a full-service facility management provider operating in the United States, Canada, and the Caribbean, dedicated to maintaining the functionality, safety..."
         },
         right:[
-          {label: 'Hospitality support', value: ''},
-          {label: 'Janitorial & cleaning', value: ''},
-          {label: 'Staffing solutions', value: ''},
-          {label: 'Concierge and security'}
+          {label: 'Hospitality support', value: '/services/hospitality-support'},
+          {label: 'Building Maintenance', value: '/services/building-maintenance'},
+          {label: 'Janitorial & cleaning', value: '/services/janitorial-cleaning'},
+          {label: 'Staffing solutions', value: '/services/staffing-solutions'},
+          {label: 'Concierge and security', value: '/services/concierge-security-experts'},
+          {label: 'Outdoor Care', value: '/services/outdoor-care'}
         ]
       } },
     { label: "Apply Now", value: "/hiring",
-      previewBox:{
-        left:{
-          title: "Transform your career dreams into reality",
-          desc: "Working with Secogroupe is much more than a job – it is a career. We constantly strive to achieve our mission of making our customers look and perform their best..."
-        },
-        right:[
-          {label: 'Why Secogroupe', value: ''},
-          {label: 'Our Leadership Team', value: ''},
-          {label: 'Our History', value: ''},
-        ]
-      } },
-    { label: "Contact Us", value: "/contact",
-      previewBox:{
-        left:{
-          title: "About Us",
-          desc: "Seco Groupe is an international business support company providing hospitality support, janitorial cleaning, staffing solutions, concierge, and security..."
-        },
-        right:[
-          {label: 'Why Secogroupe', value: ''},
-          {label: 'Our Leadership Team', value: ''},
-          {label: 'Our History', value: ''},
-        ]
-      } },
+      // previewBox:
+      // {
+      //   left:{
+      //     title: "Transform your career dreams into reality",
+      //     desc: "Working with Secogroupe is much more than a job – it is a career. We constantly strive to achieve our mission of making our customers look and perform their best..."
+      //   },
+      //   right:[
+      //     {label: 'Why Secogroupe', value: ''},
+      //     {label: 'Our Leadership Team', value: ''},
+      //     {label: 'Our History', value: ''},
+      //   ]
+      // } 
+    },
     { label: "Blog", value: "/blog",
       previewBox:{
         left:{
@@ -91,11 +85,22 @@ export class Navbar implements OnInit{
           desc: "News, insights and expert tips from SECO Groupe on facility management, security, staffing and hospitality services..."
         },
         right:[
-          {label: 'Latest Articles', value: ''},
-          {label: 'Industry Insights', value: ''},
-          {label: 'Company News', value: ''},
+          {label: 'Seco Groupe Blog', value: '/blog'}
+        ]
+      } },
+    { label: "Contact Us", value: "/contact",
+      previewBox:{
+        left:{
+          title: "Get In Touch",
+          desc: "Ready to start your project? Contact us today and let's discuss how we can help your business grow...."
+        },
+        right:[
+          {label: 'Email Us: hr@secogroupe.com', value: ''},
+          {label: 'Call Us: 954-314-7441', value: ''},
+          {label: 'Visit Us: 2701 W Oakland Park Blvd Fort Lauderdale, FL 33311', value: ''},
         ]
       } }
+    
 
   ]
 
@@ -118,7 +123,7 @@ export class Navbar implements OnInit{
           this.currentUrl.set("Apply Now")
         break;
         case "contact":
-          this.currentUrl.set("Contact")
+          this.currentUrl.set("Contact Us")
         break;
         case "blog":
           this.currentUrl.set("Blog")
