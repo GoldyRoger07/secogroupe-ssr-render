@@ -1,3 +1,53 @@
+
+<section class="relative w-full h-155 bg-[#F7941D] py-20 text-white">
+    <my-container>
+        <div class="flex flex-col gap-20 items-center  text-white">
+            
+            <div class="w-fit flex flex-col items-center gap-3">
+                <h2 class="text-3xl font-bold">Grow Your Business by Joining The Seco Groupe Preferred Vendor Network</h2>
+                <p class="text-xl text-center lg:text-2xl">Seco Groupe has been a trusted provider of integrated facility solutions for the hospitality, gaming, healthcare, education, and corporate catering markets since 1987. We deliver best-in-class cleaning, staffing, and managed labor services nationwide.<br/><br/>
+
+Over our decades of experience, we have built a strong national presence and reputation, granting us exclusive access to many large-scale cleaning opportunities. We are actively expanding our network of certified professionals and would like to consider your business as a preferred vendor.<br/><br/>
+
+If you’re seeking to grow your business without investing in additional sales or client service resources, joining our network could the the perfect solution. As a Seco Groupe service provider, you’ll become part of a vetted network of experienced professionals, benefiting from our established customer base to drive growth for your company.</p>
+            </div>
+
+            
+
+
+        </div>
+    </my-container>
+</section>
+
+<section class=" py-20">
+        <my-container>
+            <div class="flex flex-col items-center w-full gap-10">
+                <h2 class="text-gray-700 text-3xl font-bold ">How it works</h2>
+                <div class="grid grid-cols-2">
+                        <div class="flex flex-col gap-5 items-center text-gray-700 ">
+                            <h3 class="text-3xl font-bold">Seco Groupe Takes Care Of:</h3>
+
+                            <ul class="flex flex-col gap-3 items-center text-xl text-center">
+                                <li>Finding the client</li>
+                                <li>Managing the client relationship</li>
+                                <li>Handling account administration</li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-col gap-5 items-center text-gray-700 ">
+                            <h3 class="text-3xl font-bold">Your Company:</h3>
+                            <ul class="flex flex-col gap-3 items-center text-xl text-center">
+                                <li>Performs the service</li>
+                                <li>Gets paid monthly for work completed</li>
+                                <li>Maintains your general liability and workers’ compensation insurance</li>
+                            </ul>
+                        </div>
+                </div>
+                <a class="bg-[#F7941D] text-white p-5 rounded-full text-2xl font-bold"[routerLink]="[]" fragment="preform">Become a Preferred Vendor </a>
+            </div>
+        </my-container>
+</section>
+
+
 <section class="py-10 bg-white">
 
     <my-container>
