@@ -184,8 +184,9 @@ Services. `
 
   ]
 
-  previewInfo = [
-    {
+  previewInfo = {
+    otherCountry:[
+      {
       title: 'Your Safety, Our Priority',
       description: ' Comprehensive protection tailored to your peace of mind. From elite manned guarding to advanced surveillance solutions, we provide a secure environment for your assets, employees, and premises.',
       service: 'Security & Concierge'
@@ -225,7 +226,47 @@ concierge team combines hospitality with efficiency, managing inquiries and arri
 with grace and sophistication.`,
       service: 'Outdoor Care'
     }
-  ]
+    ],
+    haiti:[
+      {
+        title: 'Your Safety, Our Priority',
+        description: ' Comprehensive protection tailored to your peace of mind. From elite manned guarding to advanced surveillance solutions, we provide a secure environment for your assets, employees, and premises.',
+        service: 'Seco Securite'
+      },
+      {
+        title: 'Your Safety, Our Priority',
+        description: ' Comprehensive protection tailored to your peace of mind. From elite manned guarding to advanced surveillance solutions, we provide a secure environment for your assets, employees, and premises.',
+        service: 'Seco Tech'
+      },
+      {
+        title: 'Your Safety, Our Priority',
+        description: ' Comprehensive protection tailored to your peace of mind. From elite manned guarding to advanced surveillance solutions, we provide a secure environment for your assets, employees, and premises.',
+        service: 'Seco Distributors'
+      },
+      {
+        title: 'Your Safety, Our Priority',
+        description: ' Comprehensive protection tailored to your peace of mind. From elite manned guarding to advanced surveillance solutions, we provide a secure environment for your assets, employees, and premises.',
+        service: 'Mass Assurance'
+      },
+      {
+        title: 'Your Safety, Our Priority',
+        description: ' Comprehensive protection tailored to your peace of mind. From elite manned guarding to advanced surveillance solutions, we provide a secure environment for your assets, employees, and premises.',
+        service: 'Mass Funds'
+      },
+      {
+        title: 'Your Safety, Our Priority',
+        description: ' Comprehensive protection tailored to your peace of mind. From elite manned guarding to advanced surveillance solutions, we provide a secure environment for your assets, employees, and premises.',
+        service: 'Seco Homes & Construction'
+      },
+      {
+        title: 'Your Safety, Our Priority',
+        description: ' Comprehensive protection tailored to your peace of mind. From elite manned guarding to advanced surveillance solutions, we provide a secure environment for your assets, employees, and premises.',
+        service: 'Seco Logistique'
+      }
+    ]
+  }
+
+  
 
   
   // document.documentElement.style.setProperty('--body-bg', 'url(https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)')

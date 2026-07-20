@@ -13,6 +13,7 @@ export const routes: Routes = [
     { path: 'services/outdoor-care', loadComponent: ()=> import('./pages/services/outdoor-care/outdoor-care') },
     { path: 'services/concierge-security-experts', loadComponent: ()=> import('./pages/services/concierge-security-experts/concierge-security-experts') },
     { path: 'services-country/:pays', loadComponent: ()=> import('./pages/services-country/services-country') , pathMatch: 'full'},
+    { path: 'services/:pays/:service', loadComponent: ()=> import('./pages/services-country-details/services-country-details') , pathMatch: 'full'},
     { path: 'cookie-policy', loadComponent: ()=> import('./pages/cookie-policy/cookie-policy') , pathMatch: 'full'},
     { path: 'privacy-policy', loadComponent: ()=> import('./pages/privacy-policy/privacy-policy') , pathMatch: 'full'},
     { path: 'terms-of-service', loadComponent: ()=> import('./pages/terms-of-service/terms-of-service') , pathMatch: 'full'},

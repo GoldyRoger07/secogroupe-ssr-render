@@ -4,10 +4,11 @@ import { Navbar } from '../../navbar/navbar';
 import { MySlider } from '../../my-slider/my-slider';
 import { V4MySlider } from '../my-slider/my-slider';
 import { AnimateOnScrollDirective } from '../../../directives/animate-on-scroll';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'v4-home',
-  imports: [Navbar, V4MySlider, AnimateOnScrollDirective],
+  imports: [Navbar, V4MySlider, AnimateOnScrollDirective, RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })

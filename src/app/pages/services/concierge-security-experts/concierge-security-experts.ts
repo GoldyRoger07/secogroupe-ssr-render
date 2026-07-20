@@ -24,7 +24,7 @@ export default class ConciergeSecurityExperts implements OnInit {
 
   hero = {
     eyebrow: 'Security & Concierge',
-    title: 'Concierge & Security Experts',
+    title: 'Security & Concierge Experts',
     subtitle:
       'One trusted partner combining a welcoming concierge presence with professional protection for your people, assets and property.',
     image: 'img/services/compressed/bg_seco_securite_1440.webp',

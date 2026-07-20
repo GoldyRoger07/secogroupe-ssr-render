@@ -41,7 +41,11 @@ export class CardServices {
     return tab
   }
 
-  getPreviewInfo(service: string){
-    return this.previewInfo.find(p => p.service.toLocaleLowerCase() === service)
+   getPreviewInfo(service: string, otherCountry: boolean){
+    if(otherCountry)
+      return this.previewInfo.otherCountry.find(p => p.service.toLocaleLowerCase() === service)
+    
+    return this.previewInfo.haiti.find((p:any) => p.service.toLocaleLowerCase() === service)
+
   }
 }
