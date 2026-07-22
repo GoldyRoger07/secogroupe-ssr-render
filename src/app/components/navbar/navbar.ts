@@ -39,7 +39,7 @@ export class Navbar implements OnInit{
       previewBox:{
         left:{
           title: "About Us",
-          desc: "Seco Groupe is an international business support company providing hospitality support, janitorial cleaning, staffing solutions, concierge, and security..."
+          desc: "SECO GROUPE is a global provider of integrated facility and operational solutions, specializing in hospitality services, janitorial and cleaning solutions, staffing, concierge services, building maintenance, and security solutions..."
         },
         right:[
           // {label: 'Why Secogroupe', value: ''},
@@ -53,7 +53,7 @@ export class Navbar implements OnInit{
       previewBox:{
         left:{
           title: "Services",
-          desc: "Seco Groupe is a full-service facility management provider operating in the United States, Canada, and the Caribbean, dedicated to maintaining the functionality, safety..."
+          desc: "TURN-KEY HOSPITALITY & FACILITY MANAGEMENT SOLUTIONS — At SECO, we believe exceptional environments are built through exceptional service. Our turn-key hospitality and facility management solutions bring together expert housekeeping, building maintenance, workforce coordination, operational support, and quality assur..."
         },
         right:[
           {label: 'Hospitality support', value: '/services/hospitality-support'},

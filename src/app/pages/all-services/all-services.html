@@ -3,12 +3,43 @@
 
 
 
-    <section class="w-full h-155 bg-[url(/v4/img/services/mixed_workers.png)] bg-cover bg-center">
-        <v4-navbar [textWhite]="true"/>
-
+    <section class="w-full h-screen max-h-155 bg-[url(/v4/img/services/mixed_workers.png)] bg-cover bg-center">
+        <div class="z-5 absolute w-full">
+            <v4-navbar [textWhite]="true" [isTransparent]="true" />
+        </div>
+        <div class="absolute z-2 inset-0 bg-black/55 "></div>
+        <div class="z-2 relative translate-y-[25%] max-w-6xl text-white mx-auto px-5 py-24 md:py-32 text-center">
+            <h1 class="text-4xl  font-bold josefin-sans mb-4">TURN-KEY HOSPITALITY & FACILITY MANAGEMENT SOLUTIONS</h1>
+            <p class="max-w-2xl mx-auto text-2xl">
+            At SECO, we believe exceptional environments are built through exceptional service.
+            </p>
+        </div>
     </section>
 
-    <card-services></card-services>
+    <section class="py-20 ">
+        <my-container>
+                <div class="flex flex-col items-center text-gray-700">
+                    <h2 class="text-center font-bold  text-3xl my-5" >Our Services</h2>
+
+                    <p class="text-2xl">
+                        Our turn-key
+                        hospitality and facility management solutions bring together expert housekeeping,
+                        building maintenance, workforce coordination, operational support, and quality assurance into one seamless, fully integrated solution. <br><br>Whether serving hotels, resorts, healthcare facilities, residential communities, or
+                        commercial properties, we are committed to
+                        creating clean, safe, efficient, and welcoming
+                        environments that protect your investment,
+                        enhance operational performance, and
+                        elevate every guest and resident experience.<br><br>
+                        As your trusted partner, we manage the
+                        details with precision and professionalism,
+                        allowing you to focus on what matters most
+                        growing your business and delivering excellence.
+                    </p>
+                </div>
+        </my-container>
+    </section>
+
+    <card-services [showTitle]="false"></card-services>
     
 <!-- 
     <section class="pt-0 pb-20 mt-15">

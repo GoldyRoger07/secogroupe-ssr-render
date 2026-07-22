@@ -1,9 +1,12 @@
 <section class="col-span-12 rounded-[25px]" style=" padding: 32.5px 0;" id="services-cards">
 
     <my-container>
-        <h2 class="text-center font-bold text-gray-600 text-3xl my-5" >
-              Our Services
-          </h2>
+        @if(showTitle()){
+
+            <h2 class="text-center font-bold text-gray-600 text-3xl my-5" >
+                  Our Services
+              </h2>
+        }
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3" style="margin-bottom: 70px;">
                 <a class="service-card-container" routerLink="/services/hospitality-support">
                      <div class="service-card">

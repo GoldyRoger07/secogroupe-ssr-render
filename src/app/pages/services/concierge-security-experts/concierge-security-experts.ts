@@ -40,7 +40,7 @@ export default class ConciergeSecurityExperts implements OnInit {
   ];
 
   intro = {
-    title: 'Hospitality and protection, together',
+    title: 'Hospitality and Protection, together',
     paragraph1:
       'The front of your building has two jobs at once: to welcome the people who belong there and to keep everyone else out. Our integrated concierge and security teams do both — combining a polished, hospitable presence with vigilant, licensed protection.',
     paragraph2:

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FilialeService } from '../../services/filiale-service';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -13,6 +13,8 @@ import { Container } from "../container/container";
 export class CardServices {
 
   filialeService = inject(FilialeService)
+
+  showTitle = input<boolean>(true)
 
   previewInfo = this.filialeService.previewInfo
 
