@@ -377,6 +377,10 @@ html{
   aspect-ratio: 5 / 6;
 }
 
+.service-card{
+  aspect-ratio: 1 / 1;
+}
+
 /* =========================================================================
    BLOG CONTENT — rendu du HTML produit par l'éditeur Quill (Angular admin).
    Le contenu est injecté via [innerHTML] : ces styles DOIVENT être globaux

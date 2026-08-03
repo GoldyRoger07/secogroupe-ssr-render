@@ -103,15 +103,18 @@ export default class ServicesCountryDetails implements OnInit{
     eyebrow: 'Sécurité & Protection',
     title: 'SECO Security',
     subtitle:
-      'Des solutions de sécurité professionnelles pour protéger vos personnes, vos biens et vos infrastructures grâce à des équipes formées et des stratégies adaptées à vos besoins.',
+      `Nous combinons des
+professionnels hautement qualifiés, des technologies de pointe et une organisation opérationnelle performante pour offrir des solutions de
+sécurité fiables, adaptées aux réalités de chaque
+client.`,
     image: 'img/services/compressed/bg_seco_securite_1440.webp',
     alt: 'Agent de sécurité SECO Security assurant la protection d’une propriété professionnelle.',
   };
 
   this.gallery = [
     'img/services/compressed/security_guard_female_1440.webp',
-    'img/services/Security & Concierge/01.jpg',
-    'img/services/Security & Concierge/03.jpg',
+    // 'img/services/Security & Concierge/01.jpg',
+    // 'img/services/Security & Concierge/03.jpg',
     'img/services/compressed/seco_agent_securite_en_bleu.webp',
   ];
 
@@ -201,17 +204,17 @@ export default class ServicesCountryDetails implements OnInit{
     eyebrow: 'Construction & Immobilier',
     title: 'SECO Homes & Construction',
     subtitle:
-      'Des solutions de construction, de rénovation et de développement immobilier conçues pour créer des espaces durables, fonctionnels et adaptés à vos besoins.',
-    image: 'img/subsidiaries/compressed/seco_homes_construction_1440.webp',
+      'SECO Homes & Construction est spécialisé dans la construction d’infrastructures telles que routes, ponts, barrages, location de terrain et travaux d’électrification.',
+    image: 'img/haiti-services/construction.png',
     alt: 'SECO Homes & Construction réalisant des projets immobiliers, de construction et de rénovation pour des clients résidentiels et commerciaux.',
   };
 
   this.gallery = [
-    'img/subsidiaries/compressed/seco_homes_construction_1440.webp',
-    'img/subsidiaries/homes-construction/01.jpg',
-    'img/subsidiaries/homes-construction/02.jpg',
-    'img/subsidiaries/homes-construction/03.jpg',
-    'img/subsidiaries/homes-construction/04.jpg',
+    'img/haiti-services/cover_seco_construction.webp',
+    // 'img/subsidiaries/homes-construction/01.jpg',
+    // 'img/subsidiaries/homes-construction/02.jpg',
+    // 'img/subsidiaries/homes-construction/03.jpg',
+    // 'img/subsidiaries/homes-construction/04.jpg',
   ];
 
   this.intro = {
@@ -292,7 +295,7 @@ export default class ServicesCountryDetails implements OnInit{
   ];
 
   this.ctaImage =
-    'img/subsidiaries/compressed/seco_homes_construction_1440.webp';
+    'img/haiti-services/cover_seco_construction.webp';
 }
 
   setSecoLogistiqueInfo() {
@@ -301,16 +304,14 @@ export default class ServicesCountryDetails implements OnInit{
     title: 'SECO Logistique',
     subtitle:
       'Des solutions logistiques fiables pour accompagner le transport, la distribution et la gestion de vos marchandises avec efficacité et précision.',
-    image: 'img/subsidiaries/compressed/seco_logistique_1440.webp',
+    image: 'img/haiti-services/logistique.png',
     alt: 'SECO Logistique assurant des services professionnels de transport, de distribution et de gestion de la chaîne logistique.',
   };
 
   this.gallery = [
-    'img/subsidiaries/compressed/seco_logistique_1440.webp',
-    'img/subsidiaries/logistique/01.jpg',
-    'img/subsidiaries/logistique/02.jpg',
-    'img/subsidiaries/logistique/03.jpg',
-    'img/subsidiaries/logistique/04.jpg',
+    // 'img/subsidiaries/compressed/seco_logistique_1440.webp',
+    'img/haiti-services/logistique-1.jpg',
+    'img/haiti-services/logistique-2.jpg'
   ];
 
   this.intro = {
@@ -391,7 +392,7 @@ export default class ServicesCountryDetails implements OnInit{
   ];
 
   this.ctaImage =
-    'img/subsidiaries/compressed/seco_logistique_1440.webp';
+    'img/haiti-services/logistique.png';
 }
 
   setSecoTechInfo() {
@@ -399,17 +400,17 @@ export default class ServicesCountryDetails implements OnInit{
     eyebrow: 'Technologie & Innovation',
     title: 'SECO Tech',
     subtitle:
-      'Nous accompagnons les entreprises dans leur transformation numérique grâce à des solutions technologiques innovantes, sécurisées et adaptées à leurs objectifs.',
-    image: 'img/subsidiaries/compressed/seco_tech_1440.webp',
+      `SECO TECH allie innovation et technologie pour résoudre les besoins complexes de votre entreprise, elle est dans les domaines d’installation, de maintenance et de réparation industrielle (Systèmes électriques et mécaniques, climatisation et réfrigération).`,
+    image: 'img/haiti-services/technology.jpeg',
     alt: 'SECO Tech développant des solutions numériques, des logiciels et des infrastructures informatiques pour les entreprises.',
   };
 
   this.gallery = [
-    'img/subsidiaries/compressed/seco_tech_1440.webp',
-    'img/subsidiaries/tech/01.jpg',
-    'img/subsidiaries/tech/02.jpg',
-    'img/subsidiaries/tech/03.jpg',
-    'img/subsidiaries/tech/04.jpg',
+    'img/haiti-services/bg_seco_tech.jpg',
+    // 'img/subsidiaries/tech/01.jpg',
+    // 'img/subsidiaries/tech/02.jpg',
+    // 'img/subsidiaries/tech/03.jpg',
+    // 'img/subsidiaries/tech/04.jpg',
   ];
 
   this.intro = {
@@ -490,7 +491,7 @@ export default class ServicesCountryDetails implements OnInit{
   ];
 
   this.ctaImage =
-    'img/subsidiaries/compressed/seco_tech_1440.webp';
+    'img/haiti-services/bg_seco_tech.jpg';
 }
 
   setSecoDistributorsInfo() {
@@ -498,17 +499,17 @@ export default class ServicesCountryDetails implements OnInit{
     eyebrow: 'Distribution & Approvisionnement',
     title: 'SECO Distributors',
     subtitle:
-      'Votre partenaire de confiance pour l’approvisionnement, la distribution et la livraison de produits destinés aux entreprises, institutions et collectivités.',
-    image: 'img/subsidiaries/compressed/seco_distributors_1440.webp',
+      'SECO DISTRIBUTORS prend en charge l’importation et la distribution de carburant et de produits alimentaires, avec un service logistique intégré.',
+    image: 'img/haiti-services/distribution.jpeg',
     alt: 'SECO Distributors assurant la distribution, l’approvisionnement et la livraison de produits pour les entreprises et les organisations.',
   };
 
   this.gallery = [
-    'img/subsidiaries/compressed/seco_distributors_1440.webp',
-    'img/subsidiaries/distributors/01.jpg',
-    'img/subsidiaries/distributors/02.jpg',
-    'img/subsidiaries/distributors/03.jpg',
-    'img/subsidiaries/distributors/04.jpg',
+    'img/haiti-services/Distribution-2.jpeg',
+    // 'img/subsidiaries/distributors/01.jpg',
+    // 'img/subsidiaries/distributors/02.jpg',
+    // 'img/subsidiaries/distributors/03.jpg',
+    // 'img/subsidiaries/distributors/04.jpg',
   ];
 
   this.intro = {
@@ -589,7 +590,7 @@ export default class ServicesCountryDetails implements OnInit{
   ];
 
   this.ctaImage =
-    'img/subsidiaries/compressed/seco_distributors_1440.webp';
+    'img/haiti-services/Distribution-2.jpeg';
 }
 
   setMassAssuranceInfo() {

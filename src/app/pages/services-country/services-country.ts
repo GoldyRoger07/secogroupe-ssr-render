@@ -62,7 +62,7 @@ export default class ServicesCountry implements OnInit{
   {
     front: {
       title: 'Seco Homes & Construction',
-      cover: "/img/haiti-services/seco-homes-construction.png"
+      cover: "/img/haiti-services/seco-homes-construction.png",
     },
     back: {
       title: 'Construction & Immobilier',
@@ -70,17 +70,17 @@ export default class ServicesCountry implements OnInit{
     },
     link: '/services/haiti/seco-homes-construction'
   },
-  {
-    front: {
-      title: 'Seco Logistique',
-      cover: "/img/haiti-services/seco-logistique.png"
-    },
-    back: {
-      title: 'Logistique Intégrée',
-      desc: "Organisation, coordination et gestion de la chaîne logistique afin d'assurer un approvisionnement efficace et des opérations fluides."
-    },
-    link: '/services/haiti/seco-logistique'
-  },
+  // {
+  //   front: {
+  //     title: 'Seco Logistique',
+  //     cover: "/img/haiti-services/seco-logistique.png"
+  //   },
+  //   back: {
+  //     title: 'Logistique Intégrée',
+  //     desc: "Organisation, coordination et gestion de la chaîne logistique afin d'assurer un approvisionnement efficace et des opérations fluides."
+  //   },
+  //   link: '/services/haiti/seco-logistique'
+  // },
   {
     front: {
       title: 'Seco Tech',
@@ -103,28 +103,28 @@ export default class ServicesCountry implements OnInit{
     },
     link: '/services/haiti/seco-distributors'
   },
-  {
-    front: {
-      title: 'Mass Assurance',
-      cover: "/img/haiti-services/mass-assurance.png"
-    },
-    back: {
-      title: 'Protection & Assurance',
-      desc: "Des solutions d'assurance conçues pour protéger les particuliers et les entreprises contre les imprévus avec des couvertures adaptées."
-    },
-    link: '/services/haiti/seco-assurance'
-  },
-  {
-    front: {
-      title: 'Mass Funds',
-      cover: "/img/haiti-services/mass-funds.png"
-    },
-    back: {
-      title: 'Finance & Investissement',
-      desc: "Des services financiers destinés à accompagner l'épargne, le financement et les investissements pour soutenir la croissance de nos clients."
-    },
-    link: '/services/haiti/mass-funds'
-  }
+  // {
+  //   front: {
+  //     title: 'Mass Assurance',
+  //     cover: "/img/haiti-services/mass-assurance.png"
+  //   },
+  //   back: {
+  //     title: 'Protection & Assurance',
+  //     desc: "Des solutions d'assurance conçues pour protéger les particuliers et les entreprises contre les imprévus avec des couvertures adaptées."
+  //   },
+  //   link: '/services/haiti/seco-assurance'
+  // },
+  // {
+  //   front: {
+  //     title: 'Mass Funds',
+  //     cover: "/img/haiti-services/mass-funds.png"
+  //   },
+  //   back: {
+  //     title: 'Finance & Investissement',
+  //     desc: "Des services financiers destinés à accompagner l'épargne, le financement et les investissements pour soutenir la croissance de nos clients."
+  //   },
+  //   link: '/services/haiti/mass-funds'
+  // }
 ]
 
   previewInfo = this.filialeService.previewInfo

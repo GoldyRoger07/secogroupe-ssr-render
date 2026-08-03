@@ -77,8 +77,8 @@
           </h2>
       }
       
-      <div class="services-cards-container" style="margin-bottom: 70px;">
-          @if(!(pays === 'haiti')){
+      @if(!(pays === 'haiti')){
+            <div class="services-cards-container" style="margin-bottom: 70px;">
 
                <a class="service-card-container" routerLink="/services/concierge-security-experts">
                    <div class="service-card">
@@ -311,44 +311,51 @@
                    </div>
                    </div>
                </a>
+               </div>
              }@else {
-                @for(cardData of cardDatas; track $index){
-<!-- [routerLink]="cardData.link" -->
-                    <a class="service-card-container" >
-                       <div class="service-card">
-                       <div class="front">
-                           <div class="icon-box">
+                <div class="flex justify-center">
+
+                    <div class="grid grid-cols-2  w-[50%]">
     
-                                    <img [src]="cardData.front.cover" alt="logo" width="128px">
-                                  
-                            </div>
-                           
-                           <div class="title-box">
-                               
-                              
-                                <span>{{cardData.front.title}}</span>
-    
-                           </div>
-                       </div>
-                       <div class="back">
-                           
-                           <div class="overlay">
-                             
-                                   <div class="title text-gray-700">
+                        @for(cardData of cardDatas; track $index){
+        <!-- [routerLink]="cardData.link" -->
+                            <a class="service-card-container service-card" [routerLink]="cardData.link">
+                               <div class="service-card">
+                               <div class="front">
+                                   <div class="icon-box">
+            
+                                            <img [src]="cardData.front.cover" alt="logo" width="128px">
+                                          
+                                    </div>
+                                   
+                                   <div class="title-box">
                                        
-                                       {{cardData.back.title}}
-                                       
+                                      
+                                        <span>{{cardData.front.title}}</span>
+            
                                    </div>
-                                   <p class="text-gray-600">
-                                    {{cardData.back.desc}}
-                                    
-                                   </p>
-                             
-                           </div>
-                       </div>
-                       </div>
-                   </a>
-                }
+                               </div>
+                               <div class="back">
+                                   
+                                   <div class="overlay">
+                                     
+                                           <div class="title text-gray-700">
+                                               
+                                               {{cardData.back.title}}
+                                               
+                                           </div>
+                                           <p class="text-gray-600">
+                                            {{cardData.back.desc}}
+                                            
+                                           </p>
+                                     
+                                   </div>
+                               </div>
+                               </div>
+                           </a>
+                        }
+                    </div>
+                </div>
 
                 
              }
@@ -356,8 +363,6 @@
               
           
          
-      </div>
-        
     </section>
 
  </my-container>
