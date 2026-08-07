@@ -4,6 +4,9 @@
 
  @import './myfonts.css';
 
+
+ @plugin '@tailwindcss/typography';
+
  @layer utilities {
   .no-scrollbar::-webkit-scrollbar{
     display: none;
@@ -265,6 +268,13 @@ html{
     
 }
 
+.fade-down{
+    transform: translateY(-25%) ;
+    opacity: 0;
+    transition: all 600ms ease-in-out ;
+    
+}
+
 .blur-up{
     transform: scale(0.9);
     opacity: 0;
@@ -278,7 +288,7 @@ html{
     opacity: 1;
 }
 
-.fade-up.active{
+.fade-up.active, .fade-down.active{
     transform: translateY(0%) scale(1);
     opacity: 1;
 }

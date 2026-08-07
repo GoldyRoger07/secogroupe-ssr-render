@@ -7,6 +7,8 @@ import { Navbar } from "../../components/navbar/navbar";
 import { Container } from "../../components/container/container";
 import { V4Slider } from "../../components/v4/v4-slider/v4-slider";
 import { AnimateOnScrollDirective } from '../../directives/animate-on-scroll';
+import { raw } from 'express';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-services-country-details',
@@ -18,6 +20,9 @@ export default class ServicesCountryDetails implements OnInit{
 
   activatedRoute = inject(ActivatedRoute)
   seo = inject(SeoService)
+
+  // Injection du service DomSanitizer
+  private sanitizer = inject(DomSanitizer);
 
   pays: string = ''
   service: string = ''
@@ -414,11 +419,18 @@ client.`,
   ];
 
   this.intro = {
-    title: 'Accélérez votre transformation numérique',
+    title: 'A propos de nous',
     paragraph1:
-      'SECO Tech accompagne les entreprises, les organisations et les institutions dans la conception, le développement et le déploiement de solutions technologiques modernes. Notre mission est d\'utiliser la technologie comme un véritable levier de performance, d\'innovation et de croissance.',
+      `SECO TECH, filiale de SECO GROUPE, offre des
+solutions intégrées en Building Management et
+en ingénierie technique. Nous proposons une
+gamme complète de services spécialisés
+incluant l’entretien ménager, le nettoyage
+professionnel, l’outsourcing, la conciergerie, la
+sécurité ainsi que la gestion et la maintenance
+des bâtiments.`,
     paragraph2:
-      'Du développement de logiciels à la cybersécurité, en passant par les infrastructures réseau, le cloud et le conseil informatique, notre équipe conçoit des solutions fiables, évolutives et parfaitement adaptées aux besoins de chaque client.',
+      `Du développement de logiciels à la cybersécurité, en passant par les infrastructures réseau, le cloud et le conseil informatique, notre équipe conçoit des solutions fiables, évolutives et parfaitement adaptées aux besoins de chaque client.`,
   };
 
   this.offeringSubtitle =
@@ -426,41 +438,95 @@ client.`,
 
   this.subServices = [
     {
-      title: 'Développement de Logiciels',
+      title: 'ENTRETIEN MÉNAGER ET NETTOYAGE PROFESSIONEL',
       icon: 'ri-code-s-slash-line',
+      cover: 'img/haiti-services/seco-tech/nettoyage.webp',
       description:
-        'Conception et développement d\'applications métiers, de logiciels sur mesure et de solutions adaptées à vos besoins.',
+        ` Nous assurons des services
+          de nettoyage et d'entretien adaptés aux
+          environnements commerciaux, industriels,
+          résidentiels, hôteliers et institutionnels.<br><br> Nos équipes veillent à maintenir des espaces propres, sains
+          et conformes aux normes d'hygiène les plus
+          élevées.
+        `,
     },
     {
-      title: 'Applications Web & Mobiles',
+      title: 'OUTSOURCING : RECRUTEMENT ET GESTION DE MAIN-DŒUVRE',
       icon: 'ri-smartphone-line',
+      cover: "img/haiti-services/seco-tech/recrutement.webp",
       description:
-        'Création de sites web professionnels, plateformes web et applications mobiles performantes pour tous vos projets numériques.',
+        `SECO TECH
+          accompagne les entreprises dans le recrutement,
+          le placement et la gestion de personnel qualifié
+          afin de répondre efficacement à leurs besoins
+          opérationnels. <br> <br> Nous prenons en charge l'identification des talents, la sélection des candidats, le
+          déploiement des équipes ainsi que le suivi administratif et opérationnel. Cette solution permet à
+          nos clients de réduire leurs coûts de gestion, de
+          gagner en flexibilité et de se concentrer sur leur
+          cœur de métier tout en bénéficiant d'une
+          main-d'œuvre compétente et performante.`,
     },
     {
-      title: 'Conseil Informatique',
+      title: 'CONCIERGERIE',
       icon: 'ri-lightbulb-line',
+      cover: "img/haiti-services/seco-tech/conciergerie.webp",
       description:
-        'Accompagnement stratégique pour définir, moderniser et optimiser votre environnement informatique.',
+      ` Nos services de conciergerie
+        facilitent la gestion quotidienne des bâtiments et
+        des installations. Nous prenons en charge l'accueil, l'assistance aux occupants, la coordination des
+        prestataires et diverses tâches de soutien afin
+        d'assurer une expérience de qualité.`
+        ,
     },
     {
-      title: 'Solutions Cloud',
-      icon: 'ri-cloud-line',
+      title: 'BUILDING MANAGEMENT / GESTION INTÉGRÉE DES BÂTIMENTS',
+      cover: "img/haiti-services/seco-tech/building-maintenance.webp",
       description:
-        'Migration, hébergement et gestion d\'infrastructures cloud offrant flexibilité, disponibilité et sécurité.',
+        `SECO TECH
+        offre des solutions complètes de Building Management permettant aux entreprises, institutions,
+        hôtels et résidences d'assurer le bon fonctionnement, la performance et la durabilité de leurs infrastructures.
+        <br><br>
+        Nous prenons en charge la gestion opérationnelle
+        et technique des bâtiments à travers une
+        approche intégrée comprenant l'entretien des
+        installations, la coordination des services, la
+        gestion des équipements techniques, le suivi des
+        interventions et l'optimisation des ressources.
+        
+        <p class="text-start">
+        <h3 class="text-gray-600">Nos solutions incluent notamment :</h3>
+          <ul class="pr-10 text-start  marker:text-gray-600">
+              <li>
+                  La gestion et la maintenance des systèmes
+                  électriques et mécaniques.
+              </li>
+              <li>La climatisation et la réfrigération.</li>
+              <li>Le suivi des équipements techniques.</li>
+              <li>La gestion énergétique et l'optimisation des
+  consommations.</li>
+              <li>La coordination des services d'entretien, de
+  sécurité et de conciergerie
+  </li>
+              <li>La maintenance préventive et corrective des
+  infrastructures</li>
+
+
+          </ul>
+        </p>
+        `,
     },
-    {
-      title: 'Réseaux & Infrastructures',
-      icon: 'ri-router-line',
-      description:
-        'Installation, configuration et maintenance de réseaux informatiques performants et sécurisés.',
-    },
-    {
-      title: 'Cybersécurité',
-      icon: 'ri-shield-keyhole-line',
-      description:
-        'Protection des systèmes d\'information, des données et des infrastructures contre les cybermenaces.',
-    },
+    // {
+    //   title: 'Réseaux & Infrastructures',
+    //   icon: 'ri-router-line',
+    //   description:
+    //     'Installation, configuration et maintenance de réseaux informatiques performants et sécurisés.',
+    // },
+    // {
+    //   title: 'Cybersécurité',
+    //   icon: 'ri-shield-keyhole-line',
+    //   description:
+    //     'Protection des systèmes d\'information, des données et des infrastructures contre les cybermenaces.',
+    // },
   ];
 
   this.benefits = [
@@ -790,5 +856,10 @@ client.`,
   this.ctaImage =
     'img/subsidiaries/compressed/mass_funds_1440.webp';
 }
+
+
+  getHtmlContent(rawHtml: string){
+    return this.sanitizer.bypassSecurityTrustHtml(rawHtml)
+  }
 
 }
