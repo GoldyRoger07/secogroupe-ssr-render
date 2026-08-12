@@ -39,6 +39,45 @@ export default class ServicesCountryDetails implements OnInit{
     "mass-funds"
   ]
 
+  aboutUs = {
+    title: "À propos de nous",
+    desc: `
+      ${this.p(`Chez <strong>SECO SÉCURITÉ S.A.</strong>, la sécurité ne se
+                limite pas à une présence physique : elle
+                repose sur une stratégie opérationnelle, une
+                anticipation permanente des risques et une
+                capacité d'intervention immédiate`)}
+
+      ${this.p(`Notre Force Spéciale Bicéphale, composée
+                d'une Équipe d'Intervention Rapide (QRF) et
+                d'Agents Spéciaux en Sécurité et Défense,
+                est spécialement conçue pour répondre aux
+                défis sécuritaires les plus complexes. Elle
+                assure une protection proactive des entreprises, des résidences privées, des institutions, des sites industriels et des infrastructures sensibles.`)}
+    
+        ${this.p(`Nos équipes mettent en œuvre des dispositifs de surveillance avancés, des patrouilles
+                  tactiques, la sécurisation des points
+                  stratégiques, le contrôle des accès et des
+                  interventions rapides, garantissant ainsi une
+                  protection continue des personnes, des
+                  biens et des équipements.`)}
+    `
+
+  }
+
+  goals = {
+    title: "Nos objectifs",
+    subtitle: `Chez SECO SÉCURITÉ S.A., notre engagement est de devenir un partenaire
+               stratégique en matière de sécurité en poursuivant les objectifs suivants :`,
+    goals: [
+      "Garantir la protection des personnes, des biens et des infrastructures grâce à des solutions de sécurité intégrées et performantes.",
+      "Anticiper, prévenir et réduire les risques sécuritaires par une approche proactive fondée sur l'analyse, la surveillance et la dissuasion.",
+      "Assurer une capacité de réponse rapide et efficace face à toute menace ou situation critique.",
+      "Maintenir un haut niveau de contrôle des sites sensibles par des équipes hautement qualifiées et des protocoles opérationnels rigoureux.",
+      "Offrir à nos clients un environnement sécurisé leur permettant d'exercer leurs activités en toute confiance, tout en assurant la continuité de leurs opérations."
+    ]
+  }
+
   hero = {
     eyebrow: '',
     title: '',
@@ -106,7 +145,7 @@ export default class ServicesCountryDetails implements OnInit{
   setSecoSecurityInfo() {
   this.hero = {
     eyebrow: 'Sécurité & Protection',
-    title: 'SECO Security',
+    title: 'SECO SÉCURITÉ S.A',
     subtitle:
       `Nous combinons des
 professionnels hautement qualifiés, des technologies de pointe et une organisation opérationnelle performante pour offrir des solutions de
@@ -137,39 +176,52 @@ client.`,
   this.subServices = [
     {
       title: 'Agents de Sécurité Professionnels',
-      icon: 'ri-shield-user-line',
+      icon: 'ri-shield-user-li8ne',
       description:
         'Des agents formés et qualifiés pour assurer la surveillance, la protection et la sécurité de vos sites.',
     },
     {
-      title: 'Surveillance des Sites',
-      icon: 'ri-eye-line',
+      title: 'ÉQUIPE D\'INTERVENTION RAPIDE (QRF)',
+      icon: 'ri-eye-li8ne',
       description:
-        'Une présence de sécurité constante pour surveiller vos installations et prévenir les incidents.',
+        `Notre Quick Response Force (QRF) est mobilisable en permanence pour intervenir rapidement lors d'incidents sécuritaires, renforcer un
+dispositif existant, sécuriser une zone sensible
+ou répondre à toute situation d'urgence nécessitant une action immédiate.`,
     },
-    {
-      title: 'Contrôle d’Accès',
-      icon: 'ri-door-lock-line',
-      description:
-        'Gestion et contrôle des entrées afin de limiter les accès non autorisés et renforcer la sécurité.',
-    },
-    {
-      title: 'Patrouilles de Sécurité',
-      icon: 'ri-road-map-line',
-      description:
-        'Des rondes de surveillance régulières pour identifier les risques et maintenir un environnement sécurisé.',
-    },
+    // {
+    //   title: 'Contrôle d’Accès',
+    //   icon: 'ri-door-lock-line',
+    //   description:
+    //     'Gestion et contrôle des entrées afin de limiter les accès non autorisés et renforcer la sécurité.',
+    // },
+    // {
+    //   title: 'Patrouilles de Sécurité',
+    //   icon: 'ri-road-map-line',
+    //   description:
+    //     'Des rondes de surveillance régulières pour identifier les risques et maintenir un environnement sécurisé.',
+    // },
     {
       title: 'Protection Rapprochée',
-      icon: 'ri-user-star-line',
+      icon: 'ri-user-star-lin9e',
       description:
-        'Des services de protection personnalisés pour les personnes nécessitant un niveau de sécurité renforcé.',
+        `Nos agents
+spécialisés assurent la protection rapprochée
+de personnalités, chefs d'entreprise, diplomates, délégations étrangères, représentants
+d'ONG et autres personnes exposées à des
+risques spécifiques. Chaque mission est
+préparée selon une analyse approfondie des
+menaces afin de garantir une sécurité discrète,
+professionnelle et efficace.`,
     },
     {
-      title: 'Surveillance Électronique',
-      icon: 'ri-cctv-line',
+      title: 'SYSTÈMES DE VIDÉOSURVEILLANCE & D\'ALARME ',
+      icon: 'ri-cctv-l9ine',
       description:
-        'Solutions de vidéosurveillance et technologies de sécurité pour améliorer la protection de vos espaces.',
+        `Nous concevons, installons et
+assurons la maintenance de systèmes de vidéosurveillance intelligents, de contrôle d'accès et
+de systèmes d'alarme performants permettant
+une surveillance continue de vos installations et
+une détection précoce des menaces.`,
     },
   ];
 
@@ -860,6 +912,12 @@ des bâtiments.`,
 
   getHtmlContent(rawHtml: string){
     return this.sanitizer.bypassSecurityTrustHtml(rawHtml)
+  }
+
+  p(content: string){
+    return `
+      <p>${content}</p><br>
+    `
   }
 
 }

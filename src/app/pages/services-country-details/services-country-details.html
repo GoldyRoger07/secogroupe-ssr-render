@@ -1,5 +1,5 @@
 <!-- HERO -->
-<section class="relative min-h-[540px] h-[90svh] max-h-[820px] lg:h-[88vh] w-full overflow-hidden">
+<section class="relative min-h-135 h-[90svh] max-h-205 lg:h-[88vh] w-full overflow-hidden">
   <div class="absolute inset-x-0 top-0 z-20">
     <v4-navbar [isTransparent]="true" [textWhite]="true"></v4-navbar>
   </div>
@@ -57,35 +57,74 @@
   </div>
 </section>
 
-<!-- INTRO -->
-<section class="relative py-20 overflow-hidden">
-  <div aria-hidden="true" animateOnScroll
-    class="fade-left pointer-events-none absolute -top-2 right-4 z-0 hidden md:block">
-    <img src="v4/assets/bars.svg" class="decor-float w-16 rotate-180 opacity-70" alt="" />
-  </div>
-  <div aria-hidden="true" animateOnScroll
-    class="blur-up pointer-events-none absolute -bottom-10 -left-10 z-0 hidden lg:block">
-    <svg class="decor-float-slow" width="150" height="150" viewBox="0 0 150 150" fill="none"
-      xmlns="http://www.w3.org/2000/svg">
-      <circle class="decor-stroke-pulse" cx="75" cy="75" r="50" stroke="var(--my-sec-bg)" stroke-width="2"
-        opacity="0.35" />
-      <circle cx="75" cy="75" r="70" stroke="var(--v4-sec-bg)" stroke-width="1.5" opacity="0.18" />
-    </svg>
-  </div>
+@if(service === "seco-security"){
+  <section class="py-20">
+    <my-container>
+      <h2 class="text-4xl font-bold text-gray-700 mb-5">{{aboutUs.title}}</h2>
 
-  <my-container>
-    <div class="relative z-10 col-span-12 grid lg:grid-cols-2 gap-12 items-center px-5 lg:px-0">
-      <div animateOnScroll class="fade-right rounded-2xl overflow-hidden h-[300px] lg:h-[420px] shadow-lg">
-        <v4-slider [images]="gallery" />
+      <div [innerHTML]="aboutUs.desc" class="text-gray-600">
+        
       </div>
-      <div animateOnScroll class="fade-left flex flex-col gap-5 text-gray-600">
-        <h2 class="raleway-bold text-3xl md:text-4xl text-gray-700">{{ intro.title }}</h2>
-        <p class="raleway text-lg leading-relaxed">{{ intro.paragraph1 }}</p>
-        <p class="raleway text-lg leading-relaxed">{{ intro.paragraph2 }}</p>
-      </div>
+    </my-container>
+  </section>
+}  
+
+<!-- INTRO -->
+  <section class="relative py-20 overflow-hidden">
+    <div aria-hidden="true" animateOnScroll
+      class="fade-left pointer-events-none absolute -top-2 right-4 z-0 hidden md:block">
+      <img src="v4/assets/bars.svg" class="decor-float w-16 rotate-180 opacity-70" alt="" />
     </div>
-  </my-container>
-</section>
+    <div aria-hidden="true" animateOnScroll
+      class="blur-up pointer-events-none absolute -bottom-10 -left-10 z-0 hidden lg:block">
+      <svg class="decor-float-slow" width="150" height="150" viewBox="0 0 150 150" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <circle class="decor-stroke-pulse" cx="75" cy="75" r="50" stroke="var(--my-sec-bg)" stroke-width="2"
+          opacity="0.35" />
+        <circle cx="75" cy="75" r="70" stroke="var(--v4-sec-bg)" stroke-width="1.5" opacity="0.18" />
+      </svg>
+    </div>
+  
+    <my-container>
+      <div class="relative z-10 col-span-12 grid lg:grid-cols-2 gap-12 items-center px-5 lg:px-0">
+        <div animateOnScroll class="fade-right rounded-2xl overflow-hidden h-[300px] lg:h-[420px] shadow-lg">
+          <v4-slider [images]="gallery" />
+        </div>
+        <div animateOnScroll class="fade-left flex flex-col gap-5 text-gray-600">
+          <h2 class="raleway-bold text-3xl md:text-4xl text-gray-700">{{ intro.title }}</h2>
+          <p class="raleway text-lg leading-relaxed">{{ intro.paragraph1 }}</p>
+          <p class="raleway text-lg leading-relaxed">{{ intro.paragraph2 }}</p>
+        </div>
+      </div>
+    </my-container>
+  </section>
+
+
+ @if(service === "seco-security"){
+  <section class="py-10 px-5 lg:px-0 bg-gray-100">
+    <my-container>
+      <h2 class="text-4xl font-bold text-gray-700 mb-5">{{goals.title}}</h2>
+
+      <h3 class="text-xl text-gray-600 mb-5">{{goals.subtitle}}</h3>
+      
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          @for(goal of goals.goals; track $index){
+
+            <div class="border aspect-square border-gray-200 transition-shadow duration-200 shadow hover:shadow-2xl p-5 rounded text-gray-600 flex flex-col justify-center bg-white">
+              <span class="text-5xl font-bold">{{$index+1}}</span>
+              <span>
+                {{goal}}
+              </span>
+            </div>
+          }
+      </div>
+
+      
+      
+    </my-container>
+  </section>
+}  
+
 
 <!-- WHAT WE DELIVER -->
 <section class="relative py-16 bg-gray-50 overflow-hidden">
