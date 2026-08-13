@@ -313,18 +313,18 @@
                </a>
                </div>
              }@else {
-                <div class="flex justify-center">
+                <div class="flex justify-center p-2.5">
 
-                    <div class="grid grid-cols-2  w-[50%]">
+                    <div class="grid min-[320px]:grid-cols-2 w-full  md:w-[60%]">
     
                         @for(cardData of cardDatas; track $index){
-        <!-- [routerLink]="cardData.link" -->
+                        <!-- [routerLink]="cardData.link" -->
                             <a class="service-card-container service-card" [routerLink]="cardData.link">
                                <div class="service-card">
                                <div class="front">
                                    <div class="icon-box">
             
-                                            <img [src]="cardData.front.cover" alt="logo" width="128px">
+                                            <img [src]="cardData.front.cover" alt="logo" class="w-16 lg:w-32" >
                                           
                                     </div>
                                    

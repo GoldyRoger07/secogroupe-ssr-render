@@ -177,12 +177,14 @@ client.`,
     {
       title: 'Agents de Sécurité Professionnels',
       icon: 'ri-shield-user-li8ne',
+      cover: 'img/haiti-services/seco-security/agents-de-securite-professionnels.webp',
       description:
         'Des agents formés et qualifiés pour assurer la surveillance, la protection et la sécurité de vos sites.',
     },
     {
       title: 'ÉQUIPE D\'INTERVENTION RAPIDE (QRF)',
       icon: 'ri-eye-li8ne',
+      cover: 'img/haiti-services/seco-security/equipe-intervention-rapide.webp',
       description:
         `Notre Quick Response Force (QRF) est mobilisable en permanence pour intervenir rapidement lors d'incidents sécuritaires, renforcer un
 dispositif existant, sécuriser une zone sensible
@@ -203,6 +205,7 @@ ou répondre à toute situation d'urgence nécessitant une action immédiate.`,
     {
       title: 'Protection Rapprochée',
       icon: 'ri-user-star-lin9e',
+      cover: 'img/haiti-services/seco-security/protection-rapprochee.webp',
       description:
         `Nos agents
 spécialisés assurent la protection rapprochée
@@ -216,6 +219,7 @@ professionnelle et efficace.`,
     {
       title: 'SYSTÈMES DE VIDÉOSURVEILLANCE & D\'ALARME ',
       icon: 'ri-cctv-l9ine',
+      cover: 'img/haiti-services/seco-security/systemes-de-videosurveillance-alarme.webp',
       description:
         `Nous concevons, installons et
 assurons la maintenance de systèmes de vidéosurveillance intelligents, de contrôle d'accès et

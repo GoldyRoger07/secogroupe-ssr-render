@@ -62,7 +62,7 @@
     <my-container>
       <h2 class="text-4xl font-bold text-gray-700 mb-5">{{aboutUs.title}}</h2>
 
-      <div [innerHTML]="aboutUs.desc" class="text-gray-600">
+      <div [innerHTML]="aboutUs.desc" class="text-base sm:text-mg md:text-lg lg:text-xl text-gray-600">
         
       </div>
     </my-container>
@@ -164,29 +164,29 @@
           </svg>
         </div>
       </div>
-      @if(hero.title.toLocaleLowerCase() === 'seco tech'){
+      @if(hero.title.toLocaleLowerCase() === 'seco tech' || service === "seco-security"){
         <div class="flex flex-col gap-25">
             @for(item of subServices; track $index) {
-  <div 
-  class="flex flex-col md:flex-row gap-5 p-4 rounded-2xl"
-  [class.md:flex-row-reverse]="$index % 2 !== 0">
-  
-  <!-- Image : 100% sur mobile, 50% sur écran large -->
-  <img 
-    [src]="item.cover" 
-    animateOnScroll 
-    class="fade-up w-full md:w-1/2 object-cover rounded-2xl h-64 md:h-auto" 
-    alt="{{item.title}}">
-  
-  <!-- Contenu texte : 100% sur mobile, 50% sur écran large -->
-  <div class="w-full md:w-1/2 fade-down" animateOnScroll>
-    <h3 class="text-gray-700 text-xl md:text-2xl font-bold mb-2">{{item.title}}</h3>
-    <div class="text-gray-600 prose max-w-none" [innerHTML]="item.description"></div>
-  </div>
+              <div 
+              class="flex flex-col md:flex-row gap-5 p-4 rounded-2xl"
+              [class.md:flex-row-reverse]="$index % 2 !== 0">
+              
+              <!-- Image : 100% sur mobile, 50% sur écran large -->
+              <img 
+                [src]="item.cover" 
+                animateOnScroll 
+                class="fade-up w-full md:w-1/2 object-cover rounded-2xl h-64 md:h-auto" 
+                alt="{{item.title}}">
+              
+              <!-- Contenu texte : 100% sur mobile, 50% sur écran large -->
+              <div class="w-full md:w-1/2 fade-down" animateOnScroll>
+                <h3 class="text-gray-700 text-xl md:text-2xl font-bold mb-2">{{item.title}}</h3>
+                <div class="text-gray-600 prose max-w-none" [innerHTML]="item.description"></div>
+              </div>
 
-</div>
+            </div>
 
-}
+            }
         </div>
       }@else {
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
