@@ -20,6 +20,7 @@ export const routes: Routes = [
     { path: 'contact', loadComponent: ()=> import('./pages/contact/contact') },
     { path: 'hiring', loadComponent: ()=> import('./pages/hiring/hiring-page') },
     { path: 'apply-now', loadComponent: ()=> import('./pages/apply-now/apply-now') },
+    { path: 'foned', loadComponent: ()=> import('./pages/foned-form/foned-form') },
     { path: 'blog', loadComponent: ()=> import('./pages/blog/blog') },
     { path: 'blog/:slug', loadComponent: ()=> import('./pages/blog-detail/blog-detail') }
 ];
