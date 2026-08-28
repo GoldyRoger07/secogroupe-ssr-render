@@ -1,6 +1,6 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Component, inject, PLATFORM_ID } from '@angular/core';
-import { Router } from 'express';
+import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Router } from '@angular/router';
 import { SeoService } from '../../services/seo-service';
 
 @Component({
@@ -9,7 +9,7 @@ import { SeoService } from '../../services/seo-service';
   templateUrl: './foned-form.html',
   styleUrl: './foned-form.css',
 })
-export default class FonedForm {
+export default class FonedForm implements OnInit{
   seo = inject(SeoService)
   platformId = inject(PLATFORM_ID);
   router = inject(Router)
