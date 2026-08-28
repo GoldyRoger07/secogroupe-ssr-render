@@ -20,7 +20,7 @@ export default class FonedForm implements OnInit{
   ngOnInit(): void {
 
     this.seo.update({
-      title: 'Rantre lekòl 2026 | SECO Groupe',
+      title: 'Rantre lekòl 2026 | Fondation Nestor Pour Le Développement',
       description: 'Fondasyon Nestor bò kote tout paran ak elèv yo. Nap sipòte w jodi a, paske nou kwè timoun yo se avni peyi a.',
       path: '/foned',
       image: 'https://secogroupe.com/img/foned-flyer.jpeg',
