@@ -239,6 +239,63 @@
                      </div>
                      </div>
                  </a>
+
+                 <a class="service-card-container" routerLink="/secogroupe-centers">
+                     <div class="service-card">
+                     <div class="front">
+                         <div class="icon-box">
+                             <!-- @if(filiale.details.length>0 && !filiale.icon.includes("fas")){
+                                 <img [src]="filiale.icon" alt="logo" width="128px">
+                             }@else{ -->
+                                  <img [src]="previewIcons.secogroupeCenters" alt="logo" width="128px">
+                                 <!-- <i [class]="previewIcons.security"></i> -->
+                             <!-- } -->
+                             
+                                 <!-- <i class="ri-shield-check-fill"></i> -->
+                         </div>
+                         
+                         <div class="title-box">
+                             
+                             <!-- @if(filiale.details.length>0 && (pays === 'usa' || pays === 'canada' || pays === 'bahamas')){
+                                 <span>{{filiale.details}}</span>
+                             }@else{
+                                 <span>{{filiale.name}}</span>
+                             } -->
+                              <span>{{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD7.FRONT.TITLE' | translate}}</span>
+  
+                         </div>
+                     </div>
+                     <div class="back">
+                         <!-- <div class="top">
+                             <img [src]="filiale.logo" class="bg-amber-300 rounded-xl" alt="logo seco">
+                         </div> -->
+                         <div class="overlay">
+                           <!-- @if (pays === 'usa' || pays === 'canada' || pays === 'bahamas'){ -->
+                                 <!-- <span>{{filiale.details}}</span> -->
+                                 <div class="title text-gray-700">
+                                     <!-- <i [class]="filiale.icon"></i> -->
+                                     {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD7.BACK.TITLE' | translate}}
+                                     <!-- {{getPreviewInfo(filiale.details.toLocaleLowerCase())?.title}} -->
+                                 </div>
+                                 <p class="text-gray-600">
+                                  {{'SERVICES_USA.SECTION_SERVICES.CARDS.CARD7.BACK.DESC' | translate}}
+                                  <!-- {{getPreviewInfo(filiale.details.toLocaleLowerCase())?.description}} -->
+                                 </p>
+                           <!-- }@else{
+                                 <span>{{getPreviewInfo(filiale.name.toLocaleLowerCase())?.title}}</span>
+                                 <p>
+                                  {{getPreviewInfo(filiale.name.toLocaleLowerCase())?.description}}
+                                 </p>
+                           } -->
+                             <!-- <div class="title">
+                                 <i [class]="filiale.icon"></i>
+                                 {{filiale.name}}
+                             </div> -->
+                             <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius eveniet ratione obcaecati...</p> -->
+                         </div>
+                     </div>
+                     </div>
+                 </a>
   
                  
   

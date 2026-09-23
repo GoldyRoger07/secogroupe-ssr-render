@@ -25,6 +25,7 @@ export class CardServices {
     hospitality: "/images/logos/staffing_services.png",
     outdoor: "/images/logos/outdoor_care.png",
     janitorial: "/images/logos/janitorial_services.png",
+    secogroupeCenters: "/images/logos/call-center-operator-svgrepo-com.svg"
   }
 
   getImgUrls(){

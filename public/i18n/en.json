@@ -168,6 +168,15 @@
             "TITLE": "The First Impression Your Brand Deserves",
             "DESC": "Elevate your guest experience with professional front-of-house services. Our concierge team combines hospitality with efficiency, managing inquiries and arrivals with grace and sophistication."
           }
+        },
+        "CARD7":{
+          "FRONT":{
+            "TITLE": "Secogroupe Centers"
+          },
+          "BACK":{
+            "TITLE": "Secogroupe Centers | Customer Care Excellence",
+            "DESC": "Professional 24/7 inbound and outbound call center solutions tailored to boost customer satisfaction."
+          }
         }
       }
     }

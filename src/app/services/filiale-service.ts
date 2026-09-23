@@ -225,6 +225,11 @@ safe, and professional around the clock. `,
 concierge team combines hospitality with efficiency, managing inquiries and arrivals 
 with grace and sophistication.`,
       service: 'Outdoor Care'
+    },
+    {
+      title: 'CALL CENTER TITLE',
+      description: 'CALL CENTER DESCRIPTION',
+      service: 'Secogroupe Centers'
     }
     ],
     haiti:[

@@ -22,6 +22,7 @@ export const routes: Routes = [
     { path: 'apply-now', loadComponent: ()=> import('./pages/apply-now/apply-now') },
     { path: 'foned', loadComponent: ()=> import('./pages/foned-form/foned-form') },
     { path: 'blog', loadComponent: ()=> import('./pages/blog/blog') },
+    { path: 'secogroupe-centers', loadComponent: ()=> import('./pages/secogroupe-centers/secogroupe-centers') },
     { path: 'blog/:slug', loadComponent: ()=> import('./pages/blog-detail/blog-detail') }
 ];
 
