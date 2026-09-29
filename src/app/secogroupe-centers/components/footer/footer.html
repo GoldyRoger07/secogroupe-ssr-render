@@ -1,0 +1,25 @@
+<footer class="border-t border-gray-200 bg-gray-50 py-10">
+  <cc-container>
+    <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+      <div class="flex flex-col gap-3">
+        <a [routerLink]="language.localize('/')" class="w-fit">
+          <img [src]="company().logo.light" class="h-10 w-auto" [alt]="company().name" />
+        </a>
+        <p class="max-w-sm text-sm text-(--brand-muted)">{{ content().tagline }}</p>
+      </div>
+
+      @if (company().contact.email) {
+        <a
+          [href]="'mailto:' + company().contact.email"
+          class="text-sm font-semibold text-(--brand-primary) hover:underline"
+        >
+          {{ content().contact }} — {{ company().contact.email }}
+        </a>
+      }
+    </div>
+
+    <p class="mt-8 text-xs text-(--brand-muted)">
+      © {{ year }} {{ company().legalName }}. {{ content().rights }}
+    </p>
+  </cc-container>
+</footer>

@@ -1,4 +1,6 @@
-import { Routes } from '@angular/router';
+import { CanActivateFn, Route, Routes } from '@angular/router';
+import { CATALOG ,LanguageService, Locale, LOCALE_PREFIX } from './secogroupe-centers/services/language.service';
+import { inject } from '@angular/core';
 
 export const routes: Routes = [
     { path: '', pathMatch: 'full', loadComponent: ()=> import('./pages/home/home')  },
@@ -22,7 +24,16 @@ export const routes: Routes = [
     { path: 'apply-now', loadComponent: ()=> import('./pages/apply-now/apply-now') },
     { path: 'foned', loadComponent: ()=> import('./pages/foned-form/foned-form') },
     { path: 'blog', loadComponent: ()=> import('./pages/blog/blog') },
-    { path: 'secogroupe-centers', loadComponent: ()=> import('./pages/secogroupe-centers/secogroupe-centers') },
+    { path: 'seco-response', loadChildren: () => import('./secogroupe-centers/secogroupe-centers.routes')},   
     { path: 'blog/:slug', loadComponent: ()=> import('./pages/blog-detail/blog-detail') }
 ];
+
+
+
+const useLocale =
+  (locale: Locale): CanActivateFn =>
+  () => {
+    inject(LanguageService).setLanguage(locale);
+    return true;
+  };
 

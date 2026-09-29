@@ -1,0 +1,133 @@
+<section class="pt-10  relative">
+  <cc-container>
+    <div class="flex items-end justify-between">
+      <div class="flex max-w-xl flex-col gap-5 mb-5">
+          <span class=" text-sm font-bold uppercase tracking-widest text-(--brand-accent)">
+            {{ content().eyebrow }}
+          </span>
+          <h1 class="text-4xl poppins-semibold leading-tight md:text-5xl">{{ content().title }}</h1>
+          <p class="poppins-regular text-[22px] text-black">{{ content().lead }}</p>
+  
+          <div class="flex flex-wrap gap-3 ">
+            <a
+              [routerLink]="language.localize(content().primaryCta.url)"
+              class="rounded-(--brand-radius) bg-(--brand-primary) px-5 py-3 poppins-semibold text-white shadow transition-transform duration-200 hover:-translate-y-0.5"
+            >
+              {{ content().primaryCta.label }}
+            </a>
+            <a
+              [routerLink]="language.localize(content().secondaryCta.url)"
+              class="rounded-(--brand-radius) border-2 border-(--brand-primary) px-5 py-3 poppins-semibold text-(--brand-primary) transition-colors hover:bg-(--brand-primary)/5"
+            >
+              {{ content().secondaryCta.label }}
+            </a>
+          </div>
+      </div>
+      <svg
+    [class.is-animated]="heroAnimated()"
+    class="hero-art pointer-events-none mt-auto hidden h-auto w-1/2 max-w-200 lg:block"
+    viewBox="0 0 1000 678"
+    fill="none"
+    aria-hidden="true"
+    focusable="false"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <!-- Barres : glissent depuis la droite, l'une après l'autre -->
+    <g class="bars">
+    <rect class="bar" style="--i: 0" x="342.939" y="40.3057" width="657.06" height="31.6686" fill="#F9A535"/>
+    <rect class="bar" style="--i: 1" x="236.312" y="109.401" width="763.688" height="31.6686" fill="#F9A535"/>
+    <rect class="bar" style="--i: 2" x="423.631" y="178.496" width="576.368" height="31.6686" fill="#F9A535"/>
+    <rect class="bar" style="--i: 3" x="374.641" y="247.591" width="625.36" height="31.6686" fill="#F9A535"/>
+    <rect class="bar" style="--i: 4" x="374.641" y="313.807" width="625.36" height="31.6686" fill="#F9A535"/>
+    <rect class="bar" style="--i: 5" x="374.641" y="380.023" width="625.36" height="31.6686" fill="#F9A535"/>
+    <rect class="bar" style="--i: 6" x="374.641" y="446.239" width="625.36" height="31.6686" fill="#F9A535"/>
+    <rect class="bar" style="--i: 7" x="374.641" y="512.455" width="625.36" height="31.6686" fill="#F9A535"/>
+    <rect class="bar" style="--i: 8" x="374.641" y="578.671" width="625.36" height="31.6686" fill="#F9A535"/>
+    <rect class="bar" style="--i: 9" x="374.641" y="644.887" width="625.36" height="31.6686" fill="#F9A535"/>
+    </g>
+
+    <!-- Illustration : apparaît en montant une fois les barres lancées -->
+    <rect class="figure" x="40.2803" width="536.088" height="677.245" fill="url(#pattern0_1036_86)" />
+
+    <!-- Ondes d'appel : pulsent depuis leur point de convergence, comme une sonnerie -->
+    <g class="sparks">
+    <path class="spark" style="--i: 0" d="M56.9697 350.631C49.2524 342.648 46.3567 338.909 39.4452 331.118C25.8955 315.849 19.7216 310.718 21.4836 306.925C22.1393 305.519 23.6964 304.701 24.9257 304.496C29.6107 303.718 34.4187 311.046 36.7134 314.525C55.8087 343.44 67.7466 358.395 66.2441 359.418C65.7797 359.732 62.8431 356.703 56.9697 350.644V350.631Z" fill="#0C73BA"/>
+    <path class="spark" style="--i: 1" d="M53.5685 367.714C48.8015 365.858 46.8893 364.862 42.5184 362.938C33.9405 359.172 30.3209 358.203 30.5258 356.306C30.6077 355.61 31.1814 354.969 31.7141 354.655C33.722 353.454 37.0684 355.583 38.6529 356.593C51.9158 364.957 59.7014 368.901 59.1687 369.597C59.0048 369.815 57.1881 369.119 53.5685 367.7V367.714Z" fill="#0C73BA"/>
+    <path class="spark" style="--i: 2" d="M86.241 364.508C88.3854 362.611 89.3689 361.915 91.445 360.237C95.5154 356.935 96.9223 355.379 97.8101 355.966C98.1379 356.184 98.3019 356.634 98.3292 356.976C98.4111 358.285 96.4989 359.404 95.5974 359.937C88.044 364.399 84.0828 367.264 83.8643 366.814C83.796 366.677 84.6155 365.954 86.241 364.508Z" fill="#0C73BA"/>
+    <path class="spark" style="--i: 3" d="M60.466 390.27C57.8435 391.43 56.6961 391.784 54.1965 392.753C49.3066 394.65 47.5036 395.701 46.8206 394.868C46.5748 394.554 46.5475 394.077 46.6294 393.749C46.9436 392.48 49.1154 392.003 50.1398 391.771C58.704 389.833 63.3344 388.318 63.4163 388.81C63.4436 388.96 62.4465 389.396 60.4523 390.283L60.466 390.27Z" fill="#0C73BA"/>
+    <path class="spark" style="--i: 4" d="M69.9038 350.153C68.0325 345.391 67.4725 343.317 65.929 338.801C62.8967 329.945 61.1484 326.629 62.6782 325.496C63.2519 325.073 64.0987 325.073 64.6861 325.251C66.9261 325.919 67.6364 329.808 67.9779 331.664C70.8053 347.07 73.1819 355.461 72.3078 355.557C72.0346 355.584 71.3243 353.783 69.9038 350.153Z" fill="#0C73BA"/>
+    <path class="spark" style="--i: 5" d="M50.9332 379.382C40.8938 379.382 36.6459 378.904 27.2348 378.495C8.79519 377.69 1.56958 378.481 0.217342 374.947C-0.28804 373.637 0.162706 372.109 0.804679 371.181C3.23598 367.647 11.0216 369.134 14.7232 369.83C45.5242 375.602 62.7482 377.267 62.4614 378.877C62.3794 379.382 58.5549 379.382 50.9332 379.382Z" fill="#0C73BA"/>
+    <path class="spark" style="--i: 6" d="M78.2796 352.144C80.2465 342.934 81.5168 339.126 83.7432 330.571C88.1004 313.801 88.7834 307.033 92.3074 306.473C93.605 306.268 94.9299 306.978 95.6538 307.742C98.4266 310.662 95.5309 317.526 94.165 320.787C82.8144 347.928 77.9245 363.402 76.4903 362.828C76.0395 362.651 76.7908 359.144 78.2933 352.144H78.2796Z" fill="#0C73BA"/>
+    </g>
+
+    <!-- Bulles : montent autour de l'illustration puis éclatent, en boucle (voir hero-bubbles.ts) -->
+    <g class="bubbles">
+      @for (bubble of bubbles(); track bubble.id) {
+        <circle
+          class="bubble"
+          [attr.cx]="bubble.x"
+          [attr.cy]="bubble.y"
+          [attr.r]="bubble.r"
+          [attr.fill]="bubble.color"
+          [attr.stroke]="bubble.color"
+          [style.animation-duration.ms]="bubble.duration"
+          [style.animation-delay.ms]="bubble.delay"
+          (animationiteration)="respawnBubble(bubble.id)"
+        />
+      }
+    </g>
+
+    <defs>
+<pattern id="pattern0_1036_86" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_1036_86" transform="scale(0.00112233 0.000886525)"/>
+</pattern>
+<image id="image0_1036_86" width="891" height="1128" preserveAspectRatio="none" xlink:href="/seco-centers/hero-figure.webp"/>
+</defs>
+      </svg>
+
+    </div>
+    <div class="py-5 px-2.5 w-full bg-(--brand-primary) ">
+        <cc-container>
+            <div class="grid grid-cols-4 gap-5 text-white ">
+              
+              @for( item of content().heroEndBar; track $index){
+                <div class="flex items-start gap-2" >
+                  <i [class]="item.icon+' text-3xl'"></i>
+                  <div>
+                    <span class="font-bold ">{{item.title}}</span>
+                    <p class="text-sm text-gray-200">{{item.desc}}</p>
+                  </div>
+                </div>
+              }
+            </div>
+        </cc-container>
+    </div>
+  </cc-container>
+
+  <!-- <img src="seco-centers/lines-call-design.png" class="absolute right-0 bottom-19 w-4/10" alt=""> -->
+
+</section>
+
+<section class="min-h-50 py-10 my-25">
+  <cc-container>
+    <div class="flex flex-col">
+      <h2 class="poppins-bold text-2xl my-10 text-gray-700">{{content().section2.title}}</h2>
+      <div class="grid grid-cols-4 gap-5">
+          @for(card of content().section2.cards; track $index){
+            <div class="relative rounded-xl overflow-hidden aspect-square hover:translate-y-[-5%] ease-in-out duration-300 cc-card">
+              <img class="absolute top-0 left-0 w-full h-full object-cover z-1" [src]="card.cover" [alt]="card.title">
+              <div class="py-5 px-2.5 z-2 absolute top-0 left-0 w-full h-full flex flex-col justify-end bg-linear-to-b from-transparent to-(--brand-primary) text-white">
+                <i [class]="card.icon+' w-10 h-10 mb-auto text-xl rounded-full bg-(--brand-primary) flex items-center justify-center text-center'"></i>
+                <span class="poppins-semibold">{{card.title}}</span>
+                <p class="text-sm poppins-regular">{{card.desc}}</p>
+                <button class="ml-auto py-1 px-3">
+                  <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          }
+      </div>
+    </div>
+  </cc-container>
+</section>

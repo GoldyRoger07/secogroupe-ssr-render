@@ -1,0 +1,15 @@
+<section class="py-24 md:py-32">
+  <cc-container>
+    <div class="flex max-w-xl flex-col gap-5">
+      <span class="text-6xl font-extrabold text-(--brand-primary)">{{ content().code }}</span>
+      <h1 class="text-3xl font-extrabold md:text-4xl">{{ content().title }}</h1>
+      <p class="text-lg text-(--brand-muted)">{{ content().lead }}</p>
+      <a
+        [routerLink]="language.localize('/')"
+        class="w-fit rounded-(--brand-radius) bg-(--brand-primary) px-5 py-3 font-bold text-white shadow transition-transform duration-200 hover:-translate-y-0.5"
+      >
+        {{ content().back }}
+      </a>
+    </div>
+  </cc-container>
+</section>

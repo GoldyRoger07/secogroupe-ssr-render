@@ -1,0 +1,189 @@
+/*
+ * Illustration du hero, animée une seule fois, en trois temps :
+ * 1. les barres glissent depuis la droite, l'une après l'autre ;
+ * 2. l'illustration glisse depuis la droite, dans la même direction ;
+ *    une fois arrivée, les barres se retirent vers la gauche ;
+ * 3. les ondes d'appel jaillissent une fois, puis restent en place.
+ *
+ * Tant que `.is-animated` n'est pas posée (voir `home.ts`), les éléments restent à leur état
+ * de départ, masqués. La classe arrive une fois la page chargée et hydratée : rien ne peut
+ * relancer l'animation en cours de route, ce qui provoquait le clignotement.
+ */
+
+.hero-art {
+  --bar-step: 70ms;
+  --figure-delay: 250ms;
+  --figure-duration: 900ms;
+  /* Les barres repartent quand l'illustration est arrivée au bout de sa course. */
+  --bar-exit-delay: calc(var(--figure-delay) + var(--figure-duration));
+  --ring-delay: 1100ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.64, 0, 0.78, 0);
+}
+
+h1,h2,h3,h4,h5,h6,p,div,span,button,nav, a{
+  font-family: "Poppins", sans-serif !important;
+}
+
+/* État de départ. */
+.bar {
+  shape-rendering: crispEdges;
+  transform-box: fill-box;
+  transform-origin: right center;
+  transform: scaleX(0);
+}
+
+.figure {
+  opacity: 0;
+  transform: translateX(120px);
+}
+
+.spark {
+  transform-box: view-box;
+  transform-origin: 72px 368px;
+  opacity: 0;
+}
+
+/*
+ * 1. Barres — elles sortent du bord droit, puis, une fois l'illustration arrivée,
+ * se retirent vers la gauche dans le même ordre.
+ * `bar-out` n'a pas de remplissage arrière (`forwards` seul) : pendant son délai,
+ * c'est `bar-in` qui s'applique.
+ */
+.hero-art.is-animated .bar {
+  animation:
+    bar-in 700ms var(--ease-out) calc(var(--i) * var(--bar-step)) both,
+    bar-out 600ms var(--ease-in) calc(var(--bar-exit-delay) + var(--i) * var(--bar-step)) forwards;
+}
+
+@keyframes bar-in {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Ancrées au bord gauche : c'est le bord droit qui file vers la gauche. */
+@keyframes bar-out {
+  from {
+    transform-origin: left center;
+    transform: scaleX(1);
+  }
+  to {
+    transform-origin: left center;
+    transform: scaleX(0);
+  }
+}
+
+/* 2. Illustration — même direction que les barres : de la droite vers la gauche. */
+.hero-art.is-animated .figure {
+  animation: figure-in var(--figure-duration) var(--ease-out) var(--figure-delay) both;
+}
+
+@keyframes figure-in {
+  from {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*
+ * 3. Ondes d'appel — les traits convergent vers (72, 368) dans le viewBox :
+ * ils jaillissent de ce point avec un léger rebond, une seule fois.
+ */
+.hero-art.is-animated .spark {
+  animation: ring 600ms ease-out both;
+  animation-delay: calc(var(--ring-delay) + var(--i) * 40ms);
+}
+
+@keyframes ring {
+  0% {
+    opacity: 0;
+    transform: scale(0.55);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/*
+ * 4. Bulles — en boucle, autour de l'illustration. Position, taille et couleur changent
+ * à chaque cycle (`animationiteration`, voir `hero-bubbles.ts`), pendant qu'elles sont invisibles.
+ * Durée et délai sont posés par bulle dans le template.
+ */
+/* Remplissage plein, de la même couleur que le contour (couleur posée par bulle dans le template). */
+.bubble {
+  stroke-width: 1.5;
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  animation-name: bubble;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+}
+
+@keyframes bubble {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.4);
+  }
+  15% {
+    opacity: 0.55;
+    transform: translateY(-8px) scale(1);
+  }
+  /* Montée lente, légère dérive latérale. */
+  82% {
+    opacity: 0.55;
+    transform: translate(6px, -46px) scale(1);
+  }
+  /* Éclatement : la bulle gonfle un peu et s'efface. */
+  90% {
+    opacity: 0.3;
+    transform: translate(6px, -48px) scale(1.35);
+  }
+  96%,
+  100% {
+    opacity: 0;
+    transform: translate(6px, -48px) scale(1.6);
+  }
+}
+
+/* Réglage système « réduire les animations » : état final directement, sans mouvement. */
+@media (prefers-reduced-motion: reduce) {
+  .bar,
+  .figure,
+  .spark {
+    animation: none !important;
+  }
+
+  .figure,
+  .spark {
+    transform: none;
+    opacity: 1;
+  }
+
+  /* À la fin de l'animation, les barres sont reparties. */
+  .bar {
+    transform: scaleX(0);
+  }
+}
+
+.cc-card img{
+  transition: transform ease-out 0.5s 0.2s;
+}
+
+.cc-card:hover img{
+  transform: scale(1.2);
+}

@@ -1,0 +1,195 @@
+<a
+  href="#contenu"
+  (click)="skipToContent($event)"
+  class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-100 focus:rounded-(--brand-radius) focus:bg-(--brand-primary) focus:px-4 focus:py-2 focus:font-semibold focus:text-white"
+>
+  {{ content().skipToContent }}
+</a>
+
+<header
+  [class.hide-header]="hidden()"
+  [class.is-scrolled]="scrolled()"
+  class="fixed inset-x-0 top-0 z-50 w-full border-b border-transparent py-2 transition-all duration-300 will-change-transform"
+>
+  <cc-container>
+    <nav class="flex h-16 w-full items-center justify-between gap-2 py-1" [attr.aria-label]="content().mainNav">
+      <!-- Logo -->
+      <a [routerLink]="language.localize('/')" class="flex shrink-0 items-center gap-2.5" [attr.aria-label]="content().homeAria">
+        <img [src]="company().logo.light" class="h-11 w-auto" [alt]="company().name" />
+      </a>
+
+      <div class="flex items-center gap-3">
+            <!-- Menu (bureau) -->
+      <ul class="hidden items-center gap-7 lg:flex">
+        @for (item of navItems(); track item.label) {
+          <li>
+            @if (item.children?.length) {
+              <cc-dropdown [items]="item.children!" [label]="item.label" />
+            } @else {
+              <a
+                [routerLink]="item.url"
+                routerLinkActive="text-(--brand-primary)"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="text-sm font-semibold text-(--brand-secondary) transition-colors hover:text-(--brand-primary)"
+              >
+                {{ item.label }}
+              </a>
+            }
+          </li>
+        }
+
+        <li>
+          <label class="relative flex items-center">
+            <span class="sr-only">{{ content().language }}</span>
+            <i class="ri-global-line pointer-events-none absolute left-2 text-base text-(--brand-secondary)" aria-hidden="true"></i>
+            <select
+              (change)="changeLanguage($event)"
+              class="cursor-pointer appearance-none rounded-(--brand-radius) border border-gray-200 bg-white py-1.5 pr-7 pl-7 text-sm font-semibold text-(--brand-secondary) transition-colors hover:border-(--brand-primary) focus:border-(--brand-primary) focus:outline-none"
+            >
+              @for (option of languages; track option.code) {
+                <option [value]="option.code" [selected]="option.code === language.language()" [attr.lang]="option.code">{{ option.name }}</option>
+              }
+            </select>
+            <i class="ri-arrow-down-s-line pointer-events-none absolute right-2 text-base text-(--brand-secondary)" aria-hidden="true"></i>
+          </label>
+        </li>
+      </ul>
+
+      <!-- Actions (bureau) -->
+      <div class="hidden items-center gap-3 lg:flex">
+        
+        <a
+          [routerLink]="language.localize(content().actions.login.url)"
+          class="rounded-(--brand-radius) border-2 border-(--brand-primary) px-4 py-2 text-sm font-bold text-(--brand-primary) transition-colors hover:bg-(--brand-primary)/5"
+        >
+          {{ content().actions.login.label }}
+        </a>
+        <a
+          [routerLink]="language.localize(content().actions.register.url)"
+          class="rounded-(--brand-radius) border-2 border-(--brand-primary) bg-(--brand-primary) px-4 py-2 text-sm font-bold text-white shadow transition-transform duration-200 hover:-translate-y-0.5"
+        >
+          {{ content().actions.register.label }}
+        </a>
+      </div >
+      </div>
+      
+
+      <!-- Bouton menu (mobile) -->
+      <button
+        type="button"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-(--brand-radius) text-(--brand-secondary) transition-colors hover:bg-black/5 lg:hidden"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="mobile-menu"
+        [attr.aria-label]="content().openMenu"
+        (click)="toggleMenu()"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+  </cc-container>
+</header>
+
+<!-- Menu plein écran (mobile) -->
+<div
+  id="mobile-menu"
+  [class.open]="menuOpen()"
+  [attr.aria-hidden]="!menuOpen()"
+  class="mobile-menu-overlay fixed inset-0 z-60 flex h-dvh w-full flex-col overflow-y-auto bg-white lg:hidden"
+>
+  <div class="flex shrink-0 items-center justify-between border-b border-gray-200 px-5 py-4">
+    <a [routerLink]="language.localize('/')" class="flex items-center gap-2.5" (click)="closeMenu()" [attr.aria-label]="content().homeAria">
+      <img [src]="company().logo.light" class="h-10 w-auto" [alt]="company().name" />
+    </a>
+
+    <button
+      type="button"
+      class="inline-flex h-11 w-11 items-center justify-center rounded-(--brand-radius) text-(--brand-secondary) transition-colors hover:bg-black/5"
+      [attr.aria-label]="content().closeMenu"
+      (click)="closeMenu()"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <ul class="flex flex-1 flex-col px-5 py-2">
+    @for (item of navItems(); track item.label) {
+      <li class="border-b border-gray-100">
+        @if (item.children?.length) {
+          <button
+            type="button"
+            class="flex w-full items-center justify-between py-4 text-left text-lg font-bold text-(--brand-secondary)"
+            [attr.aria-expanded]="openSection() === item.label"
+            (click)="toggleSection(item.label)"
+          >
+            {{ item.label }}
+            <i
+              class="ri-arrow-down-s-line text-xl transition-transform duration-300"
+              [class.rotate-180]="openSection() === item.label"
+              aria-hidden="true"
+            ></i>
+          </button>
+
+          <div class="grid transition-all duration-300" [class]="openSection() === item.label ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'">
+            <ul class="overflow-hidden">
+              @for (child of item.children!; track child.url) {
+                <li>
+                  <a
+                    [routerLink]="child.url"
+                    routerLinkActive="text-(--brand-primary)"
+                    class="block py-3 pl-4 text-base text-(--brand-muted) transition-colors hover:text-(--brand-primary)"
+                    (click)="closeMenu()"
+                  >
+                    {{ child.label }}
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+        } @else {
+          <a
+            [routerLink]="item.url"
+            routerLinkActive="text-(--brand-primary)"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="block py-4 text-lg font-bold text-(--brand-secondary) transition-colors hover:text-(--brand-primary)"
+            (click)="closeMenu()"
+          >
+            {{ item.label }}
+          </a>
+        }
+      </li>
+    }
+  </ul>
+
+  <div class="flex shrink-0 flex-col gap-3 border-t border-gray-200 px-5 py-5">
+    <a
+      [routerLink]="language.localize(content().actions.register.url)"
+      class="rounded-(--brand-radius) bg-(--brand-primary) px-5 py-3 text-center font-bold text-white shadow"
+      (click)="closeMenu()"
+    >
+      {{ content().actions.register.label }}
+    </a>
+    <a
+      [routerLink]="language.localize(content().actions.login.url)"
+      class="rounded-(--brand-radius) border-2 border-(--brand-primary) px-5 py-3 text-center font-bold text-(--brand-primary)"
+      (click)="closeMenu()"
+    >
+      {{ content().actions.login.label }}
+    </a>
+    <label class="flex items-center justify-center gap-2 py-2 text-sm font-semibold text-(--brand-muted)">
+      <i class="ri-global-line text-base" aria-hidden="true"></i>
+      <span>{{ content().language }}</span>
+      <select
+        (change)="changeLanguage($event)"
+        class="cursor-pointer rounded-(--brand-radius) border border-gray-200 bg-white px-2 py-1.5 text-sm font-semibold text-(--brand-secondary) focus:border-(--brand-primary) focus:outline-none"
+      >
+        @for (option of languages; track option.code) {
+          <option [value]="option.code" [selected]="option.code === language.language()" [attr.lang]="option.code">{{ option.name }}</option>
+        }
+      </select>
+    </label>
+  </div>
+</div>
