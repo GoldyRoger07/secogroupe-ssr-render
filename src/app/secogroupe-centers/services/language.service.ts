@@ -3,23 +3,22 @@ import { SiteContent } from '../models/content.model';
 import { fr } from '../config/content/fr';
 import { en } from '../config/content/en';
 import { es } from '../config/content/es';
-import { ht } from '../config/content/ht';
 
 /** Locales disponibles. Ajouter une locale = ajouter un fichier dans `config/content/`. */
-export type Locale = 'fr' | 'en' | 'es' | 'ht';
+export type Locale = 'fr' | 'en' | 'es' ;
 
-export const CATALOG: Record<Locale, SiteContent> = { fr, en, es, ht };
+export const CATALOG: Record<Locale, SiteContent> = { fr, en, es };
 
 export const DEFAULT_LOCALE: Locale = 'fr';
 
 /** Préfixe d'URL de chaque locale : le français, langue principale, est servi sans préfixe. */
-export const LOCALE_PREFIX: Record<Locale, string> = { fr: 'fr', en: 'en', es: 'es', ht: 'ht'};
+export const LOCALE_PREFIX: Record<Locale, string> = { fr: 'fr', en: 'en', es: 'es'};
 
 /** Adresse à laquelle le projet est monté dans l'application hôte (voir `app.routes.ts`). */
 export const BASE_PATH = '/seco-response';
 
 /** Valeur de `og:locale` pour chaque locale. */
-const OG_LOCALE: Record<Locale, string> = { fr: 'fr_FR', en: 'en_US', es: 'es_ES', ht: 'ht_HT' };
+const OG_LOCALE: Record<Locale, string> = { fr: 'fr_FR', en: 'en_US', es: 'es_ES' };
 
 @Injectable({ providedIn: 'root' })
 export class LanguageService {

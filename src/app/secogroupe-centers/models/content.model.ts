@@ -20,7 +20,7 @@ export interface Seo {
 }
 
 /** Pages qui ont leur propre bloc `seo` (clé `data.seo` des routes). */
-export type SeoPage = 'home' | 'notFound';
+export type SeoPage = 'home' | 'about' | 'notFound';
 
 export interface SiteContent {
   /** Nom affiché de la langue, utilisé par le sélecteur (« Français », « English »). */
@@ -66,6 +66,42 @@ export interface SiteContent {
         title: string;
         desc: string;
       }[]
+    }
+  };
+
+
+  about:{
+    seo: Seo;
+    heroSection:{
+      title: string;
+      description: string;
+      heroImages: string[]
+    }
+    section2: {
+      p1: string
+      p2: string
+      p3: string
+    }
+
+    section3:{
+      title: string
+      cards: {
+        icon: string
+        title: string
+        desc: string
+      }[]
+    }
+
+    section4: {
+      title: string
+      desc1: string
+      desc2: string
+      cta:{
+        content: string
+        link: string
+      }
+
+      desc3: string
     }
   };
 

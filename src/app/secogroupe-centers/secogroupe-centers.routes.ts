@@ -18,6 +18,12 @@ const pages: Routes = [
     data: { seo: 'home' },
   },
   {
+    path: 'about',
+    pathMatch: 'full',
+    loadComponent: () => import('./pages/about/about'),
+    data: { seo: 'about' },
+  },
+  {
     path: '**',
     loadComponent: () => import('./pages/not-found/not-found'),
     data: { seo: 'notFound' },
@@ -35,4 +41,4 @@ function localeBranch(locale: Locale): Route {
 }
 
 // Les locales préfixées d'abord : la branche sans préfixe capture tout le reste.
-export default [localeBranch('en'), localeBranch('fr'), localeBranch('es'), localeBranch('ht')] satisfies Routes;
+export default [localeBranch('en'), localeBranch('fr'), localeBranch('es')] satisfies Routes;
