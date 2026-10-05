@@ -23,7 +23,7 @@ export const en: SiteContent = {
     language: 'Language',
     actions: {
       register: { label: 'Sign up', url: '/register-now' },
-      login: { label: 'Log in', url: '/login' },
+      login: { label: 'Sign in', url: '/signin' },
     },
   },
 
