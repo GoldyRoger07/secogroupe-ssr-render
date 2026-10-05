@@ -107,9 +107,9 @@ export const en: SiteContent = {
       title: 'Your Partner for Reliable Business Support and Customer Solutions',
       description: 'Seco Response helps organizations simplify operations, strengthen customer relationships, and access reliable professional support.',
       heroImages: [
-        '/seco-centers/about/about-1.webp', 
-        '/seco-centers/about/about-2.webp', 
-        '/seco-centers/about/about-3.webp']
+        '/seco-centers/about/about-1_500.webp', 
+        '/seco-centers/about/about-2_500.webp', 
+        '/seco-centers/about/about-3_500.webp']
     },
     section2: {
       p1: 'We provide flexible business solutions designed to meet the evolving needs of companies, organizations, and entrepreneurs. Our services span customer support, virtual assistance, administrative services, multilingual communication, technical support, business process outsourcing, and specialized operational assistance. By combining skilled professionals with efficient processes and modern technology, we help our clients save time, improve productivity, and deliver better experiences.',

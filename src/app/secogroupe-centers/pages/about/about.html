@@ -1,12 +1,12 @@
 <section class="min-h-100 w-full py-10">
     <cc-container>
-        <div class="flex items-center">
-            <div class="w-1/2">
-                <h1 animateOnScroll class="fade-right text-5xl poppins-bold leading-13 mb-2.5">{{content().heroSection.title}}</h1>
+        <div class="flex flex-col gap-5 lg:flex-row items-center">
+            <div class="lg:w-1/2">
+                <h1 animateOnScroll class="fade-right text-3xl lg:text-5xl poppins-bold lg:leading-13 mb-2.5">{{content().heroSection.title}}</h1>
                 <p animateOnScroll class="fade-right poppins-regular text-xl leading-5">{{content().heroSection.description}}</p>
             </div>
 
-            <div animateOnScroll class="fade-left bg-red-500 h-100 w-1/2 overflow-hidden rounded-2xl">
+            <div animateOnScroll class="fade-left  h-full lg:h-100 aspect-square lg:aspect-video w-90 lg:w-1/2 overflow-hidden rounded-2xl">
                 <cc-slider [images]="content().heroSection.heroImages"/>
                
             </div>
@@ -35,7 +35,7 @@
                 <h2 animateOnScroll class="fade-up text-xl poppins-semibold">{{content().section3.title}}</h2>
             </div>
 
-            <div class="grid grid-cols-2 max-w-3xl gap-5">
+            <div class="grid min-[654px]:grid-cols-2 max-w-3xl gap-5">
                 @for(card of content().section3.cards; track $index){
 
                     <div animateOnScroll class="fade-up grid grid-cols-[36px_1fr] gap-5 border border-gray-200 p-5 rounded-xl shadow-md">
