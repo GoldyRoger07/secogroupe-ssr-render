@@ -113,9 +113,9 @@
   <cc-container>
     <div class="flex flex-col">
       <h2 class="poppins-bold text-2xl my-10 text-gray-700">{{content().section2.title}}</h2>
-      <div class="grid min-[549px]:grid-cols-2 min-[720px]:grid-cols-3 lg:grid-cols-4 gap-5">
+      <div class="grid min-[549px]:grid-cols-2 min-[720px]:grid-cols-3 lg:grid-cols-4 gap-5 px-10">
           @for(card of content().section2.cards; track $index){
-            <div class="relative rounded-xl overflow-hidden aspect-square hover:translate-y-[-5%] ease-in-out duration-300 cc-card">
+            <div class="w-50 md:w-full  relative rounded-xl overflow-hidden aspect-square hover:translate-y-[-5%] ease-in-out duration-300 cc-card">
               <img class="absolute top-0 left-0 w-full h-full object-cover z-1" [src]="card.cover" [alt]="card.title">
               <div class="py-5 px-2.5 z-2 absolute top-0 left-0 w-full h-full flex flex-col justify-end bg-linear-to-b from-transparent to-(--brand-primary) text-white">
                 <i [class]="card.icon+' w-10 h-10 mb-auto text-xl rounded-full bg-(--brand-primary) flex items-center justify-center text-center'"></i>
