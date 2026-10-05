@@ -14,6 +14,12 @@ const pages: Routes = [
   {
     path: '',
     pathMatch: 'full',
+    loadComponent: () => import('./pages/signin/signin'),
+    data: { seo: 'signin' },
+  },
+  {
+    path: 'signin',
+    pathMatch: 'full',
     loadComponent: () => import('./pages/home/home'),
     data: { seo: 'home' },
   },

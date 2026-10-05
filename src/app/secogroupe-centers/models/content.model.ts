@@ -50,6 +50,10 @@ export interface SiteContent {
     contact: string;
   };
 
+  signin: {
+    seo: Seo;
+  }
+
   home: {
     seo: Seo;
     eyebrow: string;

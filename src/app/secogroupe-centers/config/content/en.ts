@@ -33,6 +33,13 @@ export const en: SiteContent = {
     contact: 'Contact us',
   },
 
+  signin:{
+    seo:{
+      title: '',
+      description: ''
+    }
+  },
+
   
 
   home: {

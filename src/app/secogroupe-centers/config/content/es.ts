@@ -31,7 +31,12 @@ export const es: SiteContent = {
     contact: 'Contact us',
   },
 
-  
+  signin:{
+    seo:{
+      title: '',
+      description: ''
+    }
+  },
 
   home: {
     seo: {

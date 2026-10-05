@@ -69,6 +69,13 @@ export const fr: SiteContent = {
     }
   },
 
+  signin:{
+    seo:{
+      title: '',
+      description: ''
+    }
+  },
+
   about: {
     seo: {
       title: 'About | SECO Response',
