@@ -14,14 +14,14 @@ const pages: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    loadComponent: () => import('./pages/signin/signin'),
-    data: { seo: 'signin' },
+    loadComponent: () => import('./pages/home/home'),
+    data: { seo: 'home' },
   },
   {
     path: 'signin',
     pathMatch: 'full',
-    loadComponent: () => import('./pages/home/home'),
-    data: { seo: 'home' },
+    loadComponent: () => import('./pages/signin/signin'),
+    data: { seo: 'signin' },
   },
   {
     path: 'about',
