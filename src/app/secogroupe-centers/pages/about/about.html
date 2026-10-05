@@ -2,11 +2,11 @@
     <cc-container>
         <div class="flex items-center">
             <div class="w-1/2">
-                <h1 class="text-5xl poppins-bold leading-13 mb-2.5">{{content().heroSection.title}}</h1>
-                <p class="poppins-regular text-xl leading-5">{{content().heroSection.description}}</p>
+                <h1 animateOnScroll class="fade-right text-5xl poppins-bold leading-13 mb-2.5">{{content().heroSection.title}}</h1>
+                <p animateOnScroll class="fade-right poppins-regular text-xl leading-5">{{content().heroSection.description}}</p>
             </div>
 
-            <div class="bg-red-500 h-100 w-1/2 overflow-hidden rounded-2xl">
+            <div animateOnScroll class="fade-left bg-red-500 h-100 w-1/2 overflow-hidden rounded-2xl">
                 <cc-slider [images]="content().heroSection.heroImages"/>
                
             </div>
@@ -18,9 +18,9 @@
     <cc-container>
         <div class="flex flex-col gap-5 items-center">
 
-            <p class="max-w-3xl poppins-light">{{content().section2.p1}}</p>
-            <p class="max-w-3xl poppins-light">{{content().section2.p2}}</p>
-            <p class="max-w-3xl poppins-light">{{content().section2.p3}}</p>
+            <p animateOnScroll class="fade-up max-w-3xl poppins-light">{{content().section2.p1}}</p>
+            <p animateOnScroll class="fade-up max-w-3xl poppins-light">{{content().section2.p2}}</p>
+            <p animateOnScroll class="fade-up max-w-3xl poppins-light">{{content().section2.p3}}</p>
 
             
         </div>
@@ -32,13 +32,13 @@
         <div class="flex flex-col gap-5 items-center ">
             <div class="max-w-3xl w-full ">
 
-                <h2 class="text-xl poppins-semibold">{{content().section3.title}}</h2>
+                <h2 animateOnScroll class="fade-up text-xl poppins-semibold">{{content().section3.title}}</h2>
             </div>
 
             <div class="grid grid-cols-2 max-w-3xl gap-5">
                 @for(card of content().section3.cards; track $index){
 
-                    <div class="grid grid-cols-[36px_1fr] gap-5 border border-gray-200 p-5 rounded-xl shadow-md">
+                    <div animateOnScroll class="fade-up grid grid-cols-[36px_1fr] gap-5 border border-gray-200 p-5 rounded-xl shadow-md">
                         <div class="rounded-full bg-blue-200 h-[36px] flex items-center justify-center">
                             <i class="ri-check-line"></i>
                         </div>
@@ -57,19 +57,19 @@
     <cc-container>
         <div class="flex flex-col gap-5 items-center">
             <div class="max-w-3xl mb-2.5">
-                <h2 class="text-xl poppins-semibold mb-2.5">{{content().section4.title}}</h2>
-                <p>{{content().section4.desc1}}</p>
+                <h2 animateOnScroll class="fade-up text-xl poppins-semibold mb-2.5">{{content().section4.title}}</h2>
+                <p animateOnScroll class="fade-up">{{content().section4.desc1}}</p>
             </div>
 
-            <div class="max-w-3xl border border-blue-200 bg-blue-100 p-5 rounded-xl text-sm poppins-light mb-5">
+            <div animateOnScroll class="fade-up max-w-3xl border border-blue-200 bg-blue-100 p-5 rounded-xl text-sm poppins-light mb-5">
                 {{content().section4.desc2}}
             </div>
             <div class="max-w-3xl w-full">
 
-                <button class="bg-blue-800 text-white p-2.5 rounded-lg poppins-semibold text-sm"> {{content().section4.cta.content}}</button>
+                <button animateOnScroll class="fade-up bg-blue-800 text-white p-2.5 rounded-lg poppins-semibold text-sm"> {{content().section4.cta.content}}</button>
             </div>
 
-            <div class="max-w-3xl w-full border-t border-gray-200 py-5 poppins-bold text-blue-900 text-sm">
+            <div animateOnScroll class="fade-up max-w-3xl w-full border-t border-gray-200 py-5 poppins-bold text-blue-900 text-sm">
                 {{content().section4.desc3}}
             </div>
         </div>
