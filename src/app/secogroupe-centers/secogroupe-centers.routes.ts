@@ -24,6 +24,12 @@ const pages: Routes = [
     data: { seo: 'signin' },
   },
   {
+    path: 'signup',
+    pathMatch: 'full',
+    loadComponent: () => import('./pages/signup/signup'),
+    data: { seo: 'signin' },
+  },
+  {
     path: 'about',
     pathMatch: 'full',
     loadComponent: () => import('./pages/about/about'),

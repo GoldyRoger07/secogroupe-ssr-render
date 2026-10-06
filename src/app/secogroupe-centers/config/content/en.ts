@@ -22,7 +22,7 @@ export const en: SiteContent = {
     closeMenu: 'Close menu',
     language: 'Language',
     actions: {
-      register: { label: 'Sign up', url: '/register-now' },
+      register: { label: 'Sign up', url: '/signup' },
       login: { label: 'Sign in', url: '/signin' },
     },
   },

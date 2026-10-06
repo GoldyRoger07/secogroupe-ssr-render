@@ -1,0 +1,271 @@
+h1,h2,h3,h4,h5,h6,p,div,span,button,nav, a, input, label{
+  font-family: "Poppins", sans-serif !important;
+}
+
+
+.form-wrapper {
+  /* max-width: 1000px; */
+  /* margin: 60px auto; */
+  /* overflow: ; */
+  /* padding: 40px; */
+  width: 100%;
+  border-radius: 20px;
+  /* background: #ffffff; */
+
+  /* box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.08); */
+}
+
+
+/* STEPPER */
+
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+
+.step {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 8px;
+
+  color: #9ca3af;
+
+  font-size: 14px;
+  text-wrap: nowrap;
+}
+
+
+.step-number {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #e5e7eb;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+
+.step.active {
+  color: #111827;
+}
+
+
+.step.active .step-number {
+  background: var(--color-blue-800);
+  color: white;
+}
+
+
+.line {
+  width: 100px;
+  height: 3px;
+
+  margin: 0 15px 22px;
+
+  background: #e5e7eb;
+
+  transition: 0.3s;
+}
+
+
+.line.active {
+  background: var(--color-blue-800);
+}
+
+
+
+/* CONTENT */
+
+.step-content {
+
+  animation: fade 0.3s ease;
+
+}
+
+
+.step-content h2 {
+
+  /* margin-bottom: 30px; */
+
+  font-size: 26px;
+
+  color: #111827;
+
+}
+
+
+/* INPUT */
+
+.form-group {
+
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 25px;
+
+}
+
+
+label {
+
+  margin-bottom: 8px;
+
+  font-weight: 500;
+
+  color: #374151;
+
+}
+
+
+input {
+
+  padding: 14px 16px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 10px;
+
+  font-size: 16px;
+
+  outline: none;
+
+  transition: 0.2s;
+
+}
+
+
+input:focus {
+
+  border-color: var(--color-blue-800);
+
+  box-shadow:
+    0 0 0 3px rgba(200, 154, 45, 0.15);
+
+}
+
+
+small {
+
+  margin-top: 6px;
+
+  color: #dc2626;
+
+}
+
+
+/* BUTTONS */
+
+.actions {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-top: 35px;
+
+}
+
+
+button {
+
+  padding: 13px 24px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  transition: 0.2s;
+
+}
+
+
+.next,
+.submit {
+
+  margin-left: auto;
+
+  background: var(--color-blue-800);
+
+  color: white;
+
+}
+
+
+.next:hover,
+.submit:hover {
+
+  transform: translateY(-2px);
+
+  opacity: 0.9;
+
+}
+
+
+.previous {
+
+  background: #f3f4f6;
+
+  color: #374151;
+
+}
+
+
+.summary {
+
+  padding: 25px;
+
+  border-radius: 12px;
+
+  background: #f9fafb;
+
+}
+
+
+.summary p {
+
+  margin: 12px 0;
+
+}
+
+
+@keyframes fade {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateX(15px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+  }
+
+}

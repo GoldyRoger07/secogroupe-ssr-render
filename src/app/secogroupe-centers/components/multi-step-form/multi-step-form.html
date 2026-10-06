@@ -1,0 +1,2030 @@
+<div class="form-wrapper flex flex-col">
+
+  <!-- STEPPER -->
+
+  <div class="stepper">
+
+    <div
+      class="step"
+      [class.active]="currentStep >= 1">
+
+      <div class="step-number">
+        1
+      </div>
+
+      <span>
+        Basic information
+      </span>
+
+    </div>
+
+
+    <div
+      class="line"
+      [class.active]="currentStep >= 2">
+    </div>
+
+
+    <div
+      class="step"
+      [class.active]="currentStep >= 2">
+
+      <div class="step-number">
+        2
+      </div>
+
+      <span>
+        Languages
+      </span>
+
+    </div>
+
+
+    <div
+      class="line"
+      [class.active]="currentStep >= 3">
+    </div>
+
+    <div
+      class="step"
+      [class.active]="currentStep >= 3">
+
+      <div class="step-number">
+        3
+      </div>
+
+      <span>
+        Experience
+      </span>
+
+    </div>
+
+    <div
+      class="line"
+      [class.active]="currentStep >= 4">
+    </div>
+
+
+
+    <div
+      class="step"
+      [class.active]="currentStep >= 4">
+
+      <div class="step-number">
+        4
+      </div>
+
+      <span>
+        Avail
+      </span>
+
+    </div>
+
+  </div>
+
+
+
+  <form
+    [formGroup]="form"
+    (ngSubmit)="submit()" class="w-full">
+
+
+    <!-- STEP 1 -->
+
+    <div
+      *ngIf="currentStep === 1"
+      formGroupName="personalInfo"
+      class="step-content">
+
+      <div class="mb-5">
+          <h2>
+            Basic information
+          </h2>
+          <span>
+            Step 1 of 4. Phone number is optional. Attach a resume and we'll fill in what we can below - you can still edit anything.
+          </span>
+
+      </div>
+
+      <div class="w-full rounded-xl border border-gray-200 flex flex-col p-5 mb-5">
+        <label for="#" class="text-sm font-semibold">Resume</label>
+        <input type="file" class="border border-gray-200" name="" id="">
+      </div>
+
+      <div class="rounded-xl border border-gray-200 flex flex-col p-5 mb-5">
+
+          <div class="grid grid-cols-2 gap-2.5">
+    
+              <div class="form-group">
+        
+                <label>
+                  Prénom
+                </label>
+        
+                <input
+                  type="text"
+                  formControlName="firstName"
+                  placeholder="Votre prénom">
+        
+        
+                <small
+                  *ngIf="
+                    personalInfo.get('firstName')?.touched &&
+                    personalInfo.get('firstName')?.invalid
+                  ">
+        
+                  Le prénom est obligatoire.
+        
+                </small>
+        
+              </div>
+        
+        
+              <div class="form-group">
+        
+                <label>
+                  Nom
+                </label>
+        
+                <input
+                  type="text"
+                  formControlName="lastName"
+                  placeholder="Votre nom">
+        
+        
+                <small
+                  *ngIf="
+                    personalInfo.get('lastName')?.touched &&
+                    personalInfo.get('lastName')?.invalid
+                  ">
+        
+                  Le nom est obligatoire.
+        
+                </small>
+        
+              </div>
+          </div>
+
+          <div class="grid gap-2.5">
+            <div class="form-group">
+        
+                <label>
+                  Email
+                </label>
+        
+                <input
+                  type="email"
+                  formControlName="email"
+                  placeholder="Votre email">
+        
+        
+                <small
+                  *ngIf="
+                    personalInfo.get('email')?.touched &&
+                    personalInfo.get('email')?.invalid
+                  ">
+        
+                  L'email est obligatoire.
+        
+                </small>
+        
+              </div>
+          </div>
+
+          <div class="grid gap-2.5">
+            <div class="form-group">
+        
+                <label>
+                  Phone <span class="text-sm text-gray-400">(Optional)</span>
+                </label>
+        
+                <input
+                  type="email"
+                  formControlName="firstName"
+                  placeholder="Votre prénom">
+        
+        
+                <small
+                  *ngIf="
+                    personalInfo.get('firstName')?.touched &&
+                    personalInfo.get('firstName')?.invalid
+                  ">
+        
+                  Le prénom est obligatoire.
+        
+                </small>
+        
+              </div>
+          </div>
+      </div>
+
+      <div class="rounded-xl border border-gray-200 flex flex-col p-5 mb-5">
+        <div class="grid gap-2.5">
+            <div class="form-group">
+        
+                <label>
+                  Country of residence
+                </label>
+        
+                <input
+                  type="email"
+                  formControlName="firstName"
+                  placeholder="Start typing or click to browse">
+        
+        
+                <small
+                  *ngIf="
+                    personalInfo.get('firstName')?.touched &&
+                    personalInfo.get('firstName')?.invalid
+                  ">
+        
+                  Le prénom est obligatoire.
+        
+                </small>
+        
+              </div>
+          </div>
+      </div>
+
+
+
+
+      <div class="actions">
+
+        <button
+          type="button"
+          class="next"
+          (click)="nextStep()">
+
+          Continuer
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- STEP 2 -->
+
+    <!-- ========================= -->
+<!-- STEP 2 : LANGUAGES -->
+<!-- ========================= -->
+
+<!-- STEP 2 : LANGUAGES -->
+
+<div
+  *ngIf="currentStep === 2"
+  class="w-full max-w-4xl mx-auto"
+>
+
+  <!-- TITLE -->
+  <div class="mb-8">
+    <h2 class="text-2xl font-bold text-slate-900">
+      Languages
+    </h2>
+
+    <p class="mt-2 text-sm leading-6 text-slate-500">
+      Step 2 of 4. Select every language you speak.
+      Mark one or more as primary - primary languages skip
+      the proficiency question.
+    </p>
+  </div>
+
+
+  <!-- SEARCH -->
+  <div class="mb-3">
+
+    <label
+      for="languageSearch"
+      class="block mb-2 text-xs font-semibold uppercase text-slate-600"
+    >
+      Search languages
+    </label>
+
+    <div class="relative  w-full
+          h-12
+          pl-12
+          pr-4
+          rounded-xl
+          border
+          border-slate-200
+          bg-white
+          text-sm
+          text-slate-700
+          placeholder:text-slate-400
+
+          outline-none
+          transition
+
+          focus:border-blue-700
+          focus:ring-4
+          focus:ring-blue-100">
+
+      <!-- SEARCH ICON -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"
+      >
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+
+      <!-- <input type="text" > -->
+      <input
+        id="languageSearch"
+        type="text"
+        placeholder='Type to filter, e.g. "Spanish"'
+        [(ngModel)]="languageSearch"
+        [ngModelOptions]="{ standalone: true }"
+
+        class=" border-none outline-none p-5 left-8 absolute -translate-y-0.5"
+        style="border: none; outline: none !important; box-shadow: none; "
+      />
+
+    </div>
+
+  </div>
+
+
+  <!-- LANGUAGE LIST -->
+  <div
+    class="
+      max-h-[320px]
+      overflow-y-auto
+
+      rounded-xl
+      border
+      border-slate-200
+
+      bg-white
+    "
+  >
+
+    <div
+      *ngFor="let language of filteredLanguages"
+      class="
+        flex
+        items-center
+        justify-between
+        gap-6
+
+        px-4
+        py-3
+
+        min-h-[64px]
+
+        border-b
+        border-slate-200
+
+        last:border-b-0
+
+        hover:bg-slate-50
+
+        transition
+      "
+    >
+
+      <!-- LANGUAGE -->
+      <div class="flex items-center gap-3 min-w-0">
+
+        <input
+          type="checkbox"
+          [id]="'language-' + language.code"
+          [checked]="language.selected"
+          (change)="toggleLanguage(language)"
+
+          class="
+            w-4
+            h-4
+            shrink-0
+
+            rounded
+            border-slate-300
+
+            text-blue-900
+
+            focus:ring-blue-800
+            focus:ring-offset-0
+
+            cursor-pointer
+          "
+        />
+
+        <label
+          [for]="'language-' + language.code"
+          class="
+            text-sm
+            font-semibold
+            text-slate-700
+
+            cursor-pointer
+          "
+        >
+          {{ language.name }}
+        </label>
+
+      </div>
+
+
+      <!-- OPTIONS -->
+      <div class="flex items-center gap-3 shrink-0">
+
+        <!-- PROFICIENCY -->
+        <select
+          [(ngModel)]="language.proficiency"
+          [ngModelOptions]="{ standalone: true }"
+          [disabled]="!language.selected || language.primary"
+
+          class="
+            w-[138px]
+            h-10
+
+            px-4
+
+            rounded-lg
+
+            border
+            border-slate-200
+
+            bg-white
+
+            text-sm
+            text-slate-700
+
+            outline-none
+
+            transition
+
+            focus:border-blue-700
+            focus:ring-2
+            focus:ring-blue-100
+
+            disabled:bg-slate-50
+            disabled:text-slate-400
+            disabled:cursor-not-allowed
+
+            cursor-pointer
+          "
+        >
+
+          <option value="">
+            Proficiency
+          </option>
+
+          <option value="basic">
+            Basic
+          </option>
+
+          <option value="conversational">
+            Conversational
+          </option>
+
+          <option value="professional">
+            Professional
+          </option>
+
+          <option value="fluent">
+            Fluent
+          </option>
+
+          <option value="native">
+            Native / Bilingual
+          </option>
+
+        </select>
+
+
+        <!-- PRIMARY -->
+        <div class="flex items-center gap-2">
+
+          <input
+            type="checkbox"
+            [id]="'primary-' + language.code"
+            [checked]="language.primary"
+            [disabled]="!language.selected"
+            (change)="togglePrimary(language)"
+
+            class="
+              w-4
+              h-4
+
+              rounded
+
+              border-slate-300
+
+              text-blue-900
+
+              focus:ring-blue-800
+              focus:ring-offset-0
+
+              disabled:cursor-not-allowed
+
+              cursor-pointer
+            "
+          />
+
+          <label
+            [for]="'primary-' + language.code"
+            class="
+              text-sm
+              font-medium
+              text-slate-600
+
+              cursor-pointer
+            "
+          >
+            Primary
+          </label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ERROR -->
+  <div
+    *ngIf="languageError"
+    class="
+      mt-3
+      flex
+      items-center
+      gap-2
+
+      text-sm
+      font-medium
+      text-red-600
+    "
+  >
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      class="w-4 h-4"
+    >
+      <circle cx="12" cy="12" r="10"></circle>
+      <path d="M12 8v4"></path>
+      <path d="M12 16h.01"></path>
+    </svg>
+
+    Please select at least one language.
+
+  </div>
+
+
+  <!-- BUTTONS -->
+  <div class="flex items-center gap-3 mt-6">
+
+    <!-- BACK -->
+    <button
+      type="button"
+      (click)="previousStep()"
+
+      class="
+        h-12
+        px-6
+
+        rounded-lg
+
+        border
+        border-slate-200
+
+        bg-white
+
+        text-sm
+        font-semibold
+        text-blue-950
+
+        transition
+
+        hover:bg-slate-50
+        hover:border-slate-300
+
+        active:scale-[0.98]
+      "
+    >
+      Back
+    </button>
+
+
+    <!-- CONTINUE -->
+    <button
+      type="button"
+      (click)="continueFromLanguages()"
+
+      class="
+        flex-1
+        h-12
+
+        rounded-lg
+
+        bg-blue-950
+
+        text-sm
+        font-semibold
+        text-white
+
+        transition
+
+        hover:bg-blue-900
+
+        active:scale-[0.99]
+
+        focus:outline-none
+        focus:ring-4
+        focus:ring-blue-100
+      "
+    >
+      Continue
+    </button>
+
+  </div>
+
+</div>
+
+
+    <!-- STEP 3 -->
+
+   <!-- ===================================== -->
+<!-- STEP 3 : EXPERIENCE -->
+<!-- ===================================== -->
+
+<div
+  *ngIf="currentStep === 3"
+  class="w-full max-w-4xl mx-auto"
+>
+
+  <!-- TITLE -->
+  <div class="mb-8">
+    <h2 class="text-2xl font-bold text-[#082675]">
+      Experience
+    </h2>
+
+    <p class="mt-1 text-sm text-slate-500">
+      Step 3 of 4.
+    </p>
+  </div>
+
+
+  <!-- ===================================== -->
+  <!-- CUSTOMER SERVICE EXPERIENCE -->
+  <!-- ===================================== -->
+
+  <div
+    class="
+      rounded-xl
+      border
+      border-slate-200
+      bg-white
+      p-5
+      md:p-6
+      mb-6
+    "
+  >
+
+    <p class="mb-4 text-sm font-semibold text-[#082675]">
+      Do you have customer-service or support experience?
+    </p>
+
+    <div class="flex flex-wrap gap-3">
+
+      <!-- YES -->
+      <label
+        class="
+          flex
+          items-center
+          gap-2
+          min-h-10
+          px-4
+          rounded-lg
+          border
+          border-slate-200
+          cursor-pointer
+          transition
+
+          hover:bg-slate-50
+
+          has-[:checked]:border-[#082675]
+          has-[:checked]:bg-blue-50
+        "
+      >
+
+        <input
+          type="radio"
+          name="supportExperience"
+          value="yes"
+          [(ngModel)]="experience.supportExperience"
+          [ngModelOptions]="{ standalone: true }"
+          class="
+            w-4
+            h-4
+            accent-[#082675]
+          "
+        />
+
+        <span class="text-sm font-medium text-slate-700">
+          Yes
+        </span>
+
+      </label>
+
+
+      <!-- NO -->
+      <label
+        class="
+          flex
+          items-center
+          gap-2
+          min-h-10
+          px-4
+          rounded-lg
+          border
+          border-slate-200
+          cursor-pointer
+          transition
+
+          hover:bg-slate-50
+
+          has-[:checked]:border-[#082675]
+          has-[:checked]:bg-blue-50
+        "
+      >
+
+        <input
+          type="radio"
+          name="supportExperience"
+          value="no"
+          [(ngModel)]="experience.supportExperience"
+          [ngModelOptions]="{ standalone: true }"
+          class="
+            w-4
+            h-4
+            accent-[#082675]
+          "
+        />
+
+        <span class="text-sm font-medium text-slate-700">
+          No
+        </span>
+
+      </label>
+
+
+      <!-- CURRENTLY GAINING EXPERIENCE -->
+      <label
+        class="
+          flex
+          items-center
+          gap-2
+          min-h-10
+          px-4
+          rounded-lg
+          border
+          border-slate-200
+          cursor-pointer
+          transition
+
+          hover:bg-slate-50
+
+          has-[:checked]:border-[#082675]
+          has-[:checked]:bg-blue-50
+        "
+      >
+
+        <input
+          type="radio"
+          name="supportExperience"
+          value="gaining"
+          [(ngModel)]="experience.supportExperience"
+          [ngModelOptions]="{ standalone: true }"
+          class="
+            w-4
+            h-4
+            accent-[#082675]
+          "
+        />
+
+        <span class="text-sm font-medium text-slate-700">
+          Currently gaining experience
+        </span>
+
+      </label>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ===================================== -->
+  <!-- WORK INTERESTS -->
+  <!-- ===================================== -->
+
+  <div
+    class="
+      rounded-xl
+      border
+      border-slate-200
+      bg-white
+      p-5
+      md:p-6
+    "
+  >
+
+    <!-- HEADER -->
+    <div class="mb-5">
+
+      <h3 class="text-sm font-semibold text-[#082675]">
+        Which kinds of work are you interested in?
+      </h3>
+
+      <p class="mt-1 text-xs text-slate-500">
+        Select every category that fits.
+      </p>
+
+    </div>
+
+
+    <!-- ===================================== -->
+    <!-- TECHNICAL SUPPORT -->
+    <!-- ===================================== -->
+
+    <div class="mb-7">
+
+      <h4
+        class="
+          mb-3
+          text-xs
+          font-semibold
+          uppercase
+          tracking-wide
+          text-slate-500
+        "
+      >
+        Technical Support
+      </h4>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3">
+
+        <label
+          *ngFor="let item of technicalSupportOptions"
+          class="flex items-center gap-2 cursor-pointer"
+        >
+
+          <input
+            type="checkbox"
+            [checked]="isWorkSelected(item)"
+            (change)="toggleWork(item)"
+            class="
+              w-4
+              h-4
+              rounded
+              border-slate-300
+              accent-[#082675]
+              cursor-pointer
+            "
+          />
+
+          <span class="text-sm text-slate-700">
+            {{ item }}
+          </span>
+
+        </label>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ===================================== -->
+    <!-- VIRTUAL ASSISTANCE -->
+    <!-- ===================================== -->
+
+    <div class="mb-7">
+
+      <h4
+        class="
+          mb-3
+          text-xs
+          font-semibold
+          uppercase
+          tracking-wide
+          text-slate-500
+        "
+      >
+        Virtual Assistance
+      </h4>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3">
+
+        <label
+          *ngFor="let item of virtualAssistanceOptions"
+          class="flex items-center gap-2 cursor-pointer"
+        >
+
+          <input
+            type="checkbox"
+            [checked]="isWorkSelected(item)"
+            (change)="toggleWork(item)"
+            class="
+              w-4
+              h-4
+              rounded
+              border-slate-300
+              accent-[#082675]
+              cursor-pointer
+            "
+          />
+
+          <span class="text-sm text-slate-700">
+            {{ item }}
+          </span>
+
+        </label>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ===================================== -->
+    <!-- E-COMMERCE -->
+    <!-- ===================================== -->
+
+    <div class="mb-7">
+
+      <h4
+        class="
+          mb-3
+          text-xs
+          font-semibold
+          uppercase
+          tracking-wide
+          text-slate-500
+        "
+      >
+        E-Commerce
+      </h4>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3">
+
+        <label
+          *ngFor="let item of ecommerceOptions"
+          class="flex items-center gap-2 cursor-pointer"
+        >
+
+          <input
+            type="checkbox"
+            [checked]="isWorkSelected(item)"
+            (change)="toggleWork(item)"
+            class="
+              w-4
+              h-4
+              rounded
+              border-slate-300
+              accent-[#082675]
+              cursor-pointer
+            "
+          />
+
+          <span class="text-sm text-slate-700">
+            {{ item }}
+          </span>
+
+        </label>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ===================================== -->
+    <!-- BACK OFFICE -->
+    <!-- ===================================== -->
+
+    <div class="mb-7">
+
+      <h4
+        class="
+          mb-3
+          text-xs
+          font-semibold
+          uppercase
+          tracking-wide
+          text-slate-500
+        "
+      >
+        Back Office
+      </h4>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3">
+
+        <label
+          *ngFor="let item of backOfficeOptions"
+          class="flex items-center gap-2 cursor-pointer"
+        >
+
+          <input
+            type="checkbox"
+            [checked]="isWorkSelected(item)"
+            (change)="toggleWork(item)"
+            class="
+              w-4
+              h-4
+              rounded
+              border-slate-300
+              accent-[#082675]
+              cursor-pointer
+            "
+          />
+
+          <span class="text-sm text-slate-700">
+            {{ item }}
+          </span>
+
+        </label>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ===================================== -->
+    <!-- CUSTOMER SUPPORT -->
+    <!-- ===================================== -->
+
+    <div class="mb-7">
+
+      <h4
+        class="
+          mb-3
+          text-xs
+          font-semibold
+          uppercase
+          tracking-wide
+          text-slate-500
+        "
+      >
+        Customer Support
+      </h4>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3">
+
+        <label
+          *ngFor="let item of customerSupportOptions"
+          class="flex items-center gap-2 cursor-pointer"
+        >
+
+          <input
+            type="checkbox"
+            [checked]="isWorkSelected(item)"
+            (change)="toggleWork(item)"
+            class="
+              w-4
+              h-4
+              rounded
+              border-slate-300
+              accent-[#082675]
+              cursor-pointer
+            "
+          />
+
+          <span class="text-sm text-slate-700">
+            {{ item }}
+          </span>
+
+        </label>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ===================================== -->
+    <!-- SALES & OUTREACH -->
+    <!-- ===================================== -->
+
+    <div class="mb-7">
+
+      <h4
+        class="
+          mb-3
+          text-xs
+          font-semibold
+          uppercase
+          tracking-wide
+          text-slate-500
+        "
+      >
+        Sales & Outreach
+      </h4>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3">
+
+        <label
+          *ngFor="let item of salesOptions"
+          class="flex items-center gap-2 cursor-pointer"
+        >
+
+          <input
+            type="checkbox"
+            [checked]="isWorkSelected(item)"
+            (change)="toggleWork(item)"
+            class="
+              w-4
+              h-4
+              rounded
+              border-slate-300
+              accent-[#082675]
+              cursor-pointer
+            "
+          />
+
+          <span class="text-sm text-slate-700">
+            {{ item }}
+          </span>
+
+        </label>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ===================================== -->
+    <!-- INDUSTRY SUPPORT -->
+    <!-- ===================================== -->
+
+    <div class="mb-7">
+
+      <h4
+        class="
+          mb-3
+          text-xs
+          font-semibold
+          uppercase
+          tracking-wide
+          text-slate-500
+        "
+      >
+        Industry Support
+      </h4>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3">
+
+        <label
+          *ngFor="let item of industryOptions"
+          class="flex items-center gap-2 cursor-pointer"
+        >
+
+          <input
+            type="checkbox"
+            [checked]="isWorkSelected(item)"
+            (change)="toggleWork(item)"
+            class="
+              w-4
+              h-4
+              rounded
+              border-slate-300
+              accent-[#082675]
+              cursor-pointer
+            "
+          />
+
+          <span class="text-sm text-slate-700">
+            {{ item }}
+          </span>
+
+        </label>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ===================================== -->
+    <!-- LANGUAGE SERVICES -->
+    <!-- ===================================== -->
+
+    <div class="mb-7">
+
+      <h4
+        class="
+          mb-3
+          text-xs
+          font-semibold
+          uppercase
+          tracking-wide
+          text-slate-500
+        "
+      >
+        Language Services
+      </h4>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3">
+
+        <label
+          *ngFor="let item of languageServicesOptions"
+          class="flex items-center gap-2 cursor-pointer"
+        >
+
+          <input
+            type="checkbox"
+            [checked]="isWorkSelected(item)"
+            (change)="toggleWork(item)"
+            class="
+              w-4
+              h-4
+              rounded
+              border-slate-300
+              accent-[#082675]
+              cursor-pointer
+            "
+          />
+
+          <span class="text-sm text-slate-700">
+            {{ item }}
+          </span>
+
+        </label>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ===================================== -->
+    <!-- OTHER -->
+    <!-- ===================================== -->
+
+    <div class="pt-1">
+
+      <label class="flex items-center gap-2 cursor-pointer">
+
+        <input
+          type="checkbox"
+          [(ngModel)]="experience.otherSelected"
+          [ngModelOptions]="{ standalone: true }"
+          class="
+            w-4
+            h-4
+            rounded
+            accent-[#082675]
+          "
+        />
+
+        <span class="text-sm font-semibold text-[#082675]">
+          Other - describe the work you're looking for
+        </span>
+
+      </label>
+
+
+      <div
+        *ngIf="experience.otherSelected"
+        class="mt-4"
+      >
+
+        <textarea
+          [(ngModel)]="experience.otherDescription"
+          [ngModelOptions]="{ standalone: true }"
+          rows="4"
+          placeholder="Describe the kind of work you're looking for..."
+          class="
+            w-full
+            resize-none
+            rounded-xl
+            border
+            border-slate-200
+            px-4
+            py-3
+            text-sm
+            text-slate-700
+            outline-none
+            transition
+
+            placeholder:text-slate-400
+
+            focus:border-[#082675]
+            focus:ring-4
+            focus:ring-blue-100
+          "
+        ></textarea>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ===================================== -->
+  <!-- ERROR -->
+  <!-- ===================================== -->
+
+  <p
+    *ngIf="experienceError"
+    class="mt-3 text-sm font-medium text-red-600"
+  >
+    Please select at least one type of work.
+  </p>
+
+
+
+  <!-- ===================================== -->
+  <!-- NAVIGATION -->
+  <!-- ===================================== -->
+
+  <div class="flex items-center gap-3 mt-6">
+
+    <button
+      type="button"
+      (click)="previousStep()"
+      class="
+        h-12
+        px-6
+        rounded-lg
+        border
+        border-slate-200
+        bg-white
+        text-sm
+        font-semibold
+        text-[#082675]
+        transition
+
+        hover:bg-slate-50
+        hover:border-slate-300
+
+        active:scale-[0.98]
+      "
+    >
+      Back
+    </button>
+
+
+    <button
+      type="button"
+      (click)="continueFromExperience()"
+      class="
+        flex-1
+        h-12
+        rounded-lg
+        bg-[#082675]
+        text-sm
+        font-semibold
+        text-white
+        transition
+
+        hover:bg-[#061e5c]
+
+        active:scale-[0.99]
+
+        focus:outline-none
+        focus:ring-4
+        focus:ring-blue-100
+      "
+    >
+      Continue
+    </button>
+
+  </div>
+
+</div>
+
+
+
+    <!-- STEP 4 -->
+
+    <!-- ===================================== -->
+<!-- STEP 4 : AVAILABILITY -->
+<!-- ===================================== -->
+
+<div
+  *ngIf="currentStep === 4"
+  class="w-full max-w-4xl mx-auto"
+>
+
+  <!-- HEADER -->
+  <div class="mb-8">
+    <h2 class="text-2xl font-bold text-[#082675]">
+      Availability
+    </h2>
+
+    <p class="mt-1 text-sm text-slate-500">
+      Step 4 of 4. Last step.
+    </p>
+  </div>
+
+
+  <!-- ===================================== -->
+  <!-- REMOTE WORK -->
+  <!-- ===================================== -->
+
+  <div
+    class="
+      mb-6
+      rounded-xl
+      border
+      border-slate-200
+      bg-white
+      p-5
+      md:p-6
+    "
+  >
+
+    <p class="mb-4 text-sm font-semibold text-[#082675]">
+      Are you interested in remote work?
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+      <!-- YES -->
+      <label
+        class="
+          flex
+          min-h-12
+          items-center
+          justify-center
+          gap-2
+
+          rounded-lg
+          border
+          border-slate-200
+
+          cursor-pointer
+          transition
+
+          hover:bg-slate-50
+
+          has-[:checked]:border-[#082675]
+          has-[:checked]:bg-blue-50
+        "
+      >
+
+        <input
+          type="radio"
+          name="remoteWork"
+          value="yes"
+          [(ngModel)]="availability.remoteWork"
+          [ngModelOptions]="{ standalone: true }"
+          class="
+            h-4
+            w-4
+            accent-[#082675]
+          "
+        />
+
+        <span class="text-sm font-medium text-slate-700">
+          Yes
+        </span>
+
+      </label>
+
+
+      <!-- NO -->
+      <label
+        class="
+          flex
+          min-h-12
+          items-center
+          justify-center
+          gap-2
+
+          rounded-lg
+          border
+          border-slate-200
+
+          cursor-pointer
+          transition
+
+          hover:bg-slate-50
+
+          has-[:checked]:border-[#082675]
+          has-[:checked]:bg-blue-50
+        "
+      >
+
+        <input
+          type="radio"
+          name="remoteWork"
+          value="no"
+          [(ngModel)]="availability.remoteWork"
+          [ngModelOptions]="{ standalone: true }"
+          class="
+            h-4
+            w-4
+            accent-[#082675]
+          "
+        />
+
+        <span class="text-sm font-medium text-slate-700">
+          No
+        </span>
+
+      </label>
+
+    </div>
+
+  </div>
+
+
+  <!-- ===================================== -->
+  <!-- SCHEDULE / SHIFT -->
+  <!-- ===================================== -->
+
+  <div
+    class="
+      mb-6
+      rounded-xl
+      border
+      border-slate-200
+      bg-white
+      p-5
+      md:p-6
+    "
+  >
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+      <!-- SCHEDULE -->
+      <div>
+
+        <label
+          for="schedulePreference"
+          class="mb-2 block text-sm font-semibold text-[#082675]"
+        >
+          Schedule preference
+        </label>
+
+        <select
+          id="schedulePreference"
+          [(ngModel)]="availability.schedulePreference"
+          [ngModelOptions]="{ standalone: true }"
+
+          class="
+            h-12
+            w-full
+
+            rounded-lg
+            border
+            border-slate-200
+
+            bg-white
+
+            px-4
+
+            text-sm
+            text-slate-700
+
+            outline-none
+            transition
+
+            focus:border-[#082675]
+            focus:ring-4
+            focus:ring-blue-100
+          "
+        >
+
+          <option value="">
+            Select an option
+          </option>
+
+          <option value="full-time">
+            Full-time
+          </option>
+
+          <option value="part-time">
+            Part-time
+          </option>
+
+          <option value="weekends">
+            Weekends
+          </option>
+
+          <option value="flexible">
+            Flexible
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- SHIFT -->
+      <div>
+
+        <label
+          for="shiftPreference"
+          class="mb-2 block text-sm font-semibold text-[#082675]"
+        >
+          Shift preference
+        </label>
+
+        <select
+          id="shiftPreference"
+          [(ngModel)]="availability.shiftPreference"
+          [ngModelOptions]="{ standalone: true }"
+
+          class="
+            h-12
+            w-full
+
+            rounded-lg
+            border
+            border-slate-200
+
+            bg-white
+
+            px-4
+
+            text-sm
+            text-slate-700
+
+            outline-none
+            transition
+
+            focus:border-[#082675]
+            focus:ring-4
+            focus:ring-blue-100
+          "
+        >
+
+          <option value="">
+            Select an option
+          </option>
+
+          <option value="morning">
+            Morning
+          </option>
+
+          <option value="afternoon">
+            Afternoon
+          </option>
+
+          <option value="evening">
+            Evening
+          </option>
+
+          <option value="night">
+            Night
+          </option>
+
+          <option value="any">
+            Any shift
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ===================================== -->
+  <!-- START DATE -->
+  <!-- ===================================== -->
+
+  <div
+    class="
+      mb-6
+      rounded-xl
+      border
+      border-slate-200
+      bg-white
+      p-5
+      md:p-6
+    "
+  >
+
+    <label
+      for="startDate"
+      class="mb-2 block text-sm font-semibold text-[#082675]"
+    >
+      When can you start?
+    </label>
+
+    <input
+      id="startDate"
+      type="text"
+      placeholder="e.g. Immediately, 2 weeks notice"
+
+      [(ngModel)]="availability.startDate"
+      [ngModelOptions]="{ standalone: true }"
+
+      class="
+        h-12
+        w-full
+
+        rounded-lg
+        border
+        border-slate-200
+
+        px-4
+
+        text-sm
+        text-slate-700
+
+        placeholder:text-slate-400
+
+        outline-none
+        transition
+
+        focus:border-[#082675]
+        focus:ring-4
+        focus:ring-blue-100
+      "
+    />
+
+  </div>
+
+
+  <!-- ===================================== -->
+  <!-- CERTIFICATIONS -->
+  <!-- ===================================== -->
+
+  <div
+    class="
+      mb-6
+      rounded-xl
+      border
+      border-slate-200
+      bg-white
+      p-5
+      md:p-6
+    "
+  >
+
+    <label
+      for="certifications"
+      class="mb-2 block text-sm font-semibold text-[#082675]"
+    >
+      Certifications
+      <span class="font-normal text-slate-500">
+        (optional)
+      </span>
+    </label>
+
+    <textarea
+      id="certifications"
+      rows="4"
+
+      [(ngModel)]="availability.certifications"
+      [ngModelOptions]="{ standalone: true }"
+
+      class="
+        w-full
+        resize-y
+
+        rounded-lg
+        border
+        border-slate-200
+
+        px-4
+        py-3
+
+        text-sm
+        text-slate-700
+
+        outline-none
+        transition
+
+        focus:border-[#082675]
+        focus:ring-4
+        focus:ring-blue-100
+      "
+    ></textarea>
+
+  </div>
+
+
+  <!-- ===================================== -->
+  <!-- AGREEMENTS -->
+  <!-- ===================================== -->
+
+  <div
+    class="
+      mb-6
+      rounded-xl
+      border
+      border-slate-200
+      bg-slate-50
+      p-5
+      md:p-6
+    "
+  >
+
+    <!-- REQUIRED CONSENT -->
+    <label
+      class="
+        mb-4
+        flex
+        items-start
+        gap-3
+        cursor-pointer
+      "
+    >
+
+      <input
+        type="checkbox"
+
+        [(ngModel)]="availability.agreeToContact"
+        [ngModelOptions]="{ standalone: true }"
+
+        class="
+          mt-1
+          h-4
+          w-4
+          shrink-0
+
+          rounded
+          border-slate-300
+
+          accent-[#082675]
+        "
+      />
+
+      <span class="text-sm leading-5 text-slate-700">
+        I agree Seco Response may contact me about my application
+        and store my information to review for current and future opportunities.
+      </span>
+
+    </label>
+
+
+    <!-- EMAIL ALERTS -->
+    <label
+      class="
+        flex
+        items-start
+        gap-3
+        cursor-pointer
+      "
+    >
+
+      <input
+        type="checkbox"
+
+        [(ngModel)]="availability.emailAlerts"
+        [ngModelOptions]="{ standalone: true }"
+
+        class="
+          mt-1
+          h-4
+          w-4
+          shrink-0
+
+          rounded
+          border-slate-300
+
+          accent-[#082675]
+        "
+      />
+
+      <span class="text-sm leading-5 text-slate-700">
+
+        Also send me email alerts about new matching opportunities
+
+        <span class="text-slate-500">
+          (optional, unsubscribe anytime).
+        </span>
+
+      </span>
+
+    </label>
+
+
+    <!-- NOTICE -->
+    <p class="mt-5 text-xs leading-5 text-slate-500">
+
+      Joining the Talent Network does not guarantee an interview,
+      placement, or employment.
+
+      If a project match arises, we will ask separately before
+      referring your profile to a partner agency.
+
+    </p>
+
+  </div>
+
+
+  <!-- ===================================== -->
+  <!-- ERROR -->
+  <!-- ===================================== -->
+
+  <div
+    *ngIf="availabilityError"
+    class="
+      mb-4
+      rounded-lg
+      bg-red-50
+      px-4
+      py-3
+      text-sm
+      font-medium
+      text-red-600
+    "
+  >
+    Please complete all required fields before submitting.
+  </div>
+
+
+  <!-- ===================================== -->
+  <!-- NAVIGATION -->
+  <!-- ===================================== -->
+
+  <div class="flex items-center gap-3">
+
+    <!-- BACK -->
+    <button
+      type="button"
+      (click)="previousStep()"
+
+      class="
+        h-12
+        px-6
+
+        rounded-lg
+
+        border
+        border-slate-200
+
+        bg-white
+
+        text-sm
+        font-semibold
+        text-[#082675]
+
+        transition
+
+        hover:bg-slate-50
+        hover:border-slate-300
+
+        active:scale-[0.98]
+      "
+    >
+      Back
+    </button>
+
+
+    <!-- SUBMIT -->
+    <button
+      type="button"
+      (click)="submitApplication()"
+
+      class="
+        flex-1
+        h-12
+
+        rounded-lg
+
+        bg-[#082675]
+
+        text-sm
+        font-semibold
+        text-white
+
+        transition
+
+        hover:bg-[#061e5c]
+
+        active:scale-[0.99]
+
+        focus:outline-none
+        focus:ring-4
+        focus:ring-blue-100
+      "
+    >
+      Submit Application
+    </button>
+
+  </div>
+
+</div>
+
+
+  </form>
+
+</div>
